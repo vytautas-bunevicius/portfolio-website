@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,13 +15,28 @@
     #tool-icons-container {
       display: flex;
       justify-content: center;
-      margin-top: 45px; /* Adjust the value based on your preference */
+      align-items: center;
     }
 
     #tool-icons-container img {
-      margin: 0 10px; /* Adjust the horizontal margin as needed */
-      max-width: 100%;
-      height: auto;
+      width: 64px;
+      height: 64px;
+      margin: 0 10px;
+    }
+
+    /* Mobile styles */
+    @media (max-width: 600px) {
+      #tool-icons-container {
+        flex-wrap: wrap;
+        max-height: 400px;
+        overflow-y: auto;
+      }
+
+      #tool-icons-container img {
+        width: 48px; /* Adjust the width as needed for mobile */
+        height: 48px; /* Adjust the height as needed for mobile */
+        margin: 5px;
+      }
     }
   </style>
 
