@@ -52,112 +52,21 @@
                 margin: 5px;
             }
         }
+    </style>
 
-    /* Dark Mode button styles */
-    .dark-mode-container {
-      display: flex;
-      align-items: center;
-      margin-left: auto; /* Push the dark-mode container to the right */
-      margin-right: 10px; /* Adjust margin to control spacing */
-    }
-
-    #darkModeIcon {
-      margin-right: 5px; /* Adjust the margin to control spacing between the icon and "Toggle Dark Mode" button */
-    }
-
-    #darkModeToggle {
-      cursor: pointer;
-      padding: 10px 20px; /* Adjust padding for height and width */
-      background-color: #4a4a4a; /* Change background color */
-      color: #ffffff; /* Change text color */
-      border: 2px solid #ffffff; /* Add border with color */
-      border-radius: 6px; /* Add border-radius for rounded corners */
-      transition: background-color 0.3s, color 0.3s; /* Add a smooth transition effect */
-    }
-
-    #darkModeToggle:hover {
-      background-color: #333; /* Change background color on hover */
-      color: #ffd700; /* Change text color on hover */
-    }
-
-    /* Adjust the margin for the "Contact Me" button */
-    .button {
-      margin-right: 10px;
-    }
-
-    /* Update text color for various elements */
-    body.dark-mode {
-      color: #ffffff; /* Set text color to white in dark mode */
-    }
-
-    body:not(.dark-mode) {
-      color: #000000; /* Set text color to black in light mode */
-    }
-
-    .nav-title,
-    .button-text {
-      color: inherit; /* Set text color to inherit from body */
-    }
-
-    /* Update text color for navigation and buttons in dark mode */
-    body.dark-mode .nav-title,
-    body.dark-mode .button-text {
-      color: #ffffff; /* Set text color to white in dark mode */
-    }
-
-    /* Update text color for navigation and buttons in light mode */
-    body:not(.dark-mode) .nav-title,
-    body:not(.dark-mode) .button-text {
-      color: #000000; /* Set text color to black in light mode */
-    }
-
-    /* Adjust the size of the "Contact Me" and "Toggle Dark Mode" buttons */
-    .button,
-    #darkModeToggle {
-      padding: 10px 20px; /* Adjust padding for height and width */
-      font-size: 16px; /* Adjust font size */
-    }
-
-    /* Adjust the position of the "Contact Me" and "Toggle Dark Mode" buttons */
-    .nav-bar {
-      display: flex;
-      justify-content: space-between; /* Align items on the horizontal axis */
-    }
-
-    .nav-bar .button-container {
-      display: flex;
-      gap: 10px; /* Add space between the buttons */
-    }
-
-    /* Update border color for buttons in dark mode */
-    body.dark-mode .button,
-    body.dark-mode #darkModeToggle {
-      border: 2px solid #ffffff; /* Set border color to white in dark mode */
-    }
-
-    /* Update border color for buttons in light mode */
-    body:not(.dark-mode) .button,
-    body:not(.dark-mode) #darkModeToggle {
-      border: 2px solid #000000; /* Set border color to black in light mode */
-    }
-        </style>
-
-        <script defer src="./js/script.js"></script>
-    </head>
-    <body>
-
+    <script defer src="./js/script.js"></script>
+</head>
+<body>
 
     <!-- NAVBAR -->
     <div class="navbar">
       <a class="nav-title-link" href="./index.html">
-        <span class="nav-title">Vytautas Portfolio</span>
+          <span class="nav-title">Vytautas Portfolio</span>
       </a>
       <a class="button" href="mailto:vytautas@bunevicius.com">
-        <span class="button-text">Contact Me</span>
+          <span class="button-text">Contact Me</span>
       </a>
-      <a class="dark-mode-container" href="#" id="darkModeToggle">
-        <img src="./assets/icons/darkmode.svg" alt="Dark Mode Icon" id="darkModeIcon">
-      </a>
+      </div>
     </div>
 
 
