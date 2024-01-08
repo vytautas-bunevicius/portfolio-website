@@ -53,47 +53,52 @@
             }
         }
 
-        /* Dark Mode button styles */
-        .dark-mode-container {
-            display: flex;
-            align-items: center;
-            margin-right: 10px; /* Adjust margin to control spacing */
-        }
+    /* Dark Mode button styles */
+    .dark-mode-container {
+      display: flex;
+      align-items: center;
+      margin-left: auto; /* Push the dark-mode container to the right */
+      margin-right: 10px; /* Adjust margin to control spacing */
+    }
 
-        #darkModeIcon {
-            margin-right: 5px; /* Adjust the margin to control spacing between the icon and "Toggle Dark Mode" button */
-            fill: #ffffff; /* Set the fill color to white for the dark mode icon */
-        }
+    #darkModeIcon {
+      margin-right: 5px; /* Adjust the margin to control spacing between the icon and "Toggle Dark Mode" button */
+    }
 
-        #darkModeToggle {
-            cursor: pointer;
-            padding: 10px 20px; /* Adjust padding for height and width */
-            background-color: #4a4a4a; /* Change background color */
-            color: #ffffff; /* Change text color */
-            border: 2px solid #ffffff; /* Add border with color */
-            border-radius: 6px; /* Add border-radius for rounded corners */
-            transition: background-color 0.3s, color 0.3s; /* Add a smooth transition effect */
-        }
+    #darkModeToggle {
+      cursor: pointer;
+      padding: 10px 20px; /* Adjust padding for height and width */
+      background-color: #4a4a4a; /* Change background color */
+      color: #ffffff; /* Change text color */
+      border: 2px solid #ffffff; /* Add border with color */
+      border-radius: 6px; /* Add border-radius for rounded corners */
+      transition: background-color 0.3s, color 0.3s; /* Add a smooth transition effect */
+    }
 
-        #darkModeToggle:hover {
-            background-color: #333; /* Change background color on hover */
-            color: #ffd700; /* Change text color on hover */
-        }
+    #darkModeToggle:hover {
+      background-color: #333; /* Change background color on hover */
+      color: #ffd700; /* Change text color on hover */
+    }
 
-        /* Update text color for various elements */
-        body.dark-mode {
-            color: #ffffff; /* Set text color to white in dark mode */
-        }
+    /* Adjust the margin for the "Contact Me" button */
+    .button {
+      margin-right: 10px;
+    }
 
-        .nav-title,
-        .button-text {
-            color: #ffffff; /* Set text color to white for navigation elements */
-        }
-    </style>
+    /* Update text color for various elements */
+    body.dark-mode {
+      color: #ffffff; /* Set text color to white in dark mode */
+    }
 
-    <script defer src="./js/script.js"></script>
-</head>
-<body>
+    .nav-title,
+    .button-text {
+      color: #000000; /* Set text color to black for navigation elements in light mode */
+    }
+        </style>
+
+        <script defer src="./js/script.js"></script>
+    </head>
+    <body>
 
 
     <!-- NAVBAR -->
