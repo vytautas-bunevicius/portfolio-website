@@ -90,9 +90,13 @@
       color: #ffffff; /* Set text color to white in dark mode */
     }
 
+    body:not(.dark-mode) {
+      color: #000000; /* Set text color to black in light mode */
+    }
+
     .nav-title,
     .button-text {
-      color: #000000; /* Set text color to black for navigation elements in light mode */
+      color: inherit; /* Set text color to inherit from body */
     }
         </style>
 
