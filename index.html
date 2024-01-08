@@ -98,11 +98,24 @@
     .button-text {
       color: inherit; /* Set text color to inherit from body */
     }
+
+    /* Update text color for navigation and buttons in dark mode */
+    body.dark-mode .nav-title,
+    body.dark-mode .button-text {
+      color: #ffffff; /* Set text color to white in dark mode */
+    }
+
+    /* Update text color for navigation and buttons in light mode */
+    body:not(.dark-mode) .nav-title,
+    body:not(.dark-mode) .button-text {
+      color: #000000; /* Set text color to black in light mode */
+    }
         </style>
 
         <script defer src="./js/script.js"></script>
     </head>
     <body>
+
 
 
     <!-- NAVBAR -->
