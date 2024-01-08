@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <link rel="icon" href="./assets/images/1311.png" />
@@ -29,7 +28,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 50px; /* Adjust the value based on your preference for larger screens */
+            margin-top: 50px; /* I can adjust the value based on my preference for larger screens */
         }
 
         #tool-icons-container img {
@@ -44,117 +43,140 @@
                 flex-wrap: wrap;
                 max-height: 400px;
                 overflow-y: auto;
-                margin-top: 50px; /* Reset margin for mobile */
+                margin-top: 50; /* Reset margin for mobile */
             }
 
             #tool-icons-container img {
-                width: 48px; /* Adjust the width as needed for mobile */
-                height: 48px; /* Adjust the height as needed for mobile */
+                width: 48px; /* I can adjust the width as needed for mobile */
+                height: 48px; /* I can adjust the height as needed for mobile */
                 margin: 5px;
             }
+        }
+
+        /* Dark Mode button styles */
+        #darkModeToggle {
+            cursor: pointer;
+            padding: 10px 20px; /* Adjust padding for height and width */
+            background-color: #4a4a4a; /* Change background color */
+            color: #ffffff; /* Change text color */
+            border: 2px solid #ffffff; /* Add border with color */
+            border-radius: 6px; /* Add border-radius for rounded corners */
+            margin: 0 10px; /* Adjust margin to control spacing */
+            transition: background-color 0.3s, color 0.3s; /* Add a smooth transition effect */
+        }
+
+        #darkModeToggle:hover {
+            background-color: #333; /* Change background color on hover */
+            color: #ffd700; /* Change text color on hover */
         }
     </style>
 
     <script defer src="./js/script.js"></script>
 </head>
-
 <body>
 
     <!-- NAVBAR -->
     <div class="navbar">
-        <a class="nav-title-link" href="./index.html">
-            <span class="nav-title">Vytautas Portfolio</span>
-        </a>
-        <a class="button" href="mailto:vytautas@bunevicius.com">
-            <span class="button-text">Contact Me</span>
-        </a>
+      <a class="nav-title-link" href="./index.html">
+          <span class="nav-title">Vytautas Portfolio</span>
+      </a>
+      <a class="button" href="mailto:vytautas@bunevicius.com">
+          <span class="button-text">Contact Me</span>
+      </a>
+      <div class="dark-mode-container">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#ffffff" width="16px" height="16px" id="darkModeIcon">
+              <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm1 20h-2v-2h2v2zm-2-4h2v-3h-2v3zm0-4h2V5h-2v7zm8 8h-2v-2h2v2zm0-4h-2v-3h2v3zm0-4h-2V5h2v7z"/>
+          </svg>
+          <button id="darkModeToggle">Toggle Dark Mode</button>
+      </div>
     </div>
+
 
     <!-- MAIN PAGE CONTENT -->
     <div id="main-content">
 
-        <!-- PORTFOLIO HEADER -->
-        <div id="portfolio-header">
-            <div id="portfolio-header-image-container">
-                <!-- 
+      <!-- PORTFOLIO HEADER -->
+      <div id="portfolio-header">
+        <div id="portfolio-header-image-container">
+          <!-- 
             TODO
 
             - I can change the img "src" attribute to point to the image I have uploaded uploaded (or whatever image).
             - I can change the number to point to my he OpenSea link with your own
             
           -->
-                <img src="./assets/images/1311.png" class="portfolio-header-image">
-                <a class="no-underline" target="_blank" href="https://opensea.io/assets/0xe0be388ab81c47b0f098d2030a1c9ef190691a8a/1311">
-                    <span class="image-caption"></span>
-                </a>
-            </div>
+          <img src="./assets/images/1311.png" class="portfolio-header-image">
+          <a class="no-underline" target="_blank" href="https://opensea.io/assets/0xe0be388ab81c47b0f098d2030a1c9ef190691a8a/1311">
+            <span class="image-caption"></span>
+          </a>
+        </div>
 
-            <!-- 
+          <!-- 
 
-            - I can change the main-title to whatever you want
+            - I can change the main-title to whatver you want
             - I can change the body-text after that to a quick introduction to what you do
             -I can edit the button text if I feel like it. It will link to the projects section below.
           -->
-            <div id="portfolio-header-text-container">
-                <div class="header-text">
-                    <span class="main-title">Hey, my name is Vytautas Bunevičius.</span>
-                    <div class="body-text" style="margin-top: 20px;">
-                        I am a data enthusiast specializing in <strong>data analysis and engineering</strong>. My passion
-                        lies in extracting meaningful insights from complex datasets and building robust data pipelines.
-                        As a data professional, I strive to contribute to the world of analytics and provide valuable
-                        solutions to data-driven challenges.
-                    </div>
-                    <a class="button" id="my-work-link">
-                        <span class="button-text">Check out my projects</span>
-                        <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
-                    </a>
-                </div>
-            </div>
+        <div id="portfolio-header-text-container">
+            <div class="header-text">
+              <span class="main-title">Hey, my name is Vytautas Bunevičius.</span>
+              <div class="body-text" style="margin-top: 20px;">
+                I am a data enthusiast specializing in <strong>data analysis and engineering</strong>.
+                My passion lies in extracting meaningful insights from complex datasets and building robust data pipelines. 
+                As a data professional, I strive to contribute to the world of analytics and provide valuable solutions to data-driven challenges.
+              </div>
+                          </div>
+            <a class="button" id="my-work-link">
+              <span class="button-text">Check out my projects</span> 
+              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
+            </a>
+        </div>
+      </div>
 
-            <!-- ABOUT SECTION -->
-            <!-- 
+      <!-- ABOUT SECTION -->
+      <!-- 
 
         - I can hange the subheader-text to whatever header you want
         - Add paragraphs using the <div class="body-text"></div> elements in the "about-section-content"
       -->
-            <!-- TOOLS / STACK SECTION -->
-            <div id="tools-section">
-                <span class="subheader-text">My Tools / Stack</span>
-                <div class="tools-section-content">
-                    <div id="tool-icons-container">
-                        <img src="./assets/icons/python.svg" alt="Python">
-                        <img src="./assets/icons/mysql.svg" alt="MySQL">
-                        <img src="./assets/icons/postgre.svg" alt="PostgreSQL">
-                        <img src="./assets/icons/tableau.svg" alt="Tableau">
-                        <img src="./assets/icons/cloud.svg" alt="Google Cloud Platform">
-                        <img src="./assets/icons/docker.svg" alt="Docker">
-                    </div>
-                </div>
+      <!-- TOOLS / STACK SECTION -->
+      <div id="tools-section">
+        <span class="subheader-text">My Tools / Stack</span>
+        <div class="tools-section-content">
+            <div id="tool-icons-container">
+                <img src="./assets/icons/python.svg" alt="Python">
+                <img src="./assets/icons/mysql.svg" alt="MySQL">
+                <img src="./assets/icons/postgre.svg" alt="PostgreSQL">
+                <img src="./assets/icons/tableau.svg" alt="Tableau">
+                <img src="./assets/icons/cloud.svg" alt="Google Cloud Platform">
+                <img src="./assets/icons/docker.svg" alt="Docker">
             </div>
+        </div>
+    </div>
+      
+      <div id="about-section">
+        <span class="subheader-text">My Background / About Me</span>
+        <div class="about-section-content">
+<div class="body-text">Graduating from Turing College with a <strong>solid educational background in data science</strong>, I have mastered the art of extracting complex data into actionable insights. My expertise extends to <strong>Python</strong> and its robust libraries such as <strong>Pandas, Matplotlib, NumPy, and SciPy</strong>, empowering me to conduct comprehensive analyses. My portfolio includes a detailed study of <strong>COVID-19 trends in South Korea</strong> and an exploration of course rating patterns, demonstrating my skill in <strong>data interpretation, pattern recognition, and the strategic use of SQL for querying relational databases</strong>.</div>
+<div class="body-text">My work experience, particularly in <strong>business client services and customer success management at CyberCare</strong>, has further enhanced my skills. As a <strong>Business Client Services Manager</strong>, I <strong>successfully onboarded and supported over 200 businesses, contributing to a commendable 10% increase in customer growth</strong> and leveraging <strong>SQL</strong> to optimize data operations. In my role as a <strong>Customer Success Manager</strong>, I led strategic optimization initiatives, resulting in a significant <strong>reduction of workload per person by 30% and a remarkable decrease in case resolution time for Linux-based users by 35%</strong>, utilizing <strong>SQL</strong> to analyze system performance and identify areas for improvement.</div>
+<div class="body-text">Driven by a strong passion for analytics, I am committed to continuous learning and providing impactful solutions to <strong>data-driven challenges</strong>. My goal is to contribute positively to the data field by applying my expertise, particularly leveraging the power of <strong>SQL, Python, and machine learning</strong> to extract valuable insights from diverse data sources.</div>
 
-            <div id="about-section">
-                <span class="subheader-text">My Background / About Me</span>
-                <div class="about-section-content">
-                    <div class="body-text">Graduating from Turing College with a <strong>solid educational background in data science</strong>, I have mastered the art of extracting complex data into actionable insights. My expertise extends to <strong>Python</strong> and its robust libraries such as <strong>Pandas, Matplotlib, NumPy, and SciPy</strong>, empowering me to conduct comprehensive analyses. My portfolio includes a detailed study of <strong>COVID-19 trends in South Korea</strong> and an exploration of course rating patterns, demonstrating my skill in <strong>data interpretation, pattern recognition, and the strategic use of SQL for querying relational databases</strong>.</div>
-                    <div class="body-text">My work experience, particularly in <strong>business client services and customer success management at CyberCare</strong>, has further enhanced my skills. As a <strong>Business Client Services Manager</strong>, I <strong>successfully onboarded and supported over 200 businesses, contributing to a commendable 10% increase in customer growth</strong> and leveraging <strong>SQL</strong> to optimize data operations. In my role as a <strong>Customer Success Manager</strong>, I led strategic optimization initiatives, resulting in a significant <strong>reduction of workload per person by 30% and a remarkable decrease in case resolution time for Linux-based users by 35%</strong>, utilizing <strong>SQL</strong> to analyze system performance and identify areas for improvement.</div>
-                    <div class="body-text">Driven by a strong passion for analytics, I am committed to continuous learning and providing impactful solutions to <strong>data-driven challenges</strong>. My goal is to contribute positively to the data field by applying my expertise, particularly leveraging the power of <strong>SQL, Python, and machine learning</strong> to extract valuable insights from diverse data sources.</div>
+        </div>
+      </div>
 
-                </div>
-            </div>
+      <!-- PROJECTS / MY WORK SECTION -->
+      <div id="my-work-section">
+        <!-- TODO - Change the subheader-text to whatever I want the Projects section header to say -->
+        <span class="subheader-text">My Work / My Projects</span>
 
-            <!-- PROJECTS / MY WORK SECTION -->
-            <div id="my-work-section">
-                <!-- TODO - Change the subheader-text to whatever I want the Projects section header to say -->
-                <span class="subheader-text">My Work / My Projects</span>
+        <style>
+          .project-card-text-container {
+            height: 120px; /* Adjust this value as needed */
+          }
+        </style>
 
-                <style>
-                    .project-card-text-container {
-                        height: 120px; /* Adjust this value as needed */
-                    }
-                </style>
-
-                <div class="projects-container">
-                    <!-- 
+        <div class="projects-container">
+          <!-- 
 
             This is where the project cards live. Here's a base level project card for what to copy:
             <div class="project-card">
@@ -175,70 +197,69 @@
                 - SMALL_PROJECT_DESCRIPTION: a quick project description (max 4 lines)
                 - PROJECT_PAGE_NAME.html: the html filename for the project (must be in project-pages folder)
           -->
-                    <div class="project-card">
-                        <a href="./project-pages/korea-analysis.html">
-                            <img src="./assets/images/covid19.jpeg" class="project-image" alt="South Korea Analysis">
-                        </a>
-                        <div class="project-card-text-container">
-                            <div class="subheader-text project-title">South Korea Analysis</div>
-                            <div class="body-text project-card-text">Explored and analyzed COVID-19-related datasets specific to South Korea, covering case distribution, patient information and etc.</div>
-                        </div>
-                        <a class="button" href="./project-pages/korea-analysis.html">
-                            <span class="button-text">Read More</span>
-                            <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
-                        </a>
-                    </div>
-
-                    <div class="project-card">
-                        <a href="./project-pages/coursera-analysis.html">
-                            <img src="./assets/images/coursera1.jpeg" class="project-image" alt="Coursera Analysis">
-                        </a>
-                        <div class="project-card-text-container">
-                            <div class="subheader-text project-title">Coursera Analysis</div>
-                            <div class="body-text project-card-text">Conducted exploratory data analysis on the distribution of courses on Coursera, using data from the Coursera API.</div>
-                        </div>
-                        <a class="button" href="./project-pages/coursera-analysis.html">
-                            <span class="button-text">Read More</span>
-                            <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
-                        </a>
-                    </div>
-
-                    <div class="project-card">
-                        <a href="./project-pages/spotify-analysis.html">
-                            <img src="./assets/images/spotify1.jpeg" class="project-image" alt="Spotify 50 Analysis">
-                        </a>
-                        <div class="project-card-text-container">
-                            <div class="subheader-text project-title">Spotify 50 Analysis</div>
-                            <div class="body-text project-card-text">Analyzed the Spotify Top 50 Tracks of 2020 dataset to extract insights into popular tracks, artists, genres, and various features.</div>
-                        </div>
-                        <a class="button" href="./project-pages/spotify-analysis.html">
-                            <span class="button-text">Read More</span>
-                            <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
-                        </a>
-                    </div>
-
-                    <!-- FOOTER -->
-                    <div id="footer">
-                        <!-- 
-        This should be the same across all pages.
-      -->
-                        <a class="icon-link" target="_blank" href="https://github.com/vytautas-bunevicius">
-                            <img src="./assets/icons/github.svg" class="footer-icon" alt="GitHub">
-                        </a>
-                        <!-- 
-        This should be the same across all pages.
-      -->
-                        <a class="icon-link" target="_blank" href="https://www.linkedin.com/in/vytautas-bunevicius/">
-                            <img src="./assets/icons/linkedin.svg" class="footer-icon" alt="LinkedIn">
-                        </a>
-                        <!--       
-        This should be the same across all pages.
-      -->
-                        <a class="icon-link" href="mailto:vytautas@bunevicius.com">
-                            <img src="./assets/icons/mail.svg" class="footer-icon" alt="Email">
-                        </a>
-                    </div>
-                </div>
+          <div class="project-card">
+            <a href="./project-pages/korea-analysis.html">
+              <img src="./assets/images/covid19.jpeg" class="project-image">
+            </a>
+            <div class="project-card-text-container">
+              <div class="subheader-text project-title">South Korea Analysis</div>
+              <div class="body-text project-card-text">Explored and analyzed COVID-19-related datasets specific to South Korea, covering case distribution, patient information and etc.</div>
             </div>
-</body>
+            <a class="button" href="./project-pages/korea-analysis.html">
+              <span class="button-text">Read More</span>
+              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
+            </a>
+          </div>
+          
+          <div class="project-card">
+            <a href="./project-pages/coursera-analysis.html">
+              <img src="./assets/images/coursera1.jpeg" class="project-image">
+            </a>
+            <div class="project-card-text-container">
+              <div class="subheader-text project-title">Coursera Analysis</div>
+              <div class="body-text project-card-text">Conducted exploratory data analysis on the distribution of courses on Coursera, using data from the Coursera API.</div>
+            </div>
+            <a class="button" href="./project-pages/coursera-analysis.html">
+              <span class="button-text">Read More</span>
+              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
+            </a>
+          </div>
+          
+          <div class="project-card">
+            <a href="./project-pages/spotify-analysis.html">
+              <img src="./assets/images/spotify1.jpeg" class="project-image">
+            </a>
+            <div class="project-card-text-container">
+              <div class="subheader-text project-title">Spotify 50 Analysis</div>
+              <div class="body-text project-card-text">Analyzed the Spotify Top 50 Tracks of 2020 dataset to extract insights into popular tracks, artists, genres, and various features.</div>
+            </div>
+            <a class="button" href="./project-pages/spotify-analysis.html">
+              <span class="button-text">Read More</span>
+              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
+            </a>
+          </div>
+
+    <!-- FOOTER -->
+    <div id="footer">
+      <!-- 
+        This should be the same across all pages.
+      -->
+      <a class="icon-link" target="_blank" href="https://github.com/vytautas-bunevicius">
+        <image src="./assets/icons/github.svg" class="footer-icon"/>
+      </a>
+      <!-- 
+        This should be the same across all pages.
+      -->
+      <a class="icon-link" target="_blank" href="https://www.linkedin.com/in/vytautas-bunevicius/">
+        <image src="./assets/icons/linkedin.svg" class="footer-icon"/>
+      </a>
+      <!--       
+        This should be the same across all pages.
+      -->
+      <a class="icon-link" href="mailto:vytautas@bunevicius.com">
+        <image src="./assets/icons/mail.svg" class="footer-icon"/>
+      </a>
+    </div>
+
+	</body>
 </html>
