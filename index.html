@@ -15,7 +15,7 @@
         .about-section-content {
             text-align: justify;
             justify-content: space-between;
-            padding: 50px 0;
+            padding: 40px 0;
         }
 
         .body-text {
@@ -56,18 +56,25 @@
         /* Dark Mode button styles */
         #darkModeToggle {
             cursor: pointer;
-            padding: 8px 16px;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            margin: 0 10px; /* Adjust the margin to your preference */
+            padding: 10px 20px; /* Adjust padding for height and width */
+            background-color: #4a4a4a; /* Change background color */
+            color: #ffffff; /* Change text color */
+            border: 2px solid #ffffff; /* Add border with color */
+            border-radius: 6px; /* Add border-radius for rounded corners */
+            margin: 0 10px; /* Adjust margin to control spacing */
+            transition: background-color 0.3s, color 0.3s; /* Add a smooth transition effect */
+        }
+
+        #darkModeToggle:hover {
+            background-color: #333; /* Change background color on hover */
+            color: #ffd700; /* Change text color on hover */
         }
     </style>
 
     <script defer src="./js/script.js"></script>
 </head>
 <body>
+
     <!-- NAVBAR -->
     <div class="navbar">
         <a class="nav-title-link" href="./index.html">
