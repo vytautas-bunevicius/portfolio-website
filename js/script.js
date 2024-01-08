@@ -1,8 +1,3 @@
-if (document.getElementById('my-work-link')) {
-  document.getElementById('my-work-link').addEventListener('click', () => {
-    document.getElementById('my-work-section').scrollIntoView({behavior: "smooth"})
-  })
-}
 document.addEventListener('DOMContentLoaded', function () {
   const darkModeToggle = document.getElementById('darkModeToggle');
   const darkModeIcon = document.getElementById('darkModeIcon');
@@ -37,5 +32,17 @@ document.addEventListener('DOMContentLoaded', function () {
   function disableDarkMode() {
     body.classList.remove('dark-mode');
     darkModeIcon.setAttribute('fill', '#000000'); // Change the icon color in light mode
+  }
+
+  // Smooth scroll to the "My Work" section when the link is clicked
+  const myWorkLink = document.getElementById('my-work-link');
+  if (myWorkLink) {
+    myWorkLink.addEventListener('click', function (event) {
+      event.preventDefault();
+      const myWorkSection = document.getElementById('my-work-section');
+      if (myWorkSection) {
+        myWorkSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
   }
 });
