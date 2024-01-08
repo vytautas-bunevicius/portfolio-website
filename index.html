@@ -12,46 +12,46 @@
     <link rel="stylesheet" href="./css/utilities.css">
 
     <style>
-      .about-section-content {
-          text-align: justify;
-          justify-content: space-between;
-          padding: 40px 0;
-      }
+        .about-section-content {
+            text-align: justify;
+            justify-content: space-between;
+            padding: 40px 0;
+        }
 
-      .body-text {
-          text-align: justify;
-          justify-content: space-between;
-          padding: 7px 0;
-      }
+        .body-text {
+            text-align: justify;
+            justify-content: space-between;
+            padding: 7px 0;
+        }
 
-      #tool-icons-container {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin-top: 50px; /* I can adjust the value based on my preference for larger screens */
-      }
+        #tool-icons-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px; /* I can adjust the value based on my preference for larger screens */
+        }
 
-      #tool-icons-container img {
-          width: 64px;
-          height: 64px;
-          margin: 0 10px;
-      }
+        #tool-icons-container img {
+            width: 64px;
+            height: 64px;
+            margin: 0 10px;
+        }
 
-      /* Mobile styles */
-      @media (max-width: 600px) {
-          #tool-icons-container {
-              flex-wrap: wrap;
-              max-height: 400px;
-              overflow-y: auto;
-              margin-top: 50; /* Reset margin for mobile */
-          }
+        /* Mobile styles */
+        @media (max-width: 600px) {
+            #tool-icons-container {
+                flex-wrap: wrap;
+                max-height: 400px;
+                overflow-y: auto;
+                margin-top: 50; /* Reset margin for mobile */
+            }
 
-          #tool-icons-container img {
-              width: 48px; /* I can adjust the width as needed for mobile */
-              height: 48px; /* I can adjust the height as needed for mobile */
-              margin: 5px;
-          }
-      }
+            #tool-icons-container img {
+                width: 48px; /* I can adjust the width as needed for mobile */
+                height: 48px; /* I can adjust the height as needed for mobile */
+                margin: 5px;
+            }
+        }
 
         /* Dark Mode button styles */
         .dark-mode-container {
@@ -62,6 +62,7 @@
 
         #darkModeIcon {
             margin-right: 5px; /* Adjust the margin to control spacing between the icon and "Toggle Dark Mode" button */
+            fill: #ffffff; /* Set the fill color to white for the dark mode icon */
         }
 
         #darkModeToggle {
@@ -78,11 +79,22 @@
             background-color: #333; /* Change background color on hover */
             color: #ffd700; /* Change text color on hover */
         }
+
+        /* Update text color for various elements */
+        body.dark-mode {
+            color: #ffffff; /* Set text color to white in dark mode */
+        }
+
+        .nav-title,
+        .button-text {
+            color: #ffffff; /* Set text color to white for navigation elements */
+        }
     </style>
 
     <script defer src="./js/script.js"></script>
 </head>
 <body>
+
 
     <!-- NAVBAR -->
     <div class="navbar">
