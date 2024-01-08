@@ -110,12 +110,29 @@
     body:not(.dark-mode) .button-text {
       color: #000000; /* Set text color to black in light mode */
     }
+
+    /* Adjust the size of the "Contact Me" and "Toggle Dark Mode" buttons */
+    .button,
+    #darkModeToggle {
+      padding: 10px 20px; /* Adjust padding for height and width */
+      font-size: 16px; /* Adjust font size */
+    }
+
+    /* Adjust the position of the "Contact Me" and "Toggle Dark Mode" buttons */
+    .nav-bar {
+      display: flex;
+      justify-content: space-between; /* Align items on the horizontal axis */
+    }
+
+    .nav-bar .button-container {
+      display: flex;
+      gap: 10px; /* Add space between the buttons */
+    }
         </style>
 
         <script defer src="./js/script.js"></script>
     </head>
     <body>
-
 
 
     <!-- NAVBAR -->
