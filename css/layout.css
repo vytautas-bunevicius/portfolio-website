@@ -1,106 +1,223 @@
-
-/* Icons */
-
-.right-arrow-icon {
-  width: 16px;
-  height: 16px;
-  margin-top: 1px;
+* {
+  box-sizing: border-box;
 }
 
-.footer-icon {
-  width: 20px;
-  height: 20px;
+html {
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
 }
 
-a.icon-link {
-  transition: transform 200ms ease-in-out;
-}
-
-a.icon-link:hover {
-  cursor: pointer;
-  stroke-width: 5;
+body {
   margin: 0;
-  transform: rotate(15deg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 
-/* Navbar Styling */
 
-.navbar {
+
+/* Main Page Layout */
+
+#main-content {
+  margin: 225px 425px;
+  display: flex;
+  flex-direction: column;
+  gap: 96px;
+}
+
+
+
+
+/* Portfolio Header */
+
+#portfolio-header {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+#portfolio-header-image-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-basis: 50%;
+}
+
+.portfolio-header-image {
   width: 100%;
-  padding: 30px 50px;
+  height: auto;
+}
+
+#portfolio-header-text-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-.nav-title-link {
-  color: black;
-  text-decoration: none;
-}
-
-.nav-title-link:hover {
-  text-decoration: underline;
-}
-
-/* Small devices (portrait tablets and large phones, 800px and below) */
-@media only screen and (max-width: 800px) {
-  .navbar {
-    padding: 20px 20px;
-    background-color: white
-  }
+  flex-direction: column;
+  gap: 34px;
+  flex-basis: 50%;
 }
 
 
-/* Button Styling */
 
-a.button {
-  padding: 8px 16px;
-  border: 3px solid #141414;
-  border-radius: 50px;
-  color: black;
-  text-decoration: none;
-  width: fit-content;
+
+/* About Section */
+
+#about-section {
   display: flex;
-  gap: 5px;
-  align-items: center;
-}
-
-a.button:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  cursor: pointer;
-}
-
-
-/* Footer Styling */
-
-#footer {
-  width: 100%;
-  display: flex;
-  padding: 30px 50px;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   gap: 16px;
 }
 
-/* Link Styling */
-a.no-underline {
-  text-decoration: none;
-  color: black
+.about-section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
 }
 
-a.no-underline:hover {
-  text-decoration: underline;
-  cursor: pointer;
+
+
+
+/* Project Section */
+
+#my-work-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.projects-container {
+  display: flex;
+  gap: 34px 16px;
+  flex-wrap: wrap;
+}
+
+    /* Project Cards */
+
+    .project-card {
+      max-width: calc((100% - 32px) / 3);
+      display: flex;
+      flex-direction: column;
+      gap: 34px;
+    }
+
+    .project-card-text-container {
+      flex-direction: column;
+      display: flex;
+      gap: 16px
+    }
+
+    .project-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+
+
+
+/* Project Pages */
+
+#project-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.project-header-image {
+  width: 100%;
+  height: auto;
+}
+
+#project-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.project-details-content {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+
+    /* Project Gallery */
+
+    #project-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .project-gallery-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 34px 16px;
+    }
+
+    .gallery-image-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .gallery-image-container.half-width {
+      width: calc((100% - 16px) / 2);
+    }
+
+    .gallery-image {
+      width: 100%;
+      height: auto;
+    }
+
+
+/* Extra Extra large devices (large laptops and desktops, 1200px and below) */
+@media only screen and (max-width: 1600px) {
+  #main-content {
+    margin: 225px 275px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and below) */
+@media only screen and (max-width: 1200px) {
+  #main-content {
+    margin: 225px 175px;
+  }
+}
+
+/* Large devices (laptops/desktops, 1000px and below) */
+@media only screen and (max-width: 1000px) {
+  #main-content {
+    margin: 225px 75px;
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 800px and below) */
 @media only screen and (max-width: 800px) {
-  #footer {
-    padding: 20px 20px;
+  #main-content {
+    margin: 150px 50px;
+  }
+
+  #portfolio-header {
+    flex-direction: column;
+  }
+
+  .project-card {
+    max-width: calc((100% - 16px) / 2);
   }
 }
+
+/* Small devices (portrait tablets and large phones, 600px and below) */
+@media only screen and (max-width: 600px) {
+  #main-content {
+    margin: 125px 20px;
+  }
+
+  .project-card {
+    max-width: 100%;
+  }
+}
+
+
+
