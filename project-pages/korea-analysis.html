@@ -71,12 +71,14 @@
         </div>
       </div>
 
+      
       <!-- IMAGE GALLERY -->
       <div id="project-notebook">
-        <div class="subheader-text">Data Exploration / Analysis</div>
-        <!-- TODO - I need to update the 'src' attribute with the correct path to your generated HTML notebook file -->
-        <iframe src="../project-pages/covid19.html" width="100%" height="600px"></iframe>
-    </div>
+        <div class="header-container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="subheader-text">Data Exploration / Analysis</div>
+            <button id="fullscreenBtn" class="button button-text">Go Fullscreen</button>
+        </div>
+        <iframe id="myIframe" src="../project-pages/covid19.html" width="100%" height="600px"></iframe>
     </div>
 
     <!-- FOOTER -->
