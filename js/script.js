@@ -53,4 +53,35 @@ document.addEventListener('DOMContentLoaded', (event) => {
       }
     });
   }
+  const lightIcon = document.getElementById("light-icon");
+  const darkIcon = document.getElementById("dark-icon");
+  let darkMode = localStorage.getItem('darkMode') === 'true';
+
+  if (darkMode) {
+    document.body.classList.add("dark-mode");
+    darkIcon.setAttribute("display", "none");
+    lightIcon.setAttribute("display", "block");
+  } else {
+    lightIcon.setAttribute("display", "none");
+    darkIcon.setAttribute("display", "block");
+  }
+
+  function toggleDarkMode() {
+    darkMode = !darkMode;
+    document.body.classList.toggle("dark-mode");
+
+    if (darkMode) {
+      lightIcon.setAttribute("display", "block");
+      darkIcon.setAttribute("display", "none");
+    } else {
+      lightIcon.setAttribute("display", "none");
+      darkIcon.setAttribute("display", "block");
+    }
+
+    // Save the current mode to localStorage
+    localStorage.setItem('darkMode', darkMode);
+  }
+
+  // Assuming the button with the onclick event is already in your HTML
+  document.querySelector('button[onclick="toggleDarkMode()"]').addEventListener('click', toggleDarkMode);
 });
