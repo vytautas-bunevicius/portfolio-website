@@ -47,3 +47,15 @@ body {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
+.dark-mode {
+  background-color: #363636; /* Dark grey color */
+  color: white;
+}
+body.dark-mode .nav-title {
+  color: white;
+}
+body.dark-mode .button {
+  background-color: #333333; /* Same color as dark mode background */
+  color: white;
+  border-color: white; /* Change border color to white */
+}
