@@ -61,12 +61,12 @@
             - I can change the 'body-text' text to a short and sweet description of my project (maybe the same as the one on the project card)
             - I can change "covid19.jpeg" to the image filename I have uploaded in the assets/images folder.
           -->
-      <div class="main-title">South Korea COVID-19 Exploratory Data Analysis</div>
-      <div class="body-text">In this project, I analyze COVID-19 data for South Korea using Python libraries such as
-        Pandas, NumPy, Scipy, and Plotly. The study looks at how cases are spread out, details about patients, trends
-        over time, demographic information, and government measures. I’ve also created interactive graphs with Plotly to
-        visualize different aspects of the pandemic in South Korea.</div>
-      <image class="project-header-image" src="../assets/images/covid19.jpeg">
+      <div class="main-title">Exploring Red Wine Characteristics with Machine Learning</div>
+      <div class="body-text">For centuries, winemakers have relied on experience and tradition to craft exceptional
+        wines. But what if we could use science to unveil the secrets behind a truly great bottle? Our project embarked
+        on a data-driven exploration of red wine, leveraging machine learning to identify the key factors influencing
+        its quality.</div>
+      <image class="project-header-image" src="../assets/images/red-wine.jpeg">
     </div>
 
     <!-- PROJECT DETAILS -->
@@ -79,26 +79,28 @@
     <div id="project-details">
       <div class="subheader-text">Summary / Findings</div>
       <div class="project-details-content">
-        <div class="body-text">The analysis of COVID-19 data for South Korea brings to light important findings. Daegu
-          is the hardest-hit region, with Nam-Gu in Daegu being the most affected city. Group infections, often linked
-          to international travel or contact with infected people, are a major source of the high case count. The
-          PatientInfo dataset shows a majority of female patients, cases tied to international arrivals, and a pattern
-          of transmission through contact within close communities.</div>
-        <div class="body-text">Data over time reveals a surge in confirmed cases in February 2020, followed by a steady
-          rise in recoveries and a relatively constant death rate. The TimeAge dataset indicates an increase in
-          confirmed cases across all age groups, with those in their 20s being the most affected. The TimeGender dataset
-          shows more confirmed cases and a higher mortality rate among men. The TimeProvince dataset identifies Daegu as
-          the epicenter of the outbreak. The Region dataset shows variations in the proportion of the elderly population
-          across different provinces.</div>
-        <div class="body-text">The Weather dataset suggests a slight positive correlation between average temperature
-          and case numbers. The SearchTrend dataset indicates a peak in public interest in “Coronavirus” around March
-          2020. After applying logarithmic transformations, the SeoulFloating dataset reveals fluctuations in the
-          floating population of Seoul. Finally, the Policy dataset outlines government policies aimed at curbing the
-          spread of the virus, protecting public health, and supporting individuals and businesses impacted by the
-          pandemic.</div>
+        <div class="body-text">Our analysis delved into a dataset of over 1,500 wines, examining their physicochemical
+          properties – the measurable characteristics that shape a wine's composition. This included factors like
+          acidity levels (both fixed and volatile), alcohol content, the presence of sulfur compounds, and even density.
+          Crucially, the dataset also included each wine's quality rating, providing a benchmark for our analysis.</div>
+        <div class="body-text">By applying machine learning algorithms, we were able to uncover fascinating connections
+          between these chemical properties and the perceived quality of the wine. For instance, we discovered a
+          positive correlation between alcohol content and quality. This suggests that wines with higher alcohol content
+          are generally perceived as being more enjoyable. However, the story doesn't end there. The analysis also
+          revealed a contrasting influence from volatile acidity. Higher levels of volatile acidity correlated with
+          lower quality ratings, indicating that an excessive amount can create unpleasant flavors and aromas.
+          Interestingly, our exploration also highlighted the importance of specific chemical properties like sulphates
+          and various acidity levels, providing a more nuanced understanding of the complex interplay between chemistry
+          and taste.</div>
+        <div class="body-text">This wasn't just an academic exercise. We further leveraged this newfound knowledge by
+          building models to predict both wine quality and alcohol content based on the analyzed features. These models
+          achieved promising accuracy, demonstrating the potential of data science to become a valuable tool in the
+          winemaker's arsenal. Imagine a future where winemakers can utilize scientific insights to optimize grape
+          selection, fermentation processes, and even predict the quality of their wines before bottling. Our project is
+          a glimpse into this exciting possibility, highlighting how data science can join hands with tradition to
+          elevate the art of winemaking.</div>
       </div>
     </div>
-
 
     <!-- IMAGE GALLERY -->
     <div id="project-notebook">
@@ -106,7 +108,7 @@
         <div class="subheader-text">Data Exploration / Analysis</div>
         <button id="fullscreenBtn" class="button button-text">Go Fullscreen</button>
       </div>
-      <iframe id="myIframe" src="../project-pages/covid19.html" width="100%" height="600px"></iframe>
+      <iframe id="myIframe" src="../project-pages/red-wine-visuals.html" width="100%" height="600px"></iframe>
     </div>
 
     <!-- FOOTER -->

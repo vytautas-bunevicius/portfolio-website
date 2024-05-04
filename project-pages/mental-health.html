@@ -1,118 +1,144 @@
-
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-    <!-- 
+
+<head>
+  <meta charset="utf-8">
+  <!-- 
       TODO
 
       This should be the same across all pages.
      -->
-     <link rel="icon" href="../assets/images/1311.png" />
-     <title>Vytautas Portfolio</title>
-    <meta name="description" content="A portfolio template for the Vytautas community.">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="../assets/images/1311.png" />
+  <title>Vytautas Portfolio</title>
+  <meta name="description" content="A portfolio template for the Vytautas community.">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<link rel="stylesheet" href="../css/layout.css">
-    <link rel="stylesheet" href="../css/typography.css">
-    <link rel="stylesheet" href="../css/utilities.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/typography.css">
+  <link rel="stylesheet" href="../css/utilities.css">
 
-		<script defer src="../js/script.js"></script>
-	</head>
-	<body>
-    <div class="navbar">
-        <a class="nav-title-link" href="../index.html">
-            <span class="nav-title">Vytautas Bunevičius</span>
-        </a>
-        <div class="navbar-buttons">
-            <a class="button" href="mailto:vytautas@bunevicius.com">
-                <span class="button-text">Contact</span>
-            </a>
-            <button class="button dark-mode-button" onclick="toggleDarkMode()">
-                <svg width="30" height="30" id="light-icon">
-                    <circle cx="15" cy="15" r="6" fill="currentColor" />
-                    <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4"></line>
-                    <use href="#ray" transform="rotate(45 15 15)" />
-                    <use href="#ray" transform="rotate(90 15 15)" />
-                    <use href="#ray" transform="rotate(135 15 15)" />
-                    <use href="#ray" transform="rotate(180 15 15)" />
-                    <use href="#ray" transform="rotate(225 15 15)" />
-                    <use href="#ray" transform="rotate(270 15 15)" />
-                    <use href="#ray" transform="rotate(315 15 15)" />
-                </svg>
-                <svg width="30" height="30" id="dark-icon">
-                    <path fill="currentColor" d="M 23, 5 A 12 12 0 1 0 23, 25 A 12 12 0 0 1 23, 5" />
-                </svg>
-            </button>
-        </div>
+  <script defer src="../js/script.js"></script>
+</head>
+
+<body>
+  <div class="navbar">
+    <a class="nav-title-link" href="../index.html">
+      <span class="nav-title">Vytautas Bunevičius</span>
+    </a>
+    <div class="navbar-buttons">
+      <a class="button" href="mailto:vytautas@bunevicius.com">
+        <span class="button-text">Contact</span>
+      </a>
+      <button class="button dark-mode-button" onclick="toggleDarkMode()">
+        <svg width="30" height="30" id="light-icon">
+          <circle cx="15" cy="15" r="6" fill="currentColor" />
+          <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4">
+          </line>
+          <use href="#ray" transform="rotate(45 15 15)" />
+          <use href="#ray" transform="rotate(90 15 15)" />
+          <use href="#ray" transform="rotate(135 15 15)" />
+          <use href="#ray" transform="rotate(180 15 15)" />
+          <use href="#ray" transform="rotate(225 15 15)" />
+          <use href="#ray" transform="rotate(270 15 15)" />
+          <use href="#ray" transform="rotate(315 15 15)" />
+        </svg>
+        <svg width="30" height="30" id="dark-icon">
+          <path fill="currentColor" d="M 23, 5 A 12 12 0 1 0 23, 25 A 12 12 0 0 1 23, 5" />
+        </svg>
+      </button>
     </div>
+  </div>
 
-    <!-- MAIN PAGE CONTENT -->
-    <div id="main-content">
+  <!-- MAIN PAGE CONTENT -->
+  <div id="main-content">
 
-      <!-- PROJECT HEADER -->
-      <div id="project-header">
-          <!-- 
+    <!-- PROJECT HEADER -->
+    <div id="project-header">
+      <!-- 
             TODO
 
             - I can change the 'main-title' text to the name of my project
             - I can change the 'body-text' text to a short and sweet description of my project (maybe the same as the one on the project card)
             - I can change "covid19.jpeg" to the image filename I have uploaded in the assets/images folder.
           -->
-        <div class="main-title">Tech Industry Mental Health  Exploratory Data Analysis</div>
-        <div class="body-text">In this project, I analyze mental health survey data in the tech industry using Python libraries such as Pandas, NumPy, NLTK, Gensim, and Plotly, along with SQL for data querying and manipulation. The study examines attitudes towards mental health, the occurrence and distribution of reported mental health disorders, and the availability of resources in the workplace. I delve into trends, correlations, and insights that contribute to a better understanding of mental health issues within the tech sector. I have also created interactive graphs with Plotly to visualize different aspects of mental health in the tech industry. </div>
-        <image class="project-header-image" src="../assets/images/mental.jpeg">
-      </div>
+      <div class="main-title">Tech Industry Mental Health Exploratory Data Analysis</div>
+      <div class="body-text">In this project, I analyze mental health survey data in the tech industry using Python
+        libraries such as Pandas, NumPy, NLTK, Gensim, and Plotly, along with SQL for data querying and manipulation.
+        The study examines attitudes towards mental health, the occurrence and distribution of reported mental health
+        disorders, and the availability of resources in the workplace. I delve into trends, correlations, and insights
+        that contribute to a better understanding of mental health issues within the tech sector. I have also created
+        interactive graphs with Plotly to visualize different aspects of mental health in the tech industry. </div>
+      <image class="project-header-image" src="../assets/images/mental.jpeg">
+    </div>
 
-      <!-- PROJECT DETAILS -->
-      <!-- 
+    <!-- PROJECT DETAILS -->
+    <!-- 
         TODO
 
         - I can change the 'subheader-text' to whatever header I want my project details to be
         - I can add paragraphs using the <div class="body-text"></div> elements in the "project-details-content"
       -->
-      <div id="project-details">
-        <div class="subheader-text">Summary / Findings</div>
-        <div class="project-details-content">
-          <div class="body-text">Mental health discussions surged in 2017 and 2018, but plateaued in 2019. The discussion of "mental health" and related terms increased significantly between 2017 and 2018, reaching a peak of 38% in 2018. This suggests that awareness of mental health issues is growing in the workplace. However, the trend reversed in 2019, with the percentage of respondents mentioning mental health dropping to 34.65%. This could indicate that the initial surge in discussions was due to a specific event or campaign, and that interest has since stabilized.</div>
-          <div class="body-text">Female participation in mental health discussions increased alongside the trend. The percentage of female respondents who mentioned mental health issues also increased during this period, rising from 19.6% in 2014 to 30% in 2018. This suggests that women may be more likely to openly discuss mental health concerns in the workplace. However, female participation declined slightly in 2019, raising questions about the underlying factors behind these trends.</div>
-          <div class="body-text">Smaller companies engaged more in mental health discussions than larger ones. During periods of peak mental health discussions, smaller companies were more likely to have employees mentioning these issues in their responses. This could be due to higher workloads or stress levels in smaller organizations, leading to a greater need for open dialogue about mental health concerns. In contrast, larger companies with over 1000 employees had fewer discussions about mental health, potentially indicating a lack of open communication or awareness of mental health resources.</div>
-          <div class="body-text">Resource availability is higher in larger companies, but the correlation with mental health disorders is weak. The analysis shows that larger companies (1000+ employees) generally have more mental health resources available to their employees. However, the correlation between the availability of these resources and the number of reported mental health disorders is very weak. This suggests that there is not a simple linear relationship between resource availability and mental health outcomes.</div>
-        </div>
+    <div id="project-details">
+      <div class="subheader-text">Summary / Findings</div>
+      <div class="project-details-content">
+        <div class="body-text">Mental health discussions surged in 2017 and 2018, but plateaued in 2019. The discussion
+          of "mental health" and related terms increased significantly between 2017 and 2018, reaching a peak of 38% in
+          2018. This suggests that awareness of mental health issues is growing in the workplace. However, the trend
+          reversed in 2019, with the percentage of respondents mentioning mental health dropping to 34.65%. This could
+          indicate that the initial surge in discussions was due to a specific event or campaign, and that interest has
+          since stabilized.</div>
+        <div class="body-text">Female participation in mental health discussions increased alongside the trend. The
+          percentage of female respondents who mentioned mental health issues also increased during this period, rising
+          from 19.6% in 2014 to 30% in 2018. This suggests that women may be more likely to openly discuss mental health
+          concerns in the workplace. However, female participation declined slightly in 2019, raising questions about
+          the underlying factors behind these trends.</div>
+        <div class="body-text">Smaller companies engaged more in mental health discussions than larger ones. During
+          periods of peak mental health discussions, smaller companies were more likely to have employees mentioning
+          these issues in their responses. This could be due to higher workloads or stress levels in smaller
+          organizations, leading to a greater need for open dialogue about mental health concerns. In contrast, larger
+          companies with over 1000 employees had fewer discussions about mental health, potentially indicating a lack of
+          open communication or awareness of mental health resources.</div>
+        <div class="body-text">Resource availability is higher in larger companies, but the correlation with mental
+          health disorders is weak. The analysis shows that larger companies (1000+ employees) generally have more
+          mental health resources available to their employees. However, the correlation between the availability of
+          these resources and the number of reported mental health disorders is very weak. This suggests that there is
+          not a simple linear relationship between resource availability and mental health outcomes.</div>
       </div>
-
-      <!-- IMAGE GALLERY -->
-      <div id="project-notebook">
-        <div class="header-container" style="display: flex; justify-content: space-between; align-items: center;">
-            <div class="subheader-text">Data Exploration / Analysis</div>
-            <button id="fullscreenBtn" class="button button-text">Go Fullscreen</button>
-        </div>
-        <iframe id="myIframe" src="../project-pages/mental-health-tech.html" width="100%" height="600px"></iframe>
     </div>
-    
+
+    <!-- IMAGE GALLERY -->
+    <div id="project-notebook">
+      <div class="header-container" style="display: flex; justify-content: space-between; align-items: center;">
+        <div class="subheader-text">Data Exploration / Analysis</div>
+        <button id="fullscreenBtn" class="button button-text">Go Fullscreen</button>
+      </div>
+      <iframe id="myIframe" src="../project-pages/mental-health-tech.html" width="100%" height="600px"></iframe>
+    </div>
+
     <!-- FOOTER -->
     <div id="footer">
       <!-- 
         This should be the same across all pages.
       -->
       <a class="icon-link" target="_blank" href="https://github.com/vytautas-bunevicius/">
-        <image src="../assets/icons/github.svg" class="footer-icon"/>
+        <image src="../assets/icons/github.svg" class="footer-icon" />
       </a>
       <!-- 
       
         This should be the same across all pages.
       -->
       <a class="icon-link" target="_blank" href="https://www.linkedin.com/in/vytautas-bunevicius/">
-        <image src="../assets/icons/linkedin.svg" class="footer-icon"/>
+        <image src="../assets/icons/linkedin.svg" class="footer-icon" />
       </a>
       <!-- 
       
         This should be the same across all pages.
       -->
       <a class="icon-link" href="mailto:vytautas@bunevicius.com">
-        <image src="../assets/icons/mail.svg" class="footer-icon"/>
+        <image src="../assets/icons/mail.svg" class="footer-icon" />
       </a>
     </div>
 
-	</body>
+</body>
+
 </html>
