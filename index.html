@@ -24,6 +24,7 @@
       text-align: justify;
       justify-content: space-between;
       padding: 7px 0;
+      word-spacing: normal;
     }
 
     #tool-icons-container {
@@ -123,10 +124,11 @@
         <div class="header-text">
           <span class="main-title">Hey, my name is Vytautas!</span>
           <div class="body-text" style="margin-top: 20px;">
-            <strong>I am a data detective, uncovering hidden patterns and insights from massive datasets (think
-              terabytes!) using data analysis and engineering. </strong>
-            I build efficient data pipelines to unlock the power of information and solve complex problems. My passion
-            lies in using data to make a real impact.
+            <strong>I'm kind of like a detective for data. I dig through huge amounts of information (imagine terabytes
+              of it!) to find hidden patterns and insights. </strong>
+            My work involves setting up automated systems that handle data smoothly and solve tricky problems. I'm all
+            about
+            using data to make a real, positive impact.
           </div>
         </div>
         <a class="button" id="my-work-link">
@@ -160,46 +162,41 @@
     <div id="about-section">
       <span class="subheader-text">My Background / About Me</span>
       <div class="about-section-content">
-        <div class="body-text"><strong>From exploring patterns in podcasts to examining global health trends, I use data
-            analysis to uncover insights that lead to real results. </strong> My education in finance at <strong>ISM
-            University of Management and Economics</strong> taught me the essentials of business processes. Combined
-          with my data science training at <strong>Turing College</strong>, I can turn messy data into effective
+        <div class="body-text"><strong>I've always been fascinated by patterns, from podcasts to global health
+            trends.</strong> My finance studies at <strong>ISM University of Management and Economics</strong> taught me
+          about business workflows. At <strong>Turing College</strong>, I learned to transform messy data into clear
+          insights.</div>
+        <div class="body-text">At Nord Security, as a Junior Analyst, I've enhanced my skills in managing and automating
+          data. I created several <strong>Python</strong> scripts, one of which helps our marketing team organize lost
+          backlinks in Google Sheets. This improvement has freed up at least 10% of our budget for other key projects.
+          I've also played a major role in developing new tools for analysts and preparing systems for future marketing
           strategies.</div>
-        <div class="body-text">At Nord Security, as a Junior Analyst, I have enhanced my data handling and automation
-          skills, significantly boosting our marketing effectiveness and precision. I developed a
-          <strong>Python</strong> script that locates and sends lost backlinks to Google Sheets, making them easily
-          accessible to our outreach team. This efficiency has allowed us to <strong>redirect at least 10% of our budget
-            towards other important projects.</strong> Additionally, I played a crucial role in developing resources for
-          analysts and establishing the infrastructure needed for our growth marketing initiatives, setting the stage
-          for future automation.
+        <div class="body-text">Furthermore, I developed several <strong>Google Apps Scripts</strong> that accurately
+          pull essential SEO metrics like Citation Flow and Trust Flow—with a remarkably low error rate of just
+          <strong>0.001%</strong>. These precise measurements are crucial for our marketing team. Implementing automated
+          error notifications has also helped us modernize and streamline our data management.
         </div>
-        <div class="body-text">Additionally, I developed <strong>Google Apps Scripts</strong> to automatically pull
-          Majestic data metrics like Citation Flow and Trust Flow. These scripts are incredibly accurate, with an
-          <strong>error rate of 0.01%</strong>, ensuring the SEO data our marketing team relies on is reliable. With
-          automated error reporting through webhooks, I have also helped modernize our processes and improve how we
-          handle data.
-        </div>
-        <div class="body-text">Lastly, my personal projects show my curiosity and motivation. By analyzing millions of
-          podcast reviews, I have identified trends that reflect public sentiment and preferences. My work on South
-          Korea's COVID-19 data has also provided a detailed view of the pandemic's wide-reaching effects, offering
-          valuable insights for policymakers and the public.</div>
+        <div class="body-text">On a personal note, my curiosity drives me to dig deep and analyze data. I've reviewed
+          millions of podcast reviews to identify trends that reflect public preferences. My work analyzing COVID-19
+          data in South Korea has provided detailed insights into the pandemic's widespread impact, useful for both
+          policymakers and the public.</div>
       </div>
-    </div>
 
-    <!-- PROJECTS / MY WORK SECTION -->
-    <div id="my-work-section">
-      <!-- TODO - Change the subheader-text to whatever I want the Projects section header to say -->
-      <span class="subheader-text">My Work / My Projects</span>
 
-      <style>
-        .project-card-text-container {
-          height: 120px;
-          /* Adjust this value as needed */
-        }
-      </style>
+      <!-- PROJECTS / MY WORK SECTION -->
+      <div id="my-work-section">
+        <!-- TODO - Change the subheader-text to whatever I want the Projects section header to say -->
+        <span class="subheader-text">My Work / My Projects</span>
 
-      <div class="projects-container">
-        <!--
+        <style>
+          .project-card-text-container {
+            height: 120px;
+            /* Adjust this value as needed */
+          }
+        </style>
+
+        <div class="projects-container">
+          <!--
 
             This is where the project cards live. Here's a base level project card for what to copy:
             <div class="project-card">
@@ -222,116 +219,117 @@
 
 
                           -->
-        <div class="project-card">
-          <a href="./project-pages/mental-health.html">
-            <img src="./assets/images/red-wine.jpeg" class="project-image">
-          </a>
-          <div class="project-card-text-container">
-            <div class="subheader-text project-title">Red Wine Analysis</div>
-            <div class="body-text project-card-text">Dove deeper into wine chemistry: Machine learning unlocked hidden
-              secrets.</div>
+          <div class="project-card">
+            <a href="./project-pages/red-wine-analysis.html">
+              <img src="./assets/images/red-wine.jpeg" class="project-image">
+            </a>
+            <div class="project-card-text-container">
+              <div class="subheader-text project-title">Red Wine Analysis</div>
+              <div class="body-text project-card-text">Dive into the chemistry of red wine using machine learning to
+                reveal its secrets.</div>
+            </div>
+            <a class="button" href="./project-pages/red-wine-analysis.html">
+              <span class="button-text">Read More</span>
+              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
+            </a>
           </div>
-          <a class="button" href="./project-pages/red-wine-analysis.html">
-            <span class="button-text">Read More</span>
-            <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
-          </a>
-        </div>
-        <div class="project-card">
-          <a href="./project-pages/mental-health.html">
-            <img src="./assets/images/podcasts.png" class="project-image">
-          </a>
-          <div class="project-card-text-container">
-            <div class="subheader-text project-title">Podcast Reviews Analysis</div>
-            <div class="body-text project-card-text">Explored podcast trends and listener preferences by analyzing
-              review data using Python and SQL.</div>
+
+          <div class="project-card">
+            <a href="./project-pages/podcasts.html">
+              <img src="./assets/images/podcasts.png" class="project-image">
+            </a>
+            <div class="project-card-text-container">
+              <div class="subheader-text project-title">Podcasts Analysis</div>
+              <div class="body-text project-card-text">Discover what listeners love and think by analyzing podcast
+                reviews with Python and SQL.</div>
+            </div>
+            <a class="button" href="./project-pages/podcasts.html">
+              <span class="button-text">Read More</span>
+              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
+            </a>
           </div>
-          <a class="button" href="./project-pages/podcasts.html">
-            <span class="button-text">Read More</span>
-            <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
-          </a>
-        </div>
 
-        <div class="project-card">
-          <a href="./project-pages/mental-health.html">
-            <img src="./assets/images/mental.jpeg" class="project-image">
-          </a>
-          <div class="project-card-text-container">
-            <div class="subheader-text project-title">Mental Health Analysis</div>
-            <div class="body-text project-card-text" style="text-align: justify;">Delved into mental health data in tech
-              using Python and SQL, uncovering trends about attitudes, disorders, and workplace support.</div>
+          <div class="project-card">
+            <a href="./project-pages/mental-health.html">
+              <img src="./assets/images/mental.jpeg" class="project-image">
+            </a>
+            <div class="project-card-text-container">
+              <div class="subheader-text project-title">Mental Health Analysis</div>
+              <div class="body-text project-card-text">Explore mental health trends in the tech industry, identifying
+                key issues and supports with Python and SQL.</div>
+            </div>
+            <a class="button" href="./project-pages/mental-health.html">
+              <span class="button-text">Read More</span>
+              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
+            </a>
           </div>
-          <a class="button" href="./project-pages/mental-health.html">
-            <span class="button-text">Read More</span>
-            <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
-          </a>
-        </div>
 
-
-        <div class="project-card">
-          <a href="./project-pages/korea-analysis.html">
-            <img src="./assets/images/covid19.jpeg" class="project-image">
-          </a>
-          <div class="project-card-text-container">
-            <div class="subheader-text project-title">South Korea Analysis</div>
-            <div class="body-text project-card-text">Explored and analyzed COVID-19-related datasets specific to South
-              Korea, covering case distribution, patient information and etc.</div>
+          <div class="project-card">
+            <a href="./project-pages/korea-analysis.html">
+              <img src="./assets/images/covid19.jpeg" class="project-image">
+            </a>
+            <div class="project-card-text-container">
+              <div class="subheader-text project-title">COVID-19 Analysis</div>
+              <div class="body-text project-card-text">Analyze comprehensive COVID-19 data from South Korea to
+                understand patterns and impacts of the pandemic.</div>
+            </div>
+            <a class="button" href="./project-pages/korea-analysis.html">
+              <span class="button-text">Read More</span>
+              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
+            </a>
           </div>
-          <a class="button" href="./project-pages/korea-analysis.html">
-            <span class="button-text">Read More</span>
-            <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
-          </a>
-        </div>
 
-        <div class="project-card">
-          <a href="./project-pages/coursera-analysis.html">
-            <img src="./assets/images/coursera1.jpeg" class="project-image">
-          </a>
-          <div class="project-card-text-container">
-            <div class="subheader-text project-title">Coursera Analysis</div>
-            <div class="body-text project-card-text">Conducted exploratory data analysis on the distribution of courses
-              on Coursera, using data from the Coursera API.</div>
+          <div class="project-card">
+            <a href="./project-pages/coursera-analysis.html">
+              <img src="./assets/images/coursera1.jpeg" class="project-image">
+            </a>
+            <div class="project-card-text-container">
+              <div class="subheader-text project-title">Coursera Analysis</div>
+              <div class="body-text project-card-text">Investigate the variety and distribution of courses on Coursera
+                to uncover trends and opportunities.</div>
+            </div>
+            <a class="button" href="./project-pages/coursera-analysis.html">
+              <span class="button-text">Read More</span>
+              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
+            </a>
           </div>
-          <a class="button" href="./project-pages/coursera-analysis.html">
-            <span class="button-text">Read More</span>
-            <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
-          </a>
-        </div>
 
-        <div class="project-card">
-          <a href="./project-pages/spotify-analysis.html">
-            <img src="./assets/images/spotify1.jpeg" class="project-image">
-          </a>
-          <div class="project-card-text-container">
-            <div class="subheader-text project-title">Spotify 50 Analysis</div>
-            <div class="body-text project-card-text">Analyzed the Spotify Top 50 Tracks of 2020 dataset to extract
-              insights into popular tracks, artists, genres, and various features.</div>
+          <div class="project-card">
+            <a href="./project-pages/spotify-analysis.html">
+              <img src="./assets/images/spotify1.jpeg" class="project-image">
+            </a>
+            <div class="project-card-text-container">
+              <div class="subheader-text project-title">Spotify Top 50 Analysis</div>
+              <div class="body-text project-card-text">Delve into Spotify's Top 50 Tracks of 2020 to decode the secrets
+                behind what makes a hit.</div>
+            </div>
+            <a class="button" href="./project-pages/spotify-analysis.html">
+              <span class="button-text">Read More</span>
+              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
+            </a>
           </div>
-          <a class="button" href="./project-pages/spotify-analysis.html">
-            <span class="button-text">Read More</span>
-            <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
-          </a>
-        </div>
 
-        <!-- FOOTER -->
-        <div id="footer">
-          <!--
+
+          <!-- FOOTER -->
+          <div id="footer">
+            <!--
         This should be the same across all pages.
       -->
-          <a class="icon-link" target="_blank" href="https://github.com/vytautas-bunevicius">
-            <img src="./assets/icons/github.svg" class="footer-icon" />
-          </a>
-          <!--
+            <a class="icon-link" target="_blank" href="https://github.com/vytautas-bunevicius">
+              <img src="./assets/icons/github.svg" class="footer-icon" />
+            </a>
+            <!--
         This should be the same across all pages.
       -->
-          <a class="icon-link" target="_blank" href="https://www.linkedin.com/in/vytautas-bunevicius/">
-            <img src="./assets/icons/linkedin.svg" class="footer-icon" />
-          </a>
-          <!--
+            <a class="icon-link" target="_blank" href="https://www.linkedin.com/in/vytautas-bunevicius/">
+              <img src="./assets/icons/linkedin.svg" class="footer-icon" />
+            </a>
+            <!--
         This should be the same across all pages.
       -->
-          <a class="icon-link" href="mailto:vytautas@bunevicius.com">
-            <img src="./assets/icons/mail.svg" class="footer-icon" /> </a>
-        </div>
+            <a class="icon-link" href="mailto:vytautas@bunevicius.com">
+              <img src="./assets/icons/mail.svg" class="footer-icon" /> </a>
+          </div>
 
 </body>
 
