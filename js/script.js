@@ -10,32 +10,33 @@ document.addEventListener('DOMContentLoaded', (event) => {
   if (document.getElementById('fullscreenBtn')) {
     const fullscreenBtn = document.getElementById('fullscreenBtn');
     const iframeElement = document.getElementById('myIframe');
+    const fullscreenIcon = fullscreenBtn.querySelector('img'); // Assuming the <img> tag is a direct child of the button
 
     // Function to handle fullscreen toggle
-    function toggleFullscreen(button) {
+    function toggleFullscreen() {
       if (!iframeElement.classList.contains('fullscreen')) {
         // Always push the 'normal' state before entering fullscreen
         history.pushState({ page: 'normal' }, '', window.location.href);
 
         iframeElement.classList.add('fullscreen');
-        button.innerHTML = 'Exit Fullscreen';
-        history.pushState({ page: 'fullscreen' }, '', window.location.href); // Changed to pushState
+        fullscreenIcon.src = '../assets/icons/fullscreen.svg'; // Keep the icon the same for simplicity
+        history.pushState({ page: 'fullscreen' }, '', window.location.href);
       } else {
         iframeElement.classList.remove('fullscreen');
-        button.innerHTML = 'Go Fullscreen';
+        fullscreenIcon.src = '../assets/icons/fullscreen.svg'; // Keep the icon the same for simplicity
         history.replaceState({ page: 'normal' }, '', window.location.href);
       }
     }
 
     // Event listener for fullscreen button click
     fullscreenBtn.addEventListener('click', function() {
-      toggleFullscreen(this); // Pass the button element as an argument
+      toggleFullscreen(); // No need to pass the button element as an argument
     });
 
     // Event listener for Escape key press
     document.addEventListener('keydown', function(event) {
       if (event.key === 'Escape' && iframeElement.classList.contains('fullscreen')) {
-        toggleFullscreen(fullscreenBtn); // Pass the button element as an argument
+        toggleFullscreen(); // No need to pass the button element as an argument
       }
     });
 
@@ -45,11 +46,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
       if (event.state && event.state.page === 'fullscreen') {
         // If yes, exit fullscreen
         iframeElement.classList.remove('fullscreen');
-        fullscreenBtn.innerHTML = 'Go Fullscreen';
+        fullscreenIcon.src = '../assets/icons/fullscreen.svg'; // Keep the icon the same for simplicity
       } else if (event.state && event.state.page === 'normal' && iframeElement.classList.contains('fullscreen')) {
         // If the current state is normal and the iframe is in fullscreen, exit fullscreen
         iframeElement.classList.remove('fullscreen');
-        fullscreenBtn.innerHTML = 'Go Fullscreen';
+        fullscreenIcon.src = '../assets/icons/fullscreen.svg'; // Keep the icon the same for simplicity
       }
     });
   }

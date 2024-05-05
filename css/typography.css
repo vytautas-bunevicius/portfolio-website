@@ -59,3 +59,7 @@ body.dark-mode .button {
   color: white;
   border-color: white; /* Change border color to white */
 }
+
+html {
+  scroll-behavior: smooth;
+}

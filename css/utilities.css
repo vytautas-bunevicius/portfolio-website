@@ -38,7 +38,8 @@ a.icon-link:hover {
 
 .navbar-buttons {
   display: flex;
-  gap: 20px; /* adjust this value to add space between the buttons */
+  gap: 20px;
+  /* adjust this value to add space between the buttons */
 }
 
 .nav-title-link {
@@ -60,7 +61,8 @@ a.icon-link:hover {
 
   .navbar-buttons {
     justify-content: center;
-    gap: 10px; /* adjust this value to add space between the buttons on small screens */
+    gap: 10px;
+    /* adjust this value to add space between the buttons on small screens */
   }
 }
 
@@ -78,12 +80,16 @@ a.icon-link:hover {
   display: flex;
   gap: 5px;
   align-items: center;
+  transition: all 0.3s ease;
+  box-shadow: none;
 }
 
 .button:hover {
   text-decoration: underline;
   text-decoration-thickness: 2px;
   cursor: pointer;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -117,13 +123,15 @@ a.no-underline:hover {
     background-color: white;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #363636; /* Dark grey color */
+    background-color: #363636;
+    /* Dark grey color */
 
   }
 
   .navbar-buttons {
     justify-content: center;
-    gap: 10px; /* adjust this value to add space between the buttons on small screens */
+    gap: 10px;
+    /* adjust this value to add space between the buttons on small screens */
   }
 }
 
@@ -135,16 +143,22 @@ a.no-underline:hover {
   height: 100%;
   z-index: 9999;
 }
+
 .button.dark-mode-button {
-  background-color: transparent; /* Remove background color */
-  border: none !important; /* Remove border */
+  background-color: transparent;
+  /* Remove background color */
+  border: none !important;
+  /* Remove border */
 }
+
 body.dark-mode .right-arrow-icon {
   filter: invert(1);
 }
+
 body.dark-mode .footer-icon {
   filter: invert(1);
 }
+
 /* Light mode styles */
 body:not(.dark-mode) .navbar {
   background-color: white;
@@ -152,29 +166,33 @@ body:not(.dark-mode) .navbar {
 
 #fullscreen-button {
   position: absolute;
-  top:  15px;
-  right:  15px;
-  background: rgba(0,0,0,0.05);
-  border:  0;
-  width:  40px;
-  height:  40px;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.05);
+  border: 0;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   box-sizing: border-box;
-  transition:  transform .3s;
-  cursor:  pointer;
+  transition: transform .3s;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 #fullscreen-button:hover {
   transform: scale(1.125);
 }
+
 #fullscreen-button svg:nth-child(2) {
   display: none;
 }
+
 .fullscreen #fullscreen-button svg:nth-child(1) {
   display: none;
 }
+
 .fullscreen #fullscreen-button svg:nth-child(2) {
   display: inline-block;
 }
