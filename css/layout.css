@@ -219,19 +219,11 @@ body {
   }
 }
 
-/* Tool Icons Styling */
-#tool-icons-container img {
-  width: 50px; /* adjust size according to design */
-  height: auto;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* subtler shadow for a clean look */
-}
-
 #tool-icons-container img:hover {
-  transform: scale(1.05); /* subtle scale rather than translateY for a gentler effect */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* consistent shadow depth with buttons */
+  transform: scale(1.05); /* subtle scale effect */
   cursor: pointer; /* ensure cursor indicates interactivity */
 }
+
 
 
 
