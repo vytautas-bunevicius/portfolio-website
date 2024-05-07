@@ -224,14 +224,6 @@ body {
   cursor: pointer; /* ensure cursor indicates interactivity */
 }
 
-.project-image {
-  transition: transform 0.3s ease;
-}
-
-.project-card:hover .project-image {
-  transform: scale(1.05);
-}
-
 
 
 
