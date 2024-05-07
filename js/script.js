@@ -85,4 +85,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   // Assuming the button with the onclick event is already in your HTML
   document.querySelector('button[onclick="toggleDarkMode()"]').addEventListener('click', toggleDarkMode);
+  
 });
+
