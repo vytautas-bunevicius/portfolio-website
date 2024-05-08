@@ -219,6 +219,13 @@ body {
   }
 }
 
+#tool-icons-container img:hover {
+  transform: scale(1.05); /* subtle scale effect */
+  cursor: pointer; /* ensure cursor indicates interactivity */
+}
+
+
+
 
 
 
