@@ -15,11 +15,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-
-
 /* Main Page Layout */
-
 #main-content {
   margin: 225px 425px;
   display: flex;
@@ -27,11 +23,7 @@ body {
   gap: 96px;
 }
 
-
-
-
 /* Portfolio Header */
-
 #portfolio-header {
   display: flex;
   gap: 20px;
@@ -57,11 +49,7 @@ body {
   flex-basis: 50%;
 }
 
-
-
-
 /* About Section */
-
 #about-section {
   display: flex;
   flex-direction: column;
@@ -74,11 +62,7 @@ body {
   gap: 34px;
 }
 
-
-
-
 /* Project Section */
-
 #my-work-section {
   display: flex;
   flex-direction: column;
@@ -91,33 +75,28 @@ body {
   flex-wrap: wrap;
 }
 
-    /* Project Cards */
+/* Project Cards */
+.project-card {
+  max-width: calc((100% - 32px) / 3);
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
 
-    .project-card {
-      max-width: calc((100% - 32px) / 3);
-      display: flex;
-      flex-direction: column;
-      gap: 34px;
-    }
+.project-card-text-container {
+  flex-direction: column;
+  display: flex;
+  gap: 16px;
+}
 
-    .project-card-text-container {
-      flex-direction: column;
-      display: flex;
-      gap: 16px
-    }
-
-    .project-image {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      object-position: center;
-    }
-
-
-
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
 
 /* Project Pages */
-
 #project-header {
   display: flex;
   flex-direction: column;
@@ -141,36 +120,34 @@ body {
   gap: 34px;
 }
 
-    /* Project Gallery */
+/* Project Gallery */
+#project-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 
-    #project-gallery {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
+.project-gallery-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 34px 16px;
+}
 
-    .project-gallery-content {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 34px 16px;
-    }
+.gallery-image-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
-    .gallery-image-container {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+.gallery-image-container.half-width {
+  width: calc((100% - 16px) / 2);
+}
 
-    .gallery-image-container.half-width {
-      width: calc((100% - 16px) / 2);
-    }
-
-    .gallery-image {
-      width: 100%;
-      height: auto;
-    }
-
+.gallery-image {
+  width: 100%;
+  height: auto;
+}
 
 /* Extra Extra large devices (large laptops and desktops, 1200px and below) */
 @media only screen and (max-width: 1600px) {
@@ -219,14 +196,60 @@ body {
   }
 }
 
-#tool-icons-container img:hover {
-  transform: scale(1.05); /* subtle scale effect */
-  cursor: pointer; /* ensure cursor indicates interactivity */
+:root {
+  --primary-color: #333;
+  --background-color: #fff;
+  --text-color: #363636;
+  --button-hover-color: #f5f5f5;
+  --font-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+#tool-icons-container {
+  display: flex;
+  gap: 10px; /* Slightly larger gap for better visual spacing */
+}
 
+#tool-icons-container img:hover {
+  transform: scale(1.05); /* Subtle scale effect */
+  cursor: pointer; /* Ensure cursor indicates interactivity */
+}
 
+.tool-icon {
+  position: relative;
+  display: inline-block;
+}
 
+.tool-icon img {
+  display: block;
+}
 
+.tool-icon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--text-color); /* Text color based on color scheme */
+  padding: 5px 8px;
+  white-space: nowrap;
+  font-size: 18px; /* Increased font size */
+  font-family: var(--font-stack); /* Cleaner font */
+  font-weight: bold; /* Bold text */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, transform 0.3s; /* Smooth transition */
+}
 
+.tool-icon:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-5px); /* Lift tooltip slightly */
+}
 
+.dark-mode {
+  --text-color: #ffffff;
+}
+
+body.dark-mode .tool-icon::after {
+  color: var(--text-color); /* White text color in dark mode */
+}
