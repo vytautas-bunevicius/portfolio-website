@@ -7,61 +7,7 @@
 }
 
 body {
-  font-family: var(--font-stack);:root {
-    --primary-color: #333;
-    --background-color: #fff;
-    --text-color: #363636;
-    --button-hover-color: #f5f5f5;
-    --font-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
-  
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --text-color: #ffffff;
-    }
-  }
-  
-  #tool-icons-container {
-    display: flex;
-    gap: 15px; /* Slightly larger gap for better visual spacing */
-  }
-  
-  #tool-icons-container img:hover {
-    transform: scale(1.05); /* Subtle scale effect */
-    cursor: pointer; /* Ensure cursor indicates interactivity */
-  }
-  
-  .tool-icon {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .tool-icon img {
-    display: block;
-  }
-  
-  .tool-icon::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--text-color); /* Text color based on color scheme */
-    padding: 5px 8px;
-    white-space: nowrap;
-    font-size: 16px;
-    font-family: var(--font-stack); /* Cleaner font */
-    font-weight: bold; /* Bold text */
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, transform 0.3s; /* Smooth transition */
-  }
-  
-  .tool-icon:hover::after {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(-5px); /* Lift tooltip slightly */
-  }
+  font-family: var(--font-stack);
   color: var(--text-color);
   background-color: var(--background-color);
 }
