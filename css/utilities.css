@@ -51,6 +51,17 @@ a.icon-link:hover {
   text-decoration: underline;
 }
 
+/* Dark mode styles for navbar links */
+body.dark-mode .nav-title-link {
+  color: white;
+}
+
+body.dark-mode .nav-title-link:hover {
+  text-decoration: underline;
+  text-decoration-color: white;
+  /* Set the underline color to white */
+}
+
 /* Small devices (portrait tablets and large phones, 800px and below) */
 @media only screen and (max-width: 800px) {
   .navbar {
