@@ -1,5 +1,4 @@
 /* Icons */
-
 .right-arrow-icon {
   width: 16px;
   height: 16px;
@@ -22,9 +21,7 @@ a.icon-link:hover {
   transform: rotate(15deg);
 }
 
-
 /* Navbar Styling */
-
 .navbar {
   width: 100%;
   padding: 30px 50px;
@@ -39,7 +36,6 @@ a.icon-link:hover {
 .navbar-buttons {
   display: flex;
   gap: 20px;
-  /* adjust this value to add space between the buttons */
 }
 
 .nav-title-link {
@@ -59,27 +55,9 @@ body.dark-mode .nav-title-link {
 body.dark-mode .nav-title-link:hover {
   text-decoration: underline;
   text-decoration-color: white;
-  /* Set the underline color to white */
 }
-
-/* Small devices (portrait tablets and large phones, 800px and below) */
-@media only screen and (max-width: 800px) {
-  .navbar {
-    padding: 20px 20px;
-    background-color: white;
-    flex-direction: column;
-  }
-
-  .navbar-buttons {
-    justify-content: center;
-    gap: 10px;
-    /* adjust this value to add space between the buttons on small screens */
-  }
-}
-
 
 /* Button Styling */
-
 .button {
   padding: 8px 16px;
   border: 3px solid #141414;
@@ -103,9 +81,37 @@ body.dark-mode .nav-title-link:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.button.dark-mode-button {
+  background-color: transparent;
+  border: none !important;
+  padding: 8px 16px;
+  transition: none;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.button.dark-mode-button:hover,
+.button.dark-mode-button:focus,
+.button.dark-mode-button:active {
+  border: none !important;
+  box-shadow: none !important;
+  transform: none;
+  text-decoration: none;
+  outline: none !important;
+}
+
+/* Dark Mode Specific Styles */
+body.dark-mode .button:not(.dark-mode-button) {
+  border-color: white;
+  color: white;
+  background-color: transparent;
+}
+
+body.dark-mode .button:not(.dark-mode-button):hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
 
 /* Footer Styling */
-
 #footer {
   width: 100%;
   display: flex;
@@ -118,7 +124,7 @@ body.dark-mode .nav-title-link:hover {
 /* Link Styling */
 a.no-underline {
   text-decoration: none;
-  color: black
+  color: black;
 }
 
 a.no-underline:hover {
@@ -126,26 +132,7 @@ a.no-underline:hover {
   cursor: pointer;
 }
 
-/* Small devices (portrait tablets and large phones, 800px and below) */
-
-@media only screen and (max-width: 800px) {
-  .navbar {
-    padding: 20px 20px;
-    background-color: white;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: #363636;
-    /* Dark grey color */
-
-  }
-
-  .navbar-buttons {
-    justify-content: center;
-    gap: 10px;
-    /* adjust this value to add space between the buttons on small screens */
-  }
-}
-
+/* Fullscreen Styling */
 .fullscreen {
   position: fixed;
   top: 0;
@@ -155,13 +142,7 @@ a.no-underline:hover {
   z-index: 9999;
 }
 
-.button.dark-mode-button {
-  background-color: transparent;
-  /* Remove background color */
-  border: none !important;
-  /* Remove border */
-}
-
+/* Dark Mode Specific Styles */
 body.dark-mode .right-arrow-icon {
   filter: invert(1);
 }
@@ -175,6 +156,7 @@ body:not(.dark-mode) .navbar {
   background-color: white;
 }
 
+/* Fullscreen Button Styling */
 #fullscreen-button {
   position: absolute;
   top: 15px;
@@ -206,4 +188,25 @@ body:not(.dark-mode) .navbar {
 
 .fullscreen #fullscreen-button svg:nth-child(2) {
   display: inline-block;
+}
+
+/* Small devices (portrait tablets and large phones, 800px and below) */
+@media only screen and (max-width: 800px) {
+  .navbar {
+    padding: 20px 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #363636;
+  }
+
+  .navbar-buttons {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .button.dark-mode-button {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
 }

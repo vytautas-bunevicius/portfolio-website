@@ -166,53 +166,6 @@ body {
   height: auto;
 }
 
-/* Extra Extra large devices (large laptops and desktops, 1200px and below) */
-@media only screen and (max-width: 1600px) {
-  #main-content {
-    margin: 225px 275px;
-  }
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and below) */
-@media only screen and (max-width: 1200px) {
-  #main-content {
-    margin: 225px 175px;
-  }
-}
-
-/* Large devices (laptops/desktops, 1000px and below) */
-@media only screen and (max-width: 1000px) {
-  #main-content {
-    margin: 225px 75px;
-  }
-}
-
-/* Small devices (portrait tablets and large phones, 800px and below) */
-@media only screen and (max-width: 800px) {
-  #main-content {
-    margin: 150px 50px;
-  }
-
-  #portfolio-header {
-    flex-direction: column;
-  }
-
-  .project-card {
-    max-width: calc((100% - 16px) / 2);
-  }
-}
-
-/* Small devices (portrait tablets and large phones, 600px and below) */
-@media only screen and (max-width: 600px) {
-  #main-content {
-    margin: 125px 20px;
-  }
-
-  .project-card {
-    max-width: 100%;
-  }
-}
-
 #tool-icons-container {
   display: flex;
   gap: 1px; /* Slightly larger gap for better visual spacing */
@@ -253,4 +206,57 @@ body {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(-5px); /* Lift tooltip slightly */
+}
+
+.dark-mode-button {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.dark-mode-button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 1600px) {
+  #main-content {
+    margin: 225px 275px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  #main-content {
+    margin: 225px 175px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  #main-content {
+    margin: 225px 75px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #main-content {
+    margin: 150px 50px;
+  }
+
+  #portfolio-header {
+    flex-direction: column;
+  }
+
+  .project-card {
+    max-width: calc((100% - 16px) / 2);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #main-content {
+    margin: 125px 20px;
+  }
+
+  .project-card {
+    max-width: 100%;
+  }
 }
