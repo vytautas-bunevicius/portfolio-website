@@ -1,27 +1,10 @@
-<!-- 
-  IMPORTANT! 
-  
-  I need to keep this file unchanged to use as a template for all future project pages. 
-
-  For every new project I add to my portfolio, I need to make a copy of this file in the
-  'project-pages' folder with a name related to the project.
--->
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <!-- 
-      TODO
-
-      I can change the title in the <title> tag to whatever I  would like the title of my portfolio to be
-
-      This should be the same across all pages.
-     -->
   <link rel="icon" href="../../assets/images/1311.png" />
-  <title>Vytautas Portfolio</title>
+  <title>Vytautas Bunevičius</title>
   <meta name="description" content="A portfolio template for the Vytautas community.">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -30,6 +13,41 @@
   <link rel="stylesheet" href="../../css/utilities.css">
 
   <script defer src="../../js/script.js"></script>
+  <style>
+    #iframe-container {
+      position: relative;
+      width: 100%;
+      height: 600px;
+    }
+
+    #fullscreenBtn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 5px 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      z-index: 9999;
+    }
+
+    #fullscreenBtn:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    #iframe-container:-webkit-full-screen #fullscreenBtn,
+    #iframe-container:-moz-full-screen #fullscreenBtn,
+    #iframe-container:-ms-fullscreen #fullscreenBtn,
+    #iframe-container:fullscreen #fullscreenBtn {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+    }
+  </style>
 </head>
 
 <body>
@@ -123,37 +141,27 @@
     </div>
 
     <div id="project-notebook">
-      <div class="header-container" style="display: flex; justify-content: space-between; align-items: center;">
-        <div class="subheader-text">Data Exploration / Analysis</div>
-        <button id="fullscreenBtn" class="button button-text">Go Fullscreen</button>
+      <div class="subheader-text">Data Exploration / Analysis</div>
+      <div id="iframe-container">
+        <iframe id="myIframe" src="../podcasts/analysis/podcast-reviews-analysis.html" width="100%"
+          height="100%"></iframe>
+        <button id="fullscreenBtn">⛶</button>
       </div>
-      <iframe id="myIframe" src="../podcasts/analysis/podcast-reviews-analysis.html" width="100%" height="600px"></iframe>
     </div>
 
-    <!-- FOOTER -->
     <div id="footer">
-      <!-- 
-
-        This should be the same across all pages.
-      -->
       <a class="icon-link" target="_blank" href="https://github.com/vytautas-bunevicius/">
-        <image src="../../assets/icons/github.svg" class="footer-icon" />
+        <img src="../../assets/icons/github.svg" class="footer-icon" alt="GitHub Icon">
       </a>
-      <!-- 
-      
-        This should be the same across all pages.
-      -->
       <a class="icon-link" target="_blank" href="https://www.linkedin.com/in/vytautas-bunevicius/">
-        <image src="../../assets/icons/linkedin.svg" class="footer-icon" />
+        <img src="../../assets/icons/linkedin.svg" class="footer-icon" alt="LinkedIn Icon">
       </a>
-      <!-- 
-      
-        This should be the same across all pages.
-      -->
       <a class="icon-link" href="mailto:vytautas@bunevicius.com">
-        <image src="../../assets/icons/mail.svg" class="footer-icon" />
+        <img src="../../assets/icons/mail.svg" class="footer-icon" alt="Email Icon">
       </a>
     </div>
+
+  </div>
 
 </body>
 

@@ -9,51 +9,48 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // Fullscreen functionality
   if (document.getElementById('fullscreenBtn')) {
     const fullscreenBtn = document.getElementById('fullscreenBtn');
-    const iframeElement = document.getElementById('myIframe');
-    const fullscreenIcon = fullscreenBtn.querySelector('img'); // Assuming the <img> tag is a direct child of the button
+    const iframeContainer = document.getElementById('iframe-container');
+    let isFullScreen = false;
 
-    // Function to handle fullscreen toggle
-    function toggleFullscreen() {
-      if (!iframeElement.classList.contains('fullscreen')) {
-        // Always push the 'normal' state before entering fullscreen
-        history.pushState({ page: 'normal' }, '', window.location.href);
-
-        iframeElement.classList.add('fullscreen');
-        fullscreenIcon.src = '../assets/icons/fullscreen.svg'; // Keep the icon the same for simplicity
-        history.pushState({ page: 'fullscreen' }, '', window.location.href);
+    function toggleFullScreen() {
+      if (!isFullScreen) {
+        if (iframeContainer.requestFullscreen) {
+          iframeContainer.requestFullscreen();
+        } else if (iframeContainer.mozRequestFullScreen) {
+          iframeContainer.mozRequestFullScreen();
+        } else if (iframeContainer.webkitRequestFullscreen) {
+          iframeContainer.webkitRequestFullscreen();
+        } else if (iframeContainer.msRequestFullscreen) {
+          iframeContainer.msRequestFullscreen();
+        }
       } else {
-        iframeElement.classList.remove('fullscreen');
-        fullscreenIcon.src = '../assets/icons/fullscreen.svg'; // Keep the icon the same for simplicity
-        history.replaceState({ page: 'normal' }, '', window.location.href);
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen();
+        }
       }
     }
 
-    // Event listener for fullscreen button click
-    fullscreenBtn.addEventListener('click', function() {
-      toggleFullscreen(); // No need to pass the button element as an argument
-    });
+    fullscreenBtn.addEventListener('click', toggleFullScreen);
 
-    // Event listener for Escape key press
-    document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape' && iframeElement.classList.contains('fullscreen')) {
-        toggleFullscreen(); // No need to pass the button element as an argument
-      }
-    });
+    function updateFullscreenButtonState() {
+      isFullScreen = !!(document.fullscreenElement || document.webkitFullscreenElement || 
+                        document.mozFullScreenElement || document.msFullscreenElement);
+      fullscreenBtn.textContent = isFullScreen ? '✖' : '⛶';
+    }
 
-    // Event listener for popstate (back button) event
-    window.addEventListener('popstate', function(event) {
-      // Check if the current state exists and is "fullscreen"
-      if (event.state && event.state.page === 'fullscreen') {
-        // If yes, exit fullscreen
-        iframeElement.classList.remove('fullscreen');
-        fullscreenIcon.src = '../assets/icons/fullscreen.svg'; // Keep the icon the same for simplicity
-      } else if (event.state && event.state.page === 'normal' && iframeElement.classList.contains('fullscreen')) {
-        // If the current state is normal and the iframe is in fullscreen, exit fullscreen
-        iframeElement.classList.remove('fullscreen');
-        fullscreenIcon.src = '../assets/icons/fullscreen.svg'; // Keep the icon the same for simplicity
-      }
-    });
+    document.addEventListener('fullscreenchange', updateFullscreenButtonState);
+    document.addEventListener('webkitfullscreenchange', updateFullscreenButtonState);
+    document.addEventListener('mozfullscreenchange', updateFullscreenButtonState);
+    document.addEventListener('MSFullscreenChange', updateFullscreenButtonState);
   }
+
+  // Dark mode functionality
   const lightIcon = document.getElementById("light-icon");
   const darkIcon = document.getElementById("dark-icon");
   let darkMode = localStorage.getItem('darkMode') === 'true';
@@ -85,6 +82,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   // Assuming the button with the onclick event is already in your HTML
   document.querySelector('button[onclick="toggleDarkMode()"]').addEventListener('click', toggleDarkMode);
-  
 });
-

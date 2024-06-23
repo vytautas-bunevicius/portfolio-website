@@ -1,131 +1,150 @@
-
-
-<!--
-  IMPORTANT!
-
-  I need to keep this file unchanged to use as a template for all future project pages.
-
-  For every new project I add to my portfolio, I need to make a copy of this file in the
-  'project-pages' folder with a name related to the project.
--->
-
-
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-    <!--
-      TODO
 
-      I can change the title in the <title> tag to whatever I  would like the title of my portfolio to be
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="../../assets/images/1311.png" />
+  <title>Vytautas Bunevičius</title>
+  <meta name="description" content="A portfolio template for the Vytautas community.">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-      This should be the same across all pages.
-     -->
-     <link rel="icon" href="../../assets/images/1311.png" />
-     <title>Vytautas Portfolio</title>
-    <meta name="description" content="A portfolio template for the Vytautas community.">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/typography.css">
+  <link rel="stylesheet" href="../../css/utilities.css">
 
-		<link rel="stylesheet" href="../../css/layout.css">
-    <link rel="stylesheet" href="../../css/typography.css">
-    <link rel="stylesheet" href="../../css/utilities.css">
+  <script defer src="../../js/script.js"></script>
+  <style>
+    #iframe-container {
+      position: relative;
+      width: 100%;
+      height: 600px;
+    }
 
-		<script defer src="../../js/script.js"></script>
-	</head>
-	<body>
-    <!-- NAVBAR -->
-    <div class="navbar">
-        <a class="nav-title-link" href="../../index.html">
-            <span class="nav-title">Vytautas Bunevičius</span>
-        </a>
-        <div class="navbar-buttons">
-            <a class="button" href="mailto:vytautas@bunevicius.com">
-                <span class="button-text">Contact</span>
-            </a>
-            <button class="button dark-mode-button" onclick="toggleDarkMode()">
-                <svg width="30" height="30" id="light-icon">
-                    <circle cx="15" cy="15" r="6" fill="currentColor" />
-                    <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4"></line>
-                    <use href="#ray" transform="rotate(45 15 15)" />
-                    <use href="#ray" transform="rotate(90 15 15)" />
-                    <use href="#ray" transform="rotate(135 15 15)" />
-                    <use href="#ray" transform="rotate(180 15 15)" />
-                    <use href="#ray" transform="rotate(225 15 15)" />
-                    <use href="#ray" transform="rotate(270 15 15)" />
-                    <use href="#ray" transform="rotate(315 15 15)" />
-                </svg>
-                <svg width="30" height="30" id="dark-icon">
-                    <path fill="currentColor" d="M 23, 5 A 12 12 0 1 0 23, 25 A 12 12 0 0 1 23, 5" />
-                </svg>
-            </button>
-        </div>
+    #fullscreenBtn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 5px 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      z-index: 9999;
+    }
+
+    #fullscreenBtn:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    #iframe-container:-webkit-full-screen #fullscreenBtn,
+    #iframe-container:-moz-full-screen #fullscreenBtn,
+    #iframe-container:-ms-fullscreen #fullscreenBtn,
+    #iframe-container:fullscreen #fullscreenBtn {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <a class="nav-title-link" href="../../index.html">
+      <span class="nav-title">Vytautas Bunevičius</span>
+    </a>
+    <div class="navbar-buttons">
+      <a class="button" href="mailto:vytautas@bunevicius.com">
+        <span class="button-text">Contact</span>
+      </a>
+      <button class="button dark-mode-button" onclick="toggleDarkMode()">
+        <svg width="30" height="30" id="light-icon">
+          <circle cx="15" cy="15" r="6" fill="currentColor" />
+          <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4">
+          </line>
+          <use href="#ray" transform="rotate(45 15 15)" />
+          <use href="#ray" transform="rotate(90 15 15)" />
+          <use href="#ray" transform="rotate(135 15 15)" />
+          <use href="#ray" transform="rotate(180 15 15)" />
+          <use href="#ray" transform="rotate(225 15 15)" />
+          <use href="#ray" transform="rotate(270 15 15)" />
+          <use href="#ray" transform="rotate(315 15 15)" />
+        </svg>
+        <svg width="30" height="30" id="dark-icon">
+          <path fill="currentColor" d="M 23, 5 A 12 12 0 1 0 23, 25 A 12 12 0 0 1 23, 5" />
+        </svg>
+      </button>
     </div>
+  </div>
 
-    <!-- MAIN PAGE CONTENT -->
-    <div id="main-content">
+  <!-- MAIN PAGE CONTENT -->
+  <div id="main-content">
 
-      <!-- PROJECT HEADER -->
-      <div id="project-header">
-          <!--
+    <!-- PROJECT HEADER -->
+    <div id="project-header">
+      <!--
             TODO
 
             - I can change the 'main-title' text to the name of my project.
             - I can change the 'body-text' text to a short and sweet description of my project (maybe the same as the one on the project card)
             - Change "spotify1.jpeg" to the image filename I have uploaded to the assets/images folder.
           -->
-        <div class="main-title">Spotify Top 50 Tracks of 2020 Analysis</div>
-        <div class="body-text">In this project, I explore the Spotify Top 50 Tracks of 2020 using the Numpy and Pandas tools in Python. The aim is to find interesting details about the most popular songs, artists, and music styles.</div>
-        <image class="project-header-image" src="../../assets/images/spotify1.jpeg">
+      <div class="main-title">Spotify Top 50 Tracks of 2020 Analysis</div>
+      <div class="body-text">In this project, I explore the Spotify Top 50 Tracks of 2020 using the Numpy and Pandas
+        tools in Python. The aim is to find interesting details about the most popular songs, artists, and music styles.
       </div>
+      <image class="project-header-image" src="../../assets/images/spotify1.jpeg">
+    </div>
 
-      <!-- PROJECT DETAILS -->
-      <!--
+    <!-- PROJECT DETAILS -->
+    <!--
         TODO
 
         - I can hange the 'subheader-text' to whatever header I want for the project details to be.
         - To add paragraphs using the <div class="body-text"></div> elements in the "project-details-content"
       -->
-      <div id="project-details">
-        <div class="subheader-text">Summary / Findings</div>
-        <div class="project-details-content">
-          <div class="body-text">I started by cleaning up the data, removing columns we don’t need, like ‘Unnamed: 0’, and checking for any missing information. Looking through the data, I learned about different music styles, which artists are common, and features of songs like how danceable they are or how loud they sound.</div>
-          <div class="body-text">I discovered that Pop is the favorite music style and looked at how often artists show up with their songs. I used statistics to spot unusual songs, find the longest and shortest ones, and see how varied the music styles, artists, and albums are. I noticed that some music styles are more common, while others, like Dreampop/Hip-Hop/R&B, don’t show up as much.</div>
-          <div class="body-text">I also looked at how different features of songs, like how loud they are and how much energy they have, are related. To finish, I compared how danceable, loud, and acoustic the songs are in each music style, giving us a glimpse into the variety of music in each category. This whole study gives us a detailed look at the trends and patterns in Spotify’s most popular songs.</div>
-        </div>
+    <div id="project-details">
+      <div class="subheader-text">Summary / Findings</div>
+      <div class="project-details-content">
+        <div class="body-text">I started by cleaning up the data, removing columns we don’t need, like ‘Unnamed: 0’, and
+          checking for any missing information. Looking through the data, I learned about different music styles, which
+          artists are common, and features of songs like how danceable they are or how loud they sound.</div>
+        <div class="body-text">I discovered that Pop is the favorite music style and looked at how often artists show up
+          with their songs. I used statistics to spot unusual songs, find the longest and shortest ones, and see how
+          varied the music styles, artists, and albums are. I noticed that some music styles are more common, while
+          others, like Dreampop/Hip-Hop/R&B, don’t show up as much.</div>
+        <div class="body-text">I also looked at how different features of songs, like how loud they are and how much
+          energy they have, are related. To finish, I compared how danceable, loud, and acoustic the songs are in each
+          music style, giving us a glimpse into the variety of music in each category. This whole study gives us a
+          detailed look at the trends and patterns in Spotify’s most popular songs.</div>
       </div>
-
-      <div id="project-notebook">
-        <div class="header-container" style="display: flex; justify-content: space-between; align-items: center;">
-            <div class="subheader-text">Data Exploration / Analysis</div>
-            <button id="fullscreenBtn" class="button button-text">Go Fullscreen</button>
-        </div>
-        <iframe id="myIframe" src="../spotify/analysis/spotify-analysis.html" width="100%" height="600px"></iframe>
     </div>
 
-    <!-- FOOTER -->
+    <div id="project-notebook">
+      <div class="subheader-text">Data Exploration / Analysis</div>
+      <div id="iframe-container">
+        <iframe id="myIframe" src="../spotify/analysis/spotify-analysis.html" width="100%" height="100%"></iframe>
+        <button id="fullscreenBtn">⛶</button>
+      </div>
+    </div>
+
     <div id="footer">
-      <!--
-
-        This should be the same across all pages.
-      -->
       <a class="icon-link" target="_blank" href="https://github.com/vytautas-bunevicius/">
-        <image src="../../assets/icons/github.svg" class="footer-icon"/>
+        <img src="../../assets/icons/github.svg" class="footer-icon" alt="GitHub Icon">
       </a>
-      <!--
-
-        This should be the same across all pages.
-      -->
       <a class="icon-link" target="_blank" href="https://www.linkedin.com/in/vytautas-bunevicius/">
-        <image src="../../assets/icons/linkedin.svg" class="footer-icon"/>
+        <img src="../../assets/icons/linkedin.svg" class="footer-icon" alt="LinkedIn Icon">
       </a>
-      <!--
-
-        This should be the same across all pages.
-      -->
       <a class="icon-link" href="mailto:vytautas@bunevicius.com">
-        <image src="../../assets/icons/mail.svg" class="footer-icon"/>
+        <img src="../../assets/icons/mail.svg" class="footer-icon" alt="Email Icon">
       </a>
     </div>
 
-	</body>
+  </div>
+
+</body>
+
 </html>
