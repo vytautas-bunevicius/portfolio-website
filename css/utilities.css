@@ -83,21 +83,33 @@ body.dark-mode .nav-title-link:hover {
 
 .button.dark-mode-button {
   background-color: transparent;
-  border: none !important;
+  border: none;
   padding: 8px 16px;
   transition: none;
-  outline: none !important;
-  box-shadow: none !important;
+  outline: none;
+  box-shadow: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .button.dark-mode-button:hover,
 .button.dark-mode-button:focus,
 .button.dark-mode-button:active {
-  border: none !important;
-  box-shadow: none !important;
+  border: none;
+  box-shadow: none;
   transform: none;
   text-decoration: none;
-  outline: none !important;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 /* Dark Mode Specific Styles */
@@ -205,8 +217,14 @@ body:not(.dark-mode) .navbar {
   }
 
   .button.dark-mode-button {
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 }
