@@ -16,8 +16,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
       if (!isFullScreen) {
         if (iframeContainer.requestFullscreen) {
           iframeContainer.requestFullscreen();
-        } else if (iframeContainer.mozRequestFullScreen) {
-          iframeContainer.mozRequestFullScreen();
         } else if (iframeContainer.webkitRequestFullscreen) {
           iframeContainer.webkitRequestFullscreen();
         } else if (iframeContainer.msRequestFullscreen) {
@@ -26,8 +24,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
       } else {
         if (document.exitFullscreen) {
           document.exitFullscreen();
-        } else if (document.mozCancelFullScreen) {
-          document.mozCancelFullScreen();
         } else if (document.webkitExitFullscreen) {
           document.webkitExitFullscreen();
         } else if (document.msExitFullscreen) {
@@ -39,14 +35,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
     fullscreenBtn.addEventListener('click', toggleFullScreen);
 
     function updateFullscreenButtonState() {
-      isFullScreen = !!(document.fullscreenElement || document.webkitFullscreenElement || 
-                        document.mozFullScreenElement || document.msFullscreenElement);
+      isFullScreen = !!(document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement);
       fullscreenBtn.textContent = isFullScreen ? '✖' : '⛶';
     }
 
     document.addEventListener('fullscreenchange', updateFullscreenButtonState);
     document.addEventListener('webkitfullscreenchange', updateFullscreenButtonState);
-    document.addEventListener('mozfullscreenchange', updateFullscreenButtonState);
     document.addEventListener('MSFullscreenChange', updateFullscreenButtonState);
   }
 
@@ -80,6 +74,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     localStorage.setItem('darkMode', darkMode);
   }
 
-  // Assuming the button with the onclick event is already in your HTML
-  document.querySelector('button[onclick="toggleDarkMode()"]').addEventListener('click', toggleDarkMode);
+  // Attach the dark mode toggle function to the button
+  document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
 });

@@ -40,12 +40,22 @@
     }
 
     #iframe-container:-webkit-full-screen #fullscreenBtn,
-    #iframe-container:-moz-full-screen #fullscreenBtn,
     #iframe-container:-ms-fullscreen #fullscreenBtn,
     #iframe-container:fullscreen #fullscreenBtn {
       position: fixed;
       top: 10px;
       right: 10px;
+    }
+
+    @media (max-width: 768px) {
+      #iframe-container {
+        height: 400px;
+      }
+
+      #fullscreenBtn {
+        padding: 8px 16px;
+        font-size: 18px;
+      }
     }
   </style>
 </head>
