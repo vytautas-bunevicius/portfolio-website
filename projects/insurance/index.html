@@ -93,40 +93,48 @@
 
   <div id="main-content">
     <div id="project-header">
-      <div class="main-title">Coursera EDA: An Exploratory Data Analysis of Coursera Courses</div>
-      <div class="body-text">In this project, I looked at Coursera's courses using data from their API. I cleaned the
-        data, used statistics, and made visuals to find patterns in course ratings, how many students sign up, and what
-        kinds of certificates they get.</div>
-      <img class="project-header-image" src="../../assets/images/coursera1.jpeg" alt="Coursera EDA Project Header">
+      <div class="main-title">Predictive Modeling of Travel Insurance Purchases: A Machine Learning Approach</div>
+      <div class="body-text">This project demonstrates the application of advanced data analysis and machine learning techniques to predict travel insurance purchases. Using a dataset of nearly 2000 customers, we developed a robust predictive model to identify key factors influencing insurance buying decisions, providing valuable insights for targeted marketing strategies in the travel industry.</div>
+      <img class="project-header-image" src="../../assets/images/insurance.jpeg" alt="Travel Insurance Analysis Project Header">
     </div>
 
     <div id="project-details">
-      <div class="subheader-text">Summary / Findings</div>
+      <div class="subheader-text">Project Overview and Methodology</div>
       <div class="project-details-content">
-        <div class="body-text">I found out that most Coursera courses offer a "COURSE" certificate, with
-          "SPECIALIZATION" and "PROFESSIONAL CERTIFICATE" also available. The courses are mostly for beginners or those
-          at an intermediate level, not so much for advanced learners.</div>
-        <div class="body-text">The study shows which organizations have a lot of students, with "SPECIALIZATION"
-          certificates being tougher and "PROFESSIONAL CERTIFICATE" certificates for beginners only. It seems that the
-          easier courses get better ratings, while the harder ones don't, maybe because they're not as common or people
-          expect more from them.</div>
-        <div class="body-text">I also noticed that some courses have the same name but are actually different, which
-          means we need to look closer at those. "COURSE" certificates are the most common, and it looks like people
-          like getting certificates that show they're good at certain skills or subjects.</div>
-        <div class="body-text">Most courses are easy or medium-hard, which means Coursera has something for everyone.
-          The study also found a small link between how students rate courses and how many sign up. But just because two
-          things are linked doesn't mean one causes the other; there could be other reasons why more students sign up.
+        <div class="body-text">
+          <h3>Data Preprocessing and Exploratory Data Analysis</h3>
+          <p>The initial phase involved rigorous data cleaning and preprocessing. We handled missing values, encoded categorical variables, and normalized numerical features. Exploratory Data Analysis (EDA) was conducted using various statistical methods and visualization techniques, including histograms, box plots, and correlation matrices.</p>
+          
+          <h3>Feature Engineering and Selection</h3>
+          <p>We engineered new features and used statistical tests (Chi-square for categorical variables, Mann-Whitney U for numerical) to identify the most significant predictors. This process revealed that employment type, travel frequency, international travel experience, and annual income were highly influential factors.</p>
+          
+          <h3>Model Development and Evaluation</h3>
+          <p>Multiple machine learning models were implemented and compared:</p>
+          <ul>
+            <li>Logistic Regression</li>
+            <li>Random Forest</li>
+            <li>Gradient Boosting</li>
+            <li>Support Vector Machine (SVM)</li>
+          </ul>
+          <p>We used cross-validation and hyperparameter tuning to optimize each model's performance. Evaluation metrics included accuracy, precision, recall, F1-score, and ROC AUC.</p>
+          
+          <h3>Key Findings</h3>
+          <p>The Random Forest model emerged as the top performer, achieving an ROC AUC score of 0.7012. It demonstrated superior ability in balancing precision and recall, crucial for practical application in customer targeting.</p>
+          <p>Contrary to initial hypotheses, factors such as age, education level, and presence of chronic diseases showed minimal impact on insurance purchase decisions.</p>
+          
+          <h3>Model Interpretation and Business Insights</h3>
+          <p>Feature importance analysis revealed that annual income, travel habits, and employment type were the most influential predictors. This insight can guide personalized marketing strategies and product development in the travel insurance sector.</p>
+          
+          <h3>Challenges and Future Work</h3>
+          <p>A key challenge was balancing model complexity with interpretability. Future work could explore more advanced ensemble methods or deep learning approaches, as well as incorporating additional data sources for enhanced predictive power.</p>
         </div>
-        <div class="body-text">To sum up, this analysis gives us a full picture of what Coursera offers, including what
-          kinds of certificates people like, how hard the courses are, and how ratings and student numbers are
-          connected.</div>
       </div>
     </div>
 
     <div id="project-notebook">
       <div class="subheader-text">Data Exploration / Analysis</div>
       <div id="iframe-container">
-        <iframe id="myIframe" src="../coursera/analysis/coursera-analysis.html" width="100%" height="100%"></iframe>
+        <iframe id="myIframe" src="../insurance/analysis/insurance-analysis.html" width="100%" height="100%"></iframe>
         <button id="fullscreenBtn">⛶</button>
       </div>
     </div>
