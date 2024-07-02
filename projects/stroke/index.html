@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="../../assets/images/1311.png" />
+  <title>Vytautas Bunevičius</title>
+  <meta name="description" content="A portfolio template for the Vytautas community.">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/typography.css">
+  <link rel="stylesheet" href="../../css/utilities.css">
+
+  <script defer src="../../js/script.js"></script>
+  <style>
+    #iframe-container {
+      position: relative;
+      width: 100%;
+      height: 600px;
+    }
+
+    #fullscreenBtn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 5px 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      z-index: 9999;
+      font-weight: bold;
+    }
+
+    #fullscreenBtn:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    #iframe-container:-webkit-full-screen #fullscreenBtn,
+    #iframe-container:-ms-fullscreen #fullscreenBtn,
+    #iframe-container:fullscreen #fullscreenBtn {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+    }
+
+    @media (max-width: 768px) {
+      #iframe-container {
+        height: 400px;
+      }
+
+      #fullscreenBtn {
+        padding: 8px 16px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <a class="nav-title-link" href="../../index.html">
+      <span class="nav-title">Vytautas Bunevičius</span>
+    </a>
+    <div class="navbar-buttons">
+      <a class="button" href="mailto:vytautas@bunevicius.com">
+        <span class="button-text">Contact</span>
+      </a>
+      <button id="darkModeToggle" class="button dark-mode-button">
+        <svg width="30" height="30" id="light-icon">
+          <circle cx="15" cy="15" r="6" fill="currentColor" />
+          <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4">
+          </line>
+          <use href="#ray" transform="rotate(45 15 15)" />
+          <use href="#ray" transform="rotate(90 15 15)" />
+          <use href="#ray" transform="rotate(135 15 15)" />
+          <use href="#ray" transform="rotate(180 15 15)" />
+          <use href="#ray" transform="rotate(225 15 15)" />
+          <use href="#ray" transform="rotate(270 15 15)" />
+          <use href="#ray" transform="rotate(315 15 15)" />
+        </svg>
+        <svg width="30" height="30" id="dark-icon">
+          <path fill="currentColor" d="M 23, 5 A 12 12 0 1 0 23, 25 A 12 12 0 0 1 23, 5" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="main-content">
+    <div id="project-header">
+      <div class="main-title">Stroke Risk Prediction: A Machine Learning Approach to Early Detection</div>
+      <div class="body-text">This project demonstrates the application of advanced machine learning techniques to
+        predict stroke risk. Using a dataset of over 5000 patients, we developed a robust predictive model to identify
+        key factors influencing stroke occurrence, providing valuable insights for early intervention and prevention
+        strategies in healthcare.</div>
+      <img class="project-header-image" src="../../assets/images/stroke.jpeg"
+        alt="Stroke Risk Prediction Project Header">
+    </div>
+
+    <div id="project-details">
+      <div class="subheader-text">Project Overview and Methodology</div>
+      <div class="project-details-content">
+        <div class="body-text">
+          <h3>Data Preprocessing and Exploratory Data Analysis</h3>
+          <p>The initial phase involved rigorous data cleaning and preprocessing. We handled missing values,
+            particularly in the BMI column, encoded categorical variables, and standardized numerical features.
+            Exploratory Data Analysis (EDA) was conducted using various statistical methods and visualization
+            techniques, including histograms, correlation matrices, and statistical tests to understand the
+            relationships between variables and stroke occurrence.</p>
+
+          <h3>Feature Engineering and Selection</h3>
+          <p>We engineered new features, such as interaction terms between age and other risk factors. Statistical tests
+            (t-tests for continuous variables, chi-square tests for categorical) were used to identify the most
+            significant predictors. This process revealed that age, average glucose level, and the presence of
+            hypertension or heart disease were highly influential factors.</p>
+
+          <h3>Model Development and Evaluation</h3>
+          <p>Multiple machine learning models were implemented and compared:</p>
+          <ul>
+            <li>Logistic Regression</li>
+            <li>Random Forest</li>
+            <li>XGBoost</li>
+            <li>LightGBM</li>
+            <li>CatBoost</li>
+          </ul>
+          <p>We used cross-validation and Bayesian optimization for hyperparameter tuning to optimize each model's
+            performance. Evaluation metrics included precision, recall, F1-score, ROC AUC, and PR AUC, with a particular
+            focus on maximizing recall due to the critical nature of stroke prediction.</p>
+
+          <h3>Key Findings</h3>
+          <p>The CatBoost model emerged as the top performer, achieving a recall of 0.9048 and an ROC AUC score of
+            0.8621 on the validation set. It demonstrated superior ability in balancing high sensitivity (crucial for
+            identifying potential stroke cases) with acceptable precision.</p>
+          <p>Age and average glucose level were consistently the most important predictors across all models.
+            Hypertension and heart disease also showed significant influence on stroke risk.</p>
+
+          <h3>Model Interpretation and Clinical Insights</h3>
+          <p>Feature importance analysis confirmed that age, glucose levels, and cardiovascular health indicators were
+            the most influential predictors. This insight can guide personalized prevention strategies and help
+            healthcare providers prioritize interventions for high-risk patients.</p>
+
+          <h3>Challenges and Future Work</h3>
+          <p>A key challenge was dealing with the highly imbalanced dataset, where stroke cases were relatively rare.
+            Future work could explore more advanced techniques for handling imbalanced data, such as advanced sampling
+            methods or anomaly detection approaches. Additionally, incorporating more detailed medical history or
+            lifestyle factors could potentially enhance the model's predictive power.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="project-notebook">
+      <div class="subheader-text">Data Exploration / Analysis</div>
+      <div id="iframe-container">
+        <iframe id="myIframe" src="../stroke/analysis/stroke-risk-analysis.html" width="100%" height="100%"></iframe>
+        <button id="fullscreenBtn">⛶</button>
+      </div>
+    </div>
+
+    <div id="footer">
+      <a class="icon-link" target="_blank" href="https://github.com/vytautas-bunevicius/">
+        <img src="../../assets/icons/github.svg" class="footer-icon" alt="GitHub Icon">
+      </a>
+      <a class="icon-link" target="_blank" href="https://www.linkedin.com/in/vytautas-bunevicius/">
+        <img src="../../assets/icons/linkedin.svg" class="footer-icon" alt="LinkedIn Icon">
+      </a>
+      <a class="icon-link" href="mailto:vytautas@bunevicius.com">
+        <img src="../../assets/icons/mail.svg" class="footer-icon" alt="Email Icon">
+      </a>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -7,12 +7,14 @@
 }
 
 .dark-mode {
-  background-color: #363636; /* Dark grey color */
+  background-color: #363636;
+  /* Dark grey color */
   color: white;
 }
 
 .dark-mode .tool-icon::after {
-  color: white; /* White text color in dark mode */
+  color: white;
+  /* White text color in dark mode */
 }
 
 * {
@@ -168,12 +170,15 @@ body {
 
 #tool-icons-container {
   display: flex;
-  gap: 1px; /* Slightly larger gap for better visual spacing */
+  gap: 1px;
+  /* Slightly larger gap for better visual spacing */
 }
 
 #tool-icons-container img:hover {
-  transform: scale(1.05); /* Subtle scale effect */
-  cursor: pointer; /* Ensure cursor indicates interactivity */
+  transform: scale(1.05);
+  /* Subtle scale effect */
+  cursor: pointer;
+  /* Ensure cursor indicates interactivity */
 }
 
 .tool-icon {
@@ -191,21 +196,26 @@ body {
   bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
-  color: var(--text-color); /* Black text color */
+  color: var(--text-color);
+  /* Black text color */
   padding: 5px 8px;
   white-space: nowrap;
   font-size: 16px;
-  font-family: var(--font-stack); /* Cleaner font */
-  font-weight: bold; /* Bold text */
+  font-family: var(--font-stack);
+  /* Cleaner font */
+  font-weight: bold;
+  /* Bold text */
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s, transform 0.3s; /* Smooth transition */
+  transition: opacity 0.3s, transform 0.3s;
+  /* Smooth transition */
 }
 
 .tool-icon:hover::after {
   opacity: 1;
   visibility: visible;
-  transform: translateX(-50%) translateY(-5px); /* Lift tooltip slightly */
+  transform: translateX(-50%) translateY(-5px);
+  /* Lift tooltip slightly */
 }
 
 .dark-mode-button {
