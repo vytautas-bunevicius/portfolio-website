@@ -97,12 +97,13 @@ body {
   max-width: calc((100% - 32px) / 3);
   display: flex;
   flex-direction: column;
-  gap: 34px;
+  gap: 16px;
 }
 
 .project-card-text-container {
-  flex-direction: column;
+  flex-grow: 1;
   display: flex;
+  flex-direction: column;
   gap: 16px;
 }
 
@@ -111,6 +112,11 @@ body {
   height: 200px;
   object-fit: cover;
   object-position: center;
+}
+
+.project-card .button {
+  align-self: flex-start;
+  margin-top: auto;
 }
 
 /* Project Pages */
@@ -183,6 +189,8 @@ body {
 
 .tool-icon img {
   display: block;
+  width: 64px;
+  height: 64px;
 }
 
 .tool-icon::after {
@@ -261,7 +269,7 @@ body {
   }
 }
 
-/* Updated media query for screens 2560px and wider */
+/* New media query for screens 2560px and wider */
 @media only screen and (min-width: 2560px) {
   #main-content {
     margin: 225px auto;
@@ -270,7 +278,7 @@ body {
   }
 
   .projects-container {
-    gap: 40px 24px;
+    gap: 50px 24px;
   }
 
   .project-card {
@@ -281,17 +289,34 @@ body {
     height: 300px;
   }
 
+  .project-card-text-container {
+    min-height: 150px; /* Adjust this value as needed */
+  }
+
   #tools-section {
     margin-top: 60px;
   }
 
   #tool-icons-container {
-    gap: 30px;
+    gap: 40px;
   }
 
   .tool-icon img {
-    width: 64px;
-    height: 64px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .tool-icon::after {
+    font-size: 18px;
+    padding: 8px 12px;
+  }
+
+  .subheader-text {
+    font-size: 28px;
+  }
+
+  .body-text {
+    font-size: 18px;
   }
 }
 
@@ -305,8 +330,29 @@ body {
     height: 400px;
   }
 
+  .project-card-text-container {
+    min-height: 200px; /* Adjust this value as needed */
+  }
+
+  #tool-icons-container {
+    gap: 60px;
+  }
+
   .tool-icon img {
-    width: 80px;
-    height: 80px;
+    width: 150px;
+    height: 150px;
+  }
+
+  .tool-icon::after {
+    font-size: 22px;
+    padding: 10px 15px;
+  }
+
+  .subheader-text {
+    font-size: 32px;
+  }
+
+  .body-text {
+    font-size: 22px;
   }
 }

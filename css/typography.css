@@ -57,19 +57,84 @@ body {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
+
 .dark-mode {
-  background-color: #363636; /* Dark grey color */
+  background-color: #363636;
   color: white;
 }
+
 body.dark-mode .nav-title {
   color: white;
 }
+
 body.dark-mode .button {
-  background-color: #363636; /* Same color as dark mode background */
+  background-color: #363636;
   color: white;
-  border-color: white; /* Change border color to white */
+  border-color: white;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+/* Media query for screens 2560px and wider */
+@media only screen and (min-width: 2560px) {
+  .nav-title {
+    font-size: 36px;
+  }
+
+  .button-text {
+    font-size: 21px;
+  }
+
+  .image-caption {
+    font-size: 21px;
+  }
+
+  .main-title {
+    font-size: 60px;
+  }
+
+  .subheader-text {
+    font-size: 30px;
+  }
+
+  .body-text {
+    font-size: 24px;
+  }
+
+  .project-card-text {
+    -webkit-line-clamp: 5;
+  }
+}
+
+/* Media query for even larger screens */
+@media only screen and (min-width: 3840px) {
+  .nav-title {
+    font-size: 48px;
+  }
+
+  .button-text {
+    font-size: 28px;
+  }
+
+  .image-caption {
+    font-size: 28px;
+  }
+
+  .main-title {
+    font-size: 80px;
+  }
+
+  .subheader-text {
+    font-size: 40px;
+  }
+
+  .body-text {
+    font-size: 32px;
+  }
+
+  .project-card-text {
+    -webkit-line-clamp: 6;
+  }
 }
