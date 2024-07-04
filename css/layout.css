@@ -270,3 +270,46 @@ body {
     max-width: 100%;
   }
 }
+
+/* Updated media query for 2560 x 1440 screens with increased dimensions */
+@media only screen and (min-width: 2560px) and (max-height: 1440px) {
+  #main-content {
+    margin: 225px auto;
+    max-width: 2200px;
+    padding: 0 40px;
+  }
+
+  .projects-container {
+    justify-content: flex-start;
+    gap: 40px 24px;
+  }
+
+  .project-card {
+    flex-basis: calc((100% - 48px) / 3);
+    max-width: calc((100% - 48px) / 3);
+    height: auto;
+  }
+
+  .project-image {
+    height: 350px;
+  }
+
+  .project-card-text-container {
+    flex-grow: 1;
+    padding: 20px 0;
+  }
+
+  #tools-section {
+    margin-top: 80px;
+  }
+
+  #tool-icons-container {
+    gap: 40px;
+    justify-content: flex-start;
+  }
+
+  .tool-icon img {
+    width: 72px;
+    height: 72px;
+  }
+}
