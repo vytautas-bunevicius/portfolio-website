@@ -6,7 +6,7 @@
   <link rel="icon" href="../../assets/images/1311.png" />
   <title>Vytautas Bunevičius</title>
   <meta name="description"
-    content="Explore Vytautas Bunevičius’s in-depth analysis of podcast reviews using Python and SQLite. Discover how listener preferences and sentiments are uncovered through advanced data techniques, providing unique insights into podcast popularity and trends.">
+    content="Explore Vytautas Bunevičius's in-depth analysis of podcast reviews using Python and SQLite. Discover how listener preferences and sentiments are uncovered through advanced data techniques, providing unique insights into podcast popularity and trends.">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Google tag (gtag.js) - Placed at the beginning of <head> -->
@@ -108,58 +108,42 @@
 
     <!-- PROJECT HEADER -->
     <div id="project-header">
-      <!--
-            TODO
-
-            - I can change the 'main-title' text to the name of my project.
-            - I can change the 'body-text' text to a short and sweet description of my project (maybe the same as the one on the project card)
-            - Change "spotify1.jpeg" to the image filename I have uploaded to the assets/images folder.
-          -->
-      <div class="main-title">Unveiling Listener Preferences through Podcast Reviews</div>
-      <div class="body-text">This project involves the analysis of podcast review data using Python and SQLite. The
-        dataset consists of 2 million reviews for 100,000 podcasts. We will conduct exploratory data analysis (EDA) to
-        uncover insights into podcast popularity, review sentiments, category trends, and more. The analysis will
-        utilize Python libraries such as Pandas, Matplotlib, and Plotly for data manipulation and visualization.</div>
+      <div class="main-title">Podcast Reviews: What's the Buzz?</div>
+      <div class="body-text">I dove into a massive dataset of 2 million podcast reviews across 100,000 shows to see what's clicking with listeners. Stored in a SQLite database with tables for categories, podcasts, reviews, and runs, it's a goldmine of listener vibes. The goal? Figure out what makes a podcast pop, how ratings shake out, and what's behind the chatter.</div>
       <image class="project-header-image" src="../../assets/images/podcasts.jpeg">
     </div>
 
     <!-- PROJECT DETAILS -->
-    <!--
-        TODO
-
-        - I can hange the 'subheader-text' to whatever header I want for the project details to be.
-        - To add paragraphs using the <div class="body-text"></div> elements in the "project-details-content"
-      -->
     <div id="project-details">
-      <div class="subheader-text">Summary / Findings</div>
+      <div class="subheader-text">Project Approach</div>
       <div class="project-details-content">
-        <div class="body-text">First, we cleaned the data by removing entries in languages other than English,
-          converting all text to lowercase, and removing unnecessary punctuation and stop words. We also added a new
-          column to the data recording the length of each review.</div>
-        <div class="body-text">One way we measured podcast popularity was by looking at the number of reviews each one
-          received. The podcast "Crime Junkie" had the most reviews, but interestingly, we found no clear connection
-          between the number of reviews and the average rating of a podcast. We also examined the relationship between
-          the length of a review and its rating. There was a weak negative correlation, meaning that slightly longer
-          reviews tended to have slightly lower ratings, but this connection was not very strong.</div>
-        <div class="body-text">The majority of reviews (86.66%) gave podcasts a perfect rating of 5, indicating a high
-          level of listener satisfaction. Ratings of 4, 3, 2, and 1 were significantly less common. We also performed
-          sentiment analysis to identify common words and phrases used in positive and negative reviews. Negative
-          reviews often used words like "podcast," "like," and "listen" in ways that expressed dissatisfaction, while
-          positive reviews frequently included words like "love" and "great," suggesting enjoyment and appreciation.
+        <div class="body-text">
+          <strong>Data Prep:</strong> Pulled the data with SQLite and Pandas, scrubbed it clean—dropped duplicates, fixed dates, and added a review length column.<br><br>
+          <strong>Exploration:</strong> Asked big questions: Which shows get the most reviews? Do long reviews mean high ratings? What's hot by category or over time? Used charts to spot trends.<br><br>
+          <strong>Stats Check:</strong> Tested hypotheses—like whether review length ties to ratings—with tools like ANOVA.<br><br>
+          <strong>Sentiment Peek:</strong> Dug into review text to see what words pop up in raves vs. rants.<br><br>
+          <strong>Results:</strong> Found top podcasts, rating patterns, and even seasonal quirks—all laid out in a Looker dashboard.
         </div>
-        <div class="body-text">Looking at podcast categories, "Society & Culture" had the most reviews, and these were
-          mostly positive. In contrast, categories like "TV & Film" and "Sports" had a wider range of ratings. We also
-          investigated trends over time, finding that the number of reviews increased over time, peaking in June 2020.
-          The average rating followed a similar trend, peaking in 2018 before declining slightly. When we looked at
-          variations by month, we found that January had the highest number of reviews and December had the lowest.
-          Similarly, February had the highest average rating, while December had the lowest.</div>
-        <div class="body-text">Finally, we analyzed the behavior of individual reviewers. There was a significant
-          difference in how often different authors wrote reviews. Interestingly, four of the most active reviewers
-          consistently gave podcasts perfect scores, while another reviewer gave slightly lower ratings (averaging
-          around 4.04). Overall, the top 5 most active reviewers all had high average ratings, suggesting that they
-          generally had a positive view of the podcasts they reviewed. We also found that these reviewers had
-          preferences for certain categories, with "Business" being the most common category they reviewed, followed by
-          "Comedy" and "Education." However, they still reviewed podcasts from a wide range of categories.</div>
+
+        <div class="body-text">
+          <strong>Key Findings:</strong><br>
+          - <strong>Data Setup:</strong> Started with 2 million reviews, axed 655 duplicates. Cleaned text and added review lengths. Four tables: categories (212k rows), podcasts (110k), reviews (2M), and runs (16).<br><br>
+          - <strong>Popularity:</strong> "Crime Junkie" crushed it with the most reviews. Interestingly, no correlation between review count and average rating (-0.08).<br><br>
+          - <strong>Review Length:</strong> ANOVA showed significant relationship between review length and ratings (p ≈ 0, F = 232)—higher ratings often come with more words.<br><br>
+          - <strong>Ratings Distribution:</strong> 86.7% of reviews are 5 stars. Low scores (1-4) are rare, under 6% each.<br><br>
+          - <strong>Categories:</strong> "Society-Culture" leads with 16k+ podcasts and abundant 5-star reviews. "TV-Film" and "Sports" show more rating variety.<br><br>
+          - <strong>Time Trends:</strong> Reviews peaked in June 2020, ratings peaked in 2018. January sees most reviews (164k), December least (136k). February has highest ratings (4.66), December lowest (4.61).<br><br>
+          - <strong>Top Reviewers:</strong> Most active reviewer contributed 612 reviews. Four of top five reviewers consistently give 5 stars, while one averages 4.04.
+        </div>
+
+        <div class="body-text">
+          <strong>Future Directions:</strong><br>
+          - Conduct surveys with top reviewers to understand their motivation<br>
+          - Implement advanced NLP for theme extraction and success prediction<br>
+          - Develop predictive models for ratings and trends<br><br>
+          
+          This analysis provides valuable insights for podcast creators and platforms, revealing what resonates with listeners and how engagement patterns evolve over time.
+        </div>
       </div>
     </div>
 
