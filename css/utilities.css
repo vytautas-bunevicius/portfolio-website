@@ -216,6 +216,15 @@ body:not(.dark-mode) .navbar {
     gap: 10px;
   }
 
+  .nav-title-link {
+    max-width: 140px;
+    word-wrap: break-word;
+  }
+
+  body.dark-mode .nav-title-link {
+    color: white;
+  }
+
   .button.dark-mode-button {
     border: none;
     outline: none;
