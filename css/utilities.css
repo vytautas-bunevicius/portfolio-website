@@ -238,9 +238,21 @@ body:not(.dark-mode) .navbar {
   }
 }
 
-/* Additional media query for extra-large phones */
+/* Media query for larger phones (including 6.9 inch screens) */
 @media only screen and (min-width: 390px) and (max-width: 800px) {
   .nav-title-link {
     font-size: 18px;
+    max-width: 160px;
+    word-wrap: break-word;
+    white-space: normal;
+  }
+}
+
+/* Extra large phones specific adjustments */
+@media only screen and (min-width: 428px) and (max-width: 800px) {
+  .nav-title-link {
+    max-width: 140px;
+    word-wrap: break-word;
+    white-space: normal;
   }
 }
