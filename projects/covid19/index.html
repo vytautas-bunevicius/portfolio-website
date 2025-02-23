@@ -97,35 +97,16 @@
 
     <!-- PROJECT HEADER -->
     <div id="project-header">
-      <!-- 
-            TODO
-
-            - I can change the 'main-title' text to the name of my project
-            - I can change the 'body-text' text to a short and sweet description of my project (maybe the same as the one on the project card)
-            - I can change "covid19.jpeg" to the image filename I have uploaded in the assets/images folder.
-          -->
-      <div class="main-title">South Korea COVID-19 Exploratory Data Analysis</div>
-      <div class="body-text">In this project, I analyze COVID-19 data for South Korea using Python libraries such as
-        Pandas, NumPy, Scipy, and Plotly. The study looks at how cases are spread out, details about patients, trends
-        over time, demographic information, and government measures. I've also created interactive graphs with Plotly to
-        visualize different aspects of the pandemic in South Korea.</div>
+      <div class="main-title">COVID-19 in South Korea: A Deep Dive</div>
+      <div class="body-text">South Korea was a pandemic poster child—early cases, quick moves, tons of data. I dug into 11 datasets to unpack how COVID-19 hit, spread, and got tamed there. From cases and demographics to weather and policies, it's a full-on look at what went down and why.</div>
       <image class="project-header-image" src="../../assets/images/covid19.jpeg">
     </div>
 
     <!-- PROJECT DETAILS -->
-    <!-- 
-        TODO
-
-        - I can change the 'subheader-text' to whatever header I want my project details to be
-        - I can add paragraphs using the <div class="body-text"></div> elements in the "project-details-content"
-      -->
     <div id="project-details">
-      <div class="subheader-text">Project Overview</div>
       <div class="project-details-content">
-        <div class="body-text">South Korea was a pandemic poster child—early cases, quick moves, tons of data. I dug into 11 datasets to unpack how COVID-19 hit, spread, and got tamed there. From cases and demographics to weather and policies, it's a full-on look at what went down and why.</div>
-
-        <div class="subheader-text">What I Did</div>
         <div class="body-text">
+          <div class="subheader-text">What I Did</div><br>
           <ul>
             <li><strong>Data Prep</strong>: Loaded 11 datasets—cases, patients, timelines, regions, you name it. Cleaned up missing bits and funky formats.</li>
             <li><strong>Exploration</strong>: Asked the biggies: How'd it spread? Who got hit hardest? Did policies work? Used maps, charts, and stats to find out.</li>
@@ -134,8 +115,8 @@
           </ul>
         </div>
 
-        <div class="subheader-text">Key Findings</div>
         <div class="body-text">
+          <div class="subheader-text">How It Went</div><br>
           <ul>
             <li><strong>Data Setup</strong>: 11 tables—cases (174 rows), patients (5k+), time series, weather, policies, more. Some gaps (like 4k missing symptom dates), but mostly solid after cleanup.</li>
             <li><strong>Spread</strong>: Daegu was ground zero—6,680 cases, Nam-gu alone at 4,511. Group infections (71%) ruled—think churches, clubs—over solo cases. Overseas inflows and close contacts fueled it too.</li>
@@ -147,23 +128,30 @@
           </ul>
         </div>
 
-        <div class="subheader-text">Future Directions</div>
         <div class="body-text">
+          <div class="subheader-text">The Details</div><br>
+          <ul>
+            <li><strong>Data</strong>: 174 cases, 5,166 patients, daily stats from Jan 2020. Lat/long mapped, provinces coded, policies dated.</li>
+            <li><strong>Stats</strong>: Group cases 71% (124/174), Daegu's 6,680 vs. Incheon's 202. Age 20s at 24% confirmed, 80s at 50% deceased (TimeAge). Temp correlation 0.015—meh.</li>
+            <li><strong>Trends</strong>: Feb peak (daily confirmed ~800), March releases soared, searches hit 100 in March.</li>
+          </ul>
+
+          <div class="subheader-text">What's Next</div><br>
           <ul>
             <li>Dig deeper into group hotspots—why churches over clubs?</li>
             <li>Cross-check weather with humidity or UV—might tease out more.</li>
             <li>Model policy timing vs. case drops—pinpoint the winners.</li>
           </ul>
-        </div>
 
-        <div class="subheader-text">Impact</div>
-        <div class="body-text">South Korea's story is a playbook: Daegu got slammed (group spread), young folks carried it, older ones bore the brunt. Fast testing and lockdowns crushed it—cases fell while releases rose. Small firms talked mental health more, big ones had resources. It's a blueprint for tackling the next big bug.</div>
+          <div class="subheader-text">Why It Matters</div><br>
+          South Korea's story is a playbook: Daegu got slammed (group spread), young folks carried it, older ones bore the brunt. Fast testing and lockdowns crushed it—cases fell while releases rose. Small firms talked mental health more, big ones had resources. It's a blueprint for tackling the next big bug. Maps and charts are on my GitHub—dive in!
+        </div>
       </div>
     </div>
 
 
     <div id="project-notebook">
-      <div class="subheader-text">Data Exploration / Analysis</div>
+      <div class="subheader-text">What the Data Showed</div><br>
       <div id="iframe-container">
         <iframe id="myIframe" src="../covid19/analysis/korea-covid19-analysis.html" width="100%" height="100%"></iframe>
         <button id="fullscreenBtn">⛶</button>

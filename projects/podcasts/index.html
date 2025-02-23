@@ -115,40 +115,56 @@
 
     <!-- PROJECT DETAILS -->
     <div id="project-details">
-      <div class="subheader-text">Project Approach</div>
       <div class="project-details-content">
         <div class="body-text">
-          <strong>Data Prep:</strong> Pulled the data with SQLite and Pandas, scrubbed it clean—dropped duplicates, fixed dates, and added a review length column.<br><br>
-          <strong>Exploration:</strong> Asked big questions: Which shows get the most reviews? Do long reviews mean high ratings? What's hot by category or over time? Used charts to spot trends.<br><br>
-          <strong>Stats Check:</strong> Tested hypotheses—like whether review length ties to ratings—with tools like ANOVA.<br><br>
-          <strong>Sentiment Peek:</strong> Dug into review text to see what words pop up in raves vs. rants.<br><br>
-          <strong>Results:</strong> Found top podcasts, rating patterns, and even seasonal quirks—all laid out in a Looker dashboard.
+          <div class="subheader-text">What I Did</div><br>
+          <ul>
+            <li><strong>Data Prep:</strong> Pulled the data with SQLite and Pandas, scrubbed it clean—dropped duplicates, fixed dates, and added a review length column.</li>
+            <li><strong>Exploration:</strong> Asked big questions: Which shows get the most reviews? Do long reviews mean high ratings? What's hot by category or over time? Used charts to spot trends.</li>
+            <li><strong>Stats Check:</strong> Tested hypotheses—like whether review length ties to ratings—with tools like ANOVA.</li>
+            <li><strong>Sentiment Peek:</strong> Dug into review text to see what words pop up in raves vs. rants.</li>
+            <li><strong>Results:</strong> Found top podcasts, rating patterns, and even seasonal quirks—all laid out in a Looker dashboard.</li>
+          </ul>
         </div>
 
         <div class="body-text">
-          <div class="subheader-text">Key Findings:</div><br>
-          - <strong>Data Setup:</strong> Started with 2 million reviews, axed 655 duplicates. Cleaned text and added review lengths. Four tables: categories (212k rows), podcasts (110k), reviews (2M), and runs (16).<br><br>
-          - <strong>Popularity:</strong> "Crime Junkie" crushed it with the most reviews. Interestingly, no correlation between review count and average rating (-0.08).<br><br>
-          - <strong>Review Length:</strong> ANOVA showed significant relationship between review length and ratings (p ≈ 0, F = 232)—higher ratings often come with more words.<br><br>
-          - <strong>Ratings Distribution:</strong> 86.7% of reviews are 5 stars. Low scores (1-4) are rare, under 6% each.<br><br>
-          - <strong>Categories:</strong> "Society-Culture" leads with 16k+ podcasts and abundant 5-star reviews. "TV-Film" and "Sports" show more rating variety.<br><br>
-          - <strong>Time Trends:</strong> Reviews peaked in June 2020, ratings peaked in 2018. January sees most reviews (164k), December least (136k). February has highest ratings (4.66), December lowest (4.61).<br><br>
-          - <strong>Top Reviewers:</strong> Most active reviewer contributed 612 reviews. Four of top five reviewers consistently give 5 stars, while one averages 4.04.
+          <div class="subheader-text">How It Went</div><br>
+          <ul>
+            <li><strong>Data Setup:</strong> Started with 2 million reviews, axed 655 duplicates. Cleaned text (lowercase, no punctuation, no stopwords) and added review lengths. Four tables: categories (212k rows), podcasts (110k), reviews (2M), and runs (16). No gaps—smooth sailing.</li>
+            <li><strong>Popularity:</strong> "Crime Junkie" crushed it with the most reviews—super popular. But review count vs. average rating? No link (correlation -0.08). Fame doesn't mean five stars.</li>
+            <li><strong>Review Length:</strong> Tested if longer reviews mean better ratings. ANOVA said yes (p ≈ 0, F = 232)—higher ratings often come with more words, though it's messy with overlap.</li>
+            <li><strong>Ratings:</strong> 86.7% of reviews are 5 stars—listeners are mostly stoked. Low scores (1-4) are rare, under 6% each.</li>
+            <li><strong>Sentiment:</strong> Positive reviews gush "love" and "great"; negative ones lean on "get" and "I'm"—not bad words, just griping vibes.</li>
+            <li><strong>Categories:</strong> "Society-Culture" rules with 16k+ podcasts and tons of 5-star reviews. "TV-Film" and "Sports" mix it up more—ratings all over.</li>
+            <li><strong>Time Trends:</strong> Reviews spiked in June 2020, ratings peaked in 2018 then dipped. January's review-heavy (164k), December's light (136k). February's tops for ratings (4.66), December's lowest (4.61).</li>
+            <li><strong>Authors:</strong> Top reviewer (ID D3307ADEFFA285C) dropped 612 reviews—four of the top five stick to 5 stars, one (4.04) mixes it up. They love "Business," "Comedy," and "Education."</li>
+          </ul>
         </div>
 
         <div class="body-text">
-          <div class="subheader-text">Future Directions:</div><br>
-          - Conduct surveys with top reviewers to understand their motivation<br>
-          - Implement advanced NLP for theme extraction and success prediction<br>
-          - Develop predictive models for ratings and trends<br><br>
-          
-          This analysis provides valuable insights for podcast creators and platforms, revealing what resonates with listeners and how engagement patterns evolve over time.
+          <div class="subheader-text">The Details</div><br>
+          <ul>
+            <li><strong>Data:</strong> 2M reviews, 110k podcasts, 212k category tags. Ratings 1-5 (mean 4.63).</li>
+            <li><strong>Stats:</strong> Review length vs. rating—F = 232, p < 10^-198, big differences across ratings. No review count-rating correlation (-0.08).</li>
+            <li><strong>Sentiment:</strong> "Love" (426k in positives) vs. "get" (19k in negatives)—clear sentiment split.</li>
+            <li><strong>Trends:</strong> January reviews 164,907, February avg 4.66—seasonal swings are real but subtle.</li>
+          </ul>
+
+          <div class="subheader-text">What's Next</div><br>
+          <ul>
+            <li>Chat with top reviewers—why so many? Maybe a quick survey.</li>
+            <li>Go deeper with NLP—pull themes or predict hits from text.</li>
+            <li>Model it—could ratings or trends forecast what's next?</li>
+          </ul>
+
+          <div class="subheader-text">Why It's Cool</div><br>
+          This cracks open what listeners love: "Crime Junkie" rules, 5-star reviews dominate, and "Society-Culture" shines. Podcasters can see what sticks—longer reviews signal fans, "Business" draws chatterboxes. It's a snapshot of the scene, perfect for creators or platforms to tweak their game. Check the Looker dashboard or GitHub for the full scoop!
         </div>
       </div>
     </div>
 
     <div id="project-notebook">
-      <div class="subheader-text">Data Exploration / Analysis</div>
+      <div class="subheader-text">What the Data Showed</div><br>
       <div id="iframe-container">
         <iframe id="myIframe" src="../podcasts/analysis/podcast-reviews-analysis.html" width="100%"
           height="100%"></iframe>

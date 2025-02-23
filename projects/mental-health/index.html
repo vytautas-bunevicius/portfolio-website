@@ -97,37 +97,16 @@
 
     <!-- PROJECT HEADER -->
     <div id="project-header">
-      <!-- 
-            TODO
-
-            - I can change the 'main-title' text to the name of my project
-            - I can change the 'body-text' text to a short and sweet description of my project (maybe the same as the one on the project card)
-            - I can change "covid19.jpeg" to the image filename I have uploaded in the assets/images folder.
-          -->
-      <div class="main-title">Tech Industry Mental Health Exploratory Data Analysis</div>
-      <div class="body-text">In this project, I analyze mental health survey data in the tech industry using Python
-        libraries such as Pandas, NumPy, NLTK, Gensim, and Plotly, along with SQL for data querying and manipulation.
-        The study examines attitudes towards mental health, the occurrence and distribution of reported mental health
-        disorders, and the availability of resources in the workplace. I delve into trends, correlations, and insights
-        that contribute to a better understanding of mental health issues within the tech sector. I have also created
-        interactive graphs with Plotly to visualize different aspects of mental health in the tech industry. </div>
+      <div class="main-title">Mental Health in Tech: What's the Deal?</div>
+      <div class="body-text">Tech's a grind—long hours, tight deadlines—and it's no secret that mental health's a hot topic in the industry. I tackled a dataset from Open Source Mental Illness (OSMI), spanning 2014-2019, to see what's up with tech workers' heads. Using Python and SQL, I cleaned it up and poked around to uncover attitudes, disorder trends, and what's shaping them.</div>
       <image class="project-header-image" src="../../assets/images/mental.jpeg">
     </div>
 
     <!-- PROJECT DETAILS -->
-    <!-- 
-        TODO
-
-        - I can change the 'subheader-text' to whatever header I want my project details to be
-        - I can add paragraphs using the <div class="body-text"></div> elements in the "project-details-content"
-      -->
     <div id="project-details">
-      <div class="subheader-text">Mental Health in Tech: What's the Deal?</div>
       <div class="project-details-content">
-        <div class="body-text">Tech's a grind—long hours, tight deadlines—and it's no secret that mental health's a hot topic in the industry. I tackled a dataset from Open Source Mental Illness (OSMI), spanning 2014-2019, to see what's up with tech workers' heads. Using Python and SQL, I cleaned it up and poked around to uncover attitudes, disorder trends, and what's shaping them.</div>
-
-        <div class="subheader-text">What I Did</div>
         <div class="body-text">
+          <div class="subheader-text">What I Did</div><br>
           <ul>
             <li><strong>Data Prep</strong>: Loaded survey data—answers, questions, years—into Pandas from a SQLite stash. Checked for messiness and got it ready to roll.</li>
             <li><strong>Exploration</strong>: Asked big stuff: How common are mental health issues? Are attitudes shifting? What's age, gender, or company size got to do with it? Used charts to spot patterns.</li>
@@ -137,8 +116,8 @@
           </ul>
         </div>
 
-        <div class="subheader-text">How It Went</div>
         <div class="body-text">
+          <div class="subheader-text">How It Went</div><br>
           <ul>
             <li><strong>Data Setup</strong>: Three tables—Survey (5 years), Question (105 Qs), Answer (236k responses). No missing bits, no duplicates—clean as a whistle. "-1" flags popped up, likely "no answer," so I filtered those out.</li>
             <li><strong>Attitudes</strong>: Mental health buzz peaked in 2018 at 38%, up from 28% in 2014, but dipped to 34.6% in 2019. Average age held steady at 35—folks might be tougher or savvier now. Women's responses rose with the buzz (19.6% in 2014 to 30% in 2018), then dropped to 27.8% in 2019.</li>
@@ -148,26 +127,24 @@
           </ul>
         </div>
 
-        <div class="subheader-text">The Details</div>
         <div class="body-text">
+          <div class="subheader-text">The Details</div><br>
           <ul>
             <li><strong>Data</strong>: 236,898 answers, 105 questions, 5 years (2014-2019). Age 18-75 (avg 35), company sizes from 1 to 1000+.</li>
             <li><strong>Stats</strong>: Mental health mentions jumped 10% from 2014-2018 (p < 0.05 implied). Disorders vs. resources? Correlation -0.00002—basically zilch.</li>
             <li><strong>Trends</strong>: 2018 peak—57% disorders, 38% mentions. Women's share grew 10% then fell 2.2%. Small firms led talks, big ones led resources.</li>
           </ul>
-        </div>
 
-        <div class="subheader-text">What's Next</div>
-        <div class="body-text">
+          <div class="subheader-text">What's Next</div><br>
           <ul>
             <li>Add diversity Qs—race, orientation—to widen the lens.</li>
             <li>Map it out—where are these folks? Location might vibe with stress.</li>
             <li>Dig into remote work—how's it hitting mental health?</li>
           </ul>
-        </div>
 
-        <div class="subheader-text">Why It Matters</div>
-        <div class="body-text">Tech's mental health scene is shifting—2018 was a loud year, small companies are chatty, and women's voices spiked with the buzz. Disorders are real (over half in 2018), but resources don't clearly tie to them. It's a heads-up for tech leaders: support's there in big firms, but the convo's hotter where teams are tight. Check my visuals or GitHub for the full scoop!</div>
+          <div class="subheader-text">Why It Matters</div><br>
+          Tech's mental health scene is shifting—2018 was a loud year, small companies are chatty, and women's voices spiked with the buzz. Disorders are real (over half in 2018), but resources don't clearly tie to them. It's a heads-up for tech leaders: support's there in big firms, but the convo's hotter where teams are tight. Check my visuals or GitHub for the full scoop!
+        </div>
       </div>
     </div>
 
