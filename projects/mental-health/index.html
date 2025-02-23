@@ -122,30 +122,52 @@
         - I can add paragraphs using the <div class="body-text"></div> elements in the "project-details-content"
       -->
     <div id="project-details">
-      <div class="subheader-text">Summary / Findings</div>
+      <div class="subheader-text">Mental Health in Tech: What's the Deal?</div>
       <div class="project-details-content">
-        <div class="body-text">Mental health discussions surged in 2017 and 2018, but plateaued in 2019. The discussion
-          of "mental health" and related terms increased significantly between 2017 and 2018, reaching a peak of 38% in
-          2018. This suggests that awareness of mental health issues is growing in the workplace. However, the trend
-          reversed in 2019, with the percentage of respondents mentioning mental health dropping to 34.65%. This could
-          indicate that the initial surge in discussions was due to a specific event or campaign, and that interest has
-          since stabilized.</div>
-        <div class="body-text">Female participation in mental health discussions increased alongside the trend. The
-          percentage of female respondents who mentioned mental health issues also increased during this period, rising
-          from 19.6% in 2014 to 30% in 2018. This suggests that women may be more likely to openly discuss mental health
-          concerns in the workplace. However, female participation declined slightly in 2019, raising questions about
-          the underlying factors behind these trends.</div>
-        <div class="body-text">Smaller companies engaged more in mental health discussions than larger ones. During
-          periods of peak mental health discussions, smaller companies were more likely to have employees mentioning
-          these issues in their responses. This could be due to higher workloads or stress levels in smaller
-          organizations, leading to a greater need for open dialogue about mental health concerns. In contrast, larger
-          companies with over 1000 employees had fewer discussions about mental health, potentially indicating a lack of
-          open communication or awareness of mental health resources.</div>
-        <div class="body-text">Resource availability is higher in larger companies, but the correlation with mental
-          health disorders is weak. The analysis shows that larger companies (1000+ employees) generally have more
-          mental health resources available to their employees. However, the correlation between the availability of
-          these resources and the number of reported mental health disorders is very weak. This suggests that there is
-          not a simple linear relationship between resource availability and mental health outcomes.</div>
+        <div class="body-text">Tech's a grind—long hours, tight deadlines—and it's no secret that mental health's a hot topic in the industry. I tackled a dataset from Open Source Mental Illness (OSMI), spanning 2014-2019, to see what's up with tech workers' heads. Using Python and SQL, I cleaned it up and poked around to uncover attitudes, disorder trends, and what's shaping them.</div>
+
+        <div class="subheader-text">What I Did</div>
+        <div class="body-text">
+          <ul>
+            <li><strong>Data Prep</strong>: Loaded survey data—answers, questions, years—into Pandas from a SQLite stash. Checked for messiness and got it ready to roll.</li>
+            <li><strong>Exploration</strong>: Asked big stuff: How common are mental health issues? Are attitudes shifting? What's age, gender, or company size got to do with it? Used charts to spot patterns.</li>
+            <li><strong>Stats Dive</strong>: Tested hypotheses—like whether resources affect disorders—with correlations and counts.</li>
+            <li><strong>Topics</strong>: Ran some NLP (LDA) to see what the survey's really about.</li>
+            <li><strong>Results</strong>: Tracked rising chatter, pinned down trends, and flagged gaps—visuals tell the tale.</li>
+          </ul>
+        </div>
+
+        <div class="subheader-text">How It Went</div>
+        <div class="body-text">
+          <ul>
+            <li><strong>Data Setup</strong>: Three tables—Survey (5 years), Question (105 Qs), Answer (236k responses). No missing bits, no duplicates—clean as a whistle. "-1" flags popped up, likely "no answer," so I filtered those out.</li>
+            <li><strong>Attitudes</strong>: Mental health buzz peaked in 2018 at 38%, up from 28% in 2014, but dipped to 34.6% in 2019. Average age held steady at 35—folks might be tougher or savvier now. Women's responses rose with the buzz (19.6% in 2014 to 30% in 2018), then dropped to 27.8% in 2019.</li>
+            <li><strong>Company Size</strong>: Small shops (1-5 employees) talked mental health most (38.7% in 2018), maybe from heavier loads. Big firms (1000+) lagged but had more resources (34.2% "yes" in 2018).</li>
+            <li><strong>Disorders</strong>: Reports hit 57% "yes" in 2018, then slid to 51.5% in 2019—mirroring women's participation. No clear link between resources and disorders (correlation near 0).</li>
+            <li><strong>Survey Scope</strong>: NLP pegged five themes—resources, past experiences, workplace chats, issues, wellness. Pretty solid coverage.</li>
+          </ul>
+        </div>
+
+        <div class="subheader-text">The Details</div>
+        <div class="body-text">
+          <ul>
+            <li><strong>Data</strong>: 236,898 answers, 105 questions, 5 years (2014-2019). Age 18-75 (avg 35), company sizes from 1 to 1000+.</li>
+            <li><strong>Stats</strong>: Mental health mentions jumped 10% from 2014-2018 (p < 0.05 implied). Disorders vs. resources? Correlation -0.00002—basically zilch.</li>
+            <li><strong>Trends</strong>: 2018 peak—57% disorders, 38% mentions. Women's share grew 10% then fell 2.2%. Small firms led talks, big ones led resources.</li>
+          </ul>
+        </div>
+
+        <div class="subheader-text">What's Next</div>
+        <div class="body-text">
+          <ul>
+            <li>Add diversity Qs—race, orientation—to widen the lens.</li>
+            <li>Map it out—where are these folks? Location might vibe with stress.</li>
+            <li>Dig into remote work—how's it hitting mental health?</li>
+          </ul>
+        </div>
+
+        <div class="subheader-text">Why It Matters</div>
+        <div class="body-text">Tech's mental health scene is shifting—2018 was a loud year, small companies are chatty, and women's voices spiked with the buzz. Disorders are real (over half in 2018), but resources don't clearly tie to them. It's a heads-up for tech leaders: support's there in big firms, but the convo's hotter where teams are tight. Check my visuals or GitHub for the full scoop!</div>
       </div>
     </div>
 

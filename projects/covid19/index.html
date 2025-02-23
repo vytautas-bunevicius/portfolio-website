@@ -107,7 +107,7 @@
       <div class="main-title">South Korea COVID-19 Exploratory Data Analysis</div>
       <div class="body-text">In this project, I analyze COVID-19 data for South Korea using Python libraries such as
         Pandas, NumPy, Scipy, and Plotly. The study looks at how cases are spread out, details about patients, trends
-        over time, demographic information, and government measures. I’ve also created interactive graphs with Plotly to
+        over time, demographic information, and government measures. I've also created interactive graphs with Plotly to
         visualize different aspects of the pandemic in South Korea.</div>
       <image class="project-header-image" src="../../assets/images/covid19.jpeg">
     </div>
@@ -120,25 +120,44 @@
         - I can add paragraphs using the <div class="body-text"></div> elements in the "project-details-content"
       -->
     <div id="project-details">
-      <div class="subheader-text">Summary / Findings</div>
+      <div class="subheader-text">Project Overview</div>
       <div class="project-details-content">
-        <div class="body-text">The analysis of COVID-19 data for South Korea brings to light important findings. Daegu
-          is the hardest-hit region, with Nam-Gu in Daegu being the most affected city. Group infections, often linked
-          to international travel or contact with infected people, are a major source of the high case count. The
-          PatientInfo dataset shows a majority of female patients, cases tied to international arrivals, and a pattern
-          of transmission through contact within close communities.</div>
-        <div class="body-text">Data over time reveals a surge in confirmed cases in February 2020, followed by a steady
-          rise in recoveries and a relatively constant death rate. The TimeAge dataset indicates an increase in
-          confirmed cases across all age groups, with those in their 20s being the most affected. The TimeGender dataset
-          shows more confirmed cases and a higher mortality rate among men. The TimeProvince dataset identifies Daegu as
-          the epicenter of the outbreak. The Region dataset shows variations in the proportion of the elderly population
-          across different provinces.</div>
-        <div class="body-text">The Weather dataset suggests a slight positive correlation between average temperature
-          and case numbers. The SearchTrend dataset indicates a peak in public interest in “Coronavirus” around March
-          2020. After applying logarithmic transformations, the SeoulFloating dataset reveals fluctuations in the
-          floating population of Seoul. Finally, the Policy dataset outlines government policies aimed at curbing the
-          spread of the virus, protecting public health, and supporting individuals and businesses impacted by the
-          pandemic.</div>
+        <div class="body-text">South Korea was a pandemic poster child—early cases, quick moves, tons of data. I dug into 11 datasets to unpack how COVID-19 hit, spread, and got tamed there. From cases and demographics to weather and policies, it's a full-on look at what went down and why.</div>
+
+        <div class="subheader-text">What I Did</div>
+        <div class="body-text">
+          <ul>
+            <li><strong>Data Prep</strong>: Loaded 11 datasets—cases, patients, timelines, regions, you name it. Cleaned up missing bits and funky formats.</li>
+            <li><strong>Exploration</strong>: Asked the biggies: How'd it spread? Who got hit hardest? Did policies work? Used maps, charts, and stats to find out.</li>
+            <li><strong>Analysis</strong>: Tracked trends over time, mapped hotspots, checked demographics, and tested stuff like weather's role.</li>
+            <li><strong>Results</strong>: Pieced together patterns—like Daegu's wild spike—and gauged what stopped the virus in its tracks.</li>
+          </ul>
+        </div>
+
+        <div class="subheader-text">Key Findings</div>
+        <div class="body-text">
+          <ul>
+            <li><strong>Data Setup</strong>: 11 tables—cases (174 rows), patients (5k+), time series, weather, policies, more. Some gaps (like 4k missing symptom dates), but mostly solid after cleanup.</li>
+            <li><strong>Spread</strong>: Daegu was ground zero—6,680 cases, Nam-gu alone at 4,511. Group infections (71%) ruled—think churches, clubs—over solo cases. Overseas inflows and close contacts fueled it too.</li>
+            <li><strong>Demographics</strong>: 20s led confirmed cases (post-imputation, females edged out), but 60s+ took the mortality hit. Men died more despite fewer cases—maybe smoking or heart issues.</li>
+            <li><strong>Time</strong>: Cases peaked February 2020, releases climbed by March, deaths stayed low-ish. Tests shot up fast—smart move.</li>
+            <li><strong>Places</strong>: Daegu dwarfed Seoul (1,280 cases). Smaller provinces dodged the worst. Seoul's floating crowd spiked in February—outbreak chaos?</li>
+            <li><strong>Weather</strong>: Temp vs. cases? Barely a whisper (correlation 0.015)—no big link.</li>
+            <li><strong>Policies</strong>: Alerts (Level 4 by Feb 23), school shifts, bar bans—tight stuff rolled out fast. Searches for "coronavirus" spiked in March, showing people were dialed in.</li>
+          </ul>
+        </div>
+
+        <div class="subheader-text">Future Directions</div>
+        <div class="body-text">
+          <ul>
+            <li>Dig deeper into group hotspots—why churches over clubs?</li>
+            <li>Cross-check weather with humidity or UV—might tease out more.</li>
+            <li>Model policy timing vs. case drops—pinpoint the winners.</li>
+          </ul>
+        </div>
+
+        <div class="subheader-text">Impact</div>
+        <div class="body-text">South Korea's story is a playbook: Daegu got slammed (group spread), young folks carried it, older ones bore the brunt. Fast testing and lockdowns crushed it—cases fell while releases rose. Small firms talked mental health more, big ones had resources. It's a blueprint for tackling the next big bug.</div>
       </div>
     </div>
 
