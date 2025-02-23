@@ -27,21 +27,26 @@
     .about-section-content {
       text-align: justify;
       justify-content: space-between;
-      padding: 40px 0;
+      padding: 10px 0 0 0;
     }
 
     .body-text {
       text-align: justify;
       justify-content: space-between;
-      padding: 7px 0;
+      padding: -5px 0;
       word-spacing: normal;
+    }
+
+    .body-text:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
     }
 
     #tool-icons-container {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: 50px;
+      margin-top: 100px;
     }
 
     #tool-icons-container img {
@@ -64,6 +69,90 @@
         height: 48px;
         margin: 5px;
       }
+    }
+
+    /* Update these navbar styles */
+    .navbar {
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-title {
+      font-size: 1.5rem;
+    }
+
+    .navbar-buttons {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .dark-mode-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      min-width: 46px;
+      min-height: 46px;
+    }
+
+    .dark-mode-button svg {
+      width: 30px;
+      height: 30px;
+      margin: 0;
+    }
+
+    /* Mobile styles */
+    @media (max-width: 600px) {
+      .navbar {
+        padding: 10px 15px;
+      }
+
+      .nav-title {
+        font-size: 1.2rem;
+      }
+
+      .navbar-buttons {
+        gap: 10px;
+      }
+
+      .button {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+      }
+
+      .dark-mode-button {
+        min-width: 42px;
+        min-height: 42px;
+        padding: 6px;
+      }
+
+      .dark-mode-button svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    #my-work-section {
+      margin-top: -60px;
+      padding-top: 0;
+    }
+
+    #my-work-section .subheader-text {
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+
+    #about-section {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .projects-container {
+      margin-top: 20px;
     }
   </style>
 
@@ -114,9 +203,9 @@
 
       <div id="portfolio-header-text-container">
         <div class="header-text">
-          <span class="main-title">Hey, I’m Vytautas!</span>
+          <span class="main-title">Hey, I'm Vytautas!</span>
           <div class="body-text" style="margin-top: 20px;">
-            I dig into data to make things happen—whether it’s building models, sorting out pipelines, or spotting trends that actually matter.
+            I dig into data to make things happen—whether it's building models, sorting out pipelines, or spotting trends that actually matter.
           </div>
         </div>
         <a class="button" id="my-work-link">
@@ -156,10 +245,10 @@
       <span class="subheader-text">About Me</span>
       <div class="about-section-content">
         <div class="body-text">
-          I started out at <strong>ISM University of Management and Economics</strong>, getting a grip on finance and how businesses tick. Then at <strong>Turing College</strong>, I dove into data analysis, machine learning, and automation. Now I’m back there as a mentor, helping newbies debug code and figure out the ropes.
+          I started out at <strong>ISM University of Management and Economics</strong>, getting a grip on finance and how businesses tick. Then at <strong>Turing College</strong>, I dove into data analysis, machine learning, and automation. Now I'm back there as a mentor, helping newbies debug code and figure out the ropes.
         </div>
         <div class="body-text">
-          At <strong>Nord Security</strong>, I’m an analyst building tools to wrangle data better. I’ve set up pipelines pulling from places like Ahrefs and YouTube, built a web scraper to snoop on what people say about us online, and made a model to pick out websites worth partnering with.
+          At <strong>Nord Security</strong>, I'm an analyst building tools to wrangle data better. I've set up pipelines pulling from places like Ahrefs and YouTube, built a web scraper to snoop on what people say about us online, and made a model to pick out websites worth partnering with.
         </div>
         <div class="body-text">
           I also put together a <strong>React and PostgreSQL hub</strong> to track API usage, script status, and marketing metrics. It cut errors by 30% and saved the team a bunch of time after I wrestled with some messy state and sync issues.
@@ -195,7 +284,7 @@
           </a>
           <div class="project-card-text-container">
             <div class="subheader-text project-title">Travel Insurance Analysis</div>
-            <div class="body-text project-card-text">Made a model to predict who’s buying travel insurance and why—turns out some patterns are pretty clear.</div>
+            <div class="body-text project-card-text">Made a model to predict who's buying travel insurance and why—turns out some patterns are pretty clear.</div>
           </div>
           <a class="button" href="./projects/insurance/index.html">
             <span class="button-text">Read More</span>
@@ -251,7 +340,7 @@
           </a>
           <div class="project-card-text-container">
             <div class="subheader-text project-title">COVID-19 Analysis</div>
-            <div class="body-text project-card-text">Cracked open South Korea’s COVID-19 data to see how it spread and who it hit hardest.</div>
+            <div class="body-text project-card-text">Cracked open South Korea's COVID-19 data to see how it spread and who it hit hardest.</div>
           </div>
           <a class="button" href="./projects/covid19/index.html">
             <span class="button-text">Read More</span>
