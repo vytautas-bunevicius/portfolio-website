@@ -94,62 +94,44 @@
 
   <div id="main-content">
     <div id="project-header">
-      <div class="main-title">Stroke Risk Prediction: A Machine Learning Approach to Early Detection</div>
-      <div class="body-text">This project demonstrates the application of advanced machine learning techniques to
-        predict stroke risk. Using a dataset of over 5000 patients, we developed a robust predictive model to identify
-        key factors influencing stroke occurrence, providing valuable insights for early intervention and prevention
-        strategies in healthcare.</div>
-      <img class="project-header-image" src="../../assets/images/stroke.jpeg"
-        alt="Stroke Risk Prediction Project Header">
+      <div class="main-title">Stroke Risk Prediction: Figuring Out Who's at Risk</div>
+      <div class="body-text">I built a machine learning model to spot people at risk of a stroke, using data from over 5,000 patients. The goal? Catch the warning signs early so doctors can step in before things get bad. Strokes are a big deal—second leading cause of death worldwide, according to the World Health Organization—so this could really help.</div>
+      <img class="project-header-image" src="../../assets/images/stroke.jpeg" alt="Stroke Risk Prediction Project Header">
     </div>
 
     <div id="project-details">
       <div class="subheader-text">Project Overview and Methodology</div>
       <div class="project-details-content">
         <div class="body-text">
-          <h3>Data Preprocessing and Exploratory Data Analysis</h3>
-          <p>The initial phase involved rigorous data cleaning and preprocessing. We handled missing values,
-            particularly in the BMI column, encoded categorical variables, and standardized numerical features.
-            Exploratory Data Analysis (EDA) was conducted using various statistical methods and visualization
-            techniques, including histograms, correlation matrices, and statistical tests to understand the
-            relationships between variables and stroke occurrence.</p>
-
-          <h3>Feature Engineering and Selection</h3>
-          <p>We engineered new features, such as interaction terms between age and other risk factors. Statistical tests
-            (t-tests for continuous variables, chi-square tests for categorical) were used to identify the most
-            significant predictors. This process revealed that age, average glucose level, and the presence of
-            hypertension or heart disease were highly influential factors.</p>
-
-          <h3>Model Development and Evaluation</h3>
-          <p>Multiple machine learning models were implemented and compared:</p>
+          <h3>What I Did</h3>
           <ul>
-            <li>Logistic Regression</li>
-            <li>Random Forest</li>
-            <li>XGBoost</li>
-            <li>LightGBM</li>
-            <li>CatBoost</li>
+            <li><strong>Data Setup</strong>: Started with a dataset packed with patient info—age, glucose levels, BMI, hypertension, smoking habits, you name it. Cleaned it up, filled in gaps (like missing BMI numbers), and poked around with histograms and stats to see what's what.</li>
+            <li><strong>Finding the Clues</strong>: Used stats tricks like t-tests and chi-square to pin down what's tied to strokes. Age and glucose levels kept popping up as big red flags.</li>
+            <li><strong>Building the Model</strong>: Tried a bunch of approaches—Logistic Regression, Random Forest, XGBoost, LightGBM, and CatBoost. Tuned them with Bayesian optimization to squeeze out the best results, focusing on catching as many stroke risks as possible (high recall).</li>
+            <li><strong>Results</strong>: CatBoost came out on top with a recall of 0.9048 and ROC AUC of 0.8621 on the validation set. Translation: it catches 90% of potential stroke cases and does a decent job sorting real risks from noise.</li>
           </ul>
-          <p>We used cross-validation and Bayesian optimization for hyperparameter tuning to optimize each model's
-            performance. Evaluation metrics included precision, recall, F1-score, ROC AUC, and PR AUC, with a particular
-            focus on maximizing recall due to the critical nature of stroke prediction.</p>
 
-          <h3>Key Findings</h3>
-          <p>The CatBoost model emerged as the top performer, achieving a recall of 0.9048 and an ROC AUC score of
-            0.8621 on the validation set. It demonstrated superior ability in balancing high sensitivity (crucial for
-            identifying potential stroke cases) with acceptable precision.</p>
-          <p>Age and average glucose level were consistently the most important predictors across all models.
-            Hypertension and heart disease also showed significant influence on stroke risk.</p>
+          <h3>How It Went Down</h3>
+          <p>Started by scrubbing the data—dropped 201 rows with missing BMI (about 4% of the set) since it wasn't a dealbreaker. Plotted stuff like age and glucose distributions; turns out age is pretty spread out, while glucose spikes high for some folks. Also flagged outliers but kept them—they're often the juicy cases in medical data.</p>
+          
+          <p>Added some combo features—like age times glucose—to catch sneaky patterns. Stats showed age, glucose, hypertension, and heart disease matter most, so I leaned on those. Tested five models, tweaking them to nail recall since missing a stroke is worse than a false alarm. CatBoost won—it's great at balancing "don't miss anything" with "don't freak out over nothing."</p>
 
-          <h3>Model Interpretation and Clinical Insights</h3>
-          <p>Feature importance analysis confirmed that age, glucose levels, and cardiovascular health indicators were
-            the most influential predictors. This insight can guide personalized prevention strategies and help
-            healthcare providers prioritize interventions for high-risk patients.</p>
+          <h3>The Nitty-Gritty</h3>
+          <ul>
+            <li><strong>Data</strong>: 4,909 patients after cleanup. Features like age (0.08 to 82), glucose levels (55 to 271 mg/dL), and binary stuff like hypertension (9% yes). Stroke cases? Just 4%—super imbalanced.</li>
+            <li><strong>Stats</strong>: Age and stroke? Strong link (Cohen's d = 1.18, p < 0.001). Glucose too (d = 0.70). Hypertension's odds ratio hit 4.4—yikes.</li>
+            <li><strong>Model Details</strong>: CatBoost nailed it after 50 rounds of tuning—depth, learning rate, all that jazz. Final recall of 0.9048 means it misses only 4 out of 42 stroke cases in validation. Precision's lower (0.12), but that's the trade-off for not missing the big stuff.</li>
+          </ul>
 
-          <h3>Challenges and Future Work</h3>
-          <p>A key challenge was dealing with the highly imbalanced dataset, where stroke cases were relatively rare.
-            Future work could explore more advanced techniques for handling imbalanced data, such as advanced sampling
-            methods or anomaly detection approaches. Additionally, incorporating more detailed medical history or
-            lifestyle factors could potentially enhance the model's predictive power.</p>
+          <h3>What's Next</h3>
+          <ul>
+            <li>The imbalance is a pain—more stroke data would help.</li>
+            <li>Could try anomaly detection to catch those weird edge cases.</li>
+            <li>Adding lifestyle details (diet, exercise) might sharpen it up.</li>
+          </ul>
+
+          <h3>Why It Matters</h3>
+          <p>This model's a tool, not a doctor. Pair it with a pro's judgment, and it could flag high-risk folks early—maybe save some lives. It's not perfect, but it's a solid start. Check the code and full breakdown on my GitHub if you're curious!</p>
         </div>
       </div>
     </div>

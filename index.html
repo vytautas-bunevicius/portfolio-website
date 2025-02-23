@@ -42,7 +42,6 @@
       justify-content: center;
       align-items: center;
       margin-top: 50px;
-      /* I can adjust the value based on my preference for larger screens */
     }
 
     #tool-icons-container img {
@@ -58,14 +57,11 @@
         max-height: 400px;
         overflow-y: auto;
         margin-top: 50px;
-        /* Reset margin for mobile */
       }
 
       #tool-icons-container img {
         width: 48px;
-        /* I can adjust the width as needed for mobile */
         height: 48px;
-        /* I can adjust the height as needed for mobile */
         margin: 5px;
       }
     }
@@ -111,7 +107,6 @@
     <div id="portfolio-header">
       <div id="portfolio-header-image-container">
         <img src="./assets/images/1311.png" class="portfolio-header-image" alt="">
-        <!-- Removed href attribute to disable the link while keeping the tag for formatting -->
         <a class="no-underline" target="_blank">
           <span class="image-caption"></span>
         </a>
@@ -119,21 +114,20 @@
 
       <div id="portfolio-header-text-container">
         <div class="header-text">
-          <span class="main-title">Hello, my name is Vytautas!</span>
+          <span class="main-title">Hey, I’m Vytautas!</span>
           <div class="body-text" style="margin-top: 20px;">
-            <strong>I turn data into action.</strong> I'm an Analyst who builds machine learning models,
-            creates efficient data pipelines, and uncovers hidden patterns to drive business success.
+            I dig into data to make things happen—whether it’s building models, sorting out pipelines, or spotting trends that actually matter.
           </div>
         </div>
         <a class="button" id="my-work-link">
-          <span class="button-text">Check out my projects</span>
+          <span class="button-text">See my projects</span>
           <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"></image>
         </a>
       </div>
     </div>
 
     <div id="tools-section">
-      <span class="subheader-text">My Tools / Stack</span>
+      <span class="subheader-text">Tools I Use</span>
       <div class="tools-section-content">
         <div id="tool-icons-container">
           <div class="tool-icon" data-tooltip="Python">
@@ -159,62 +153,35 @@
     </div>
 
     <div id="about-section">
-      <span class="subheader-text">My Background / About Me</span>
+      <span class="subheader-text">About Me</span>
       <div class="about-section-content">
         <div class="body-text">
-          My data journey began with business fundamentals at <strong>ISM University of Management and Economics</strong>, where I studied finance and learned the ins and outs of business processes. At <strong>Turing College</strong>, I gained expertise in <strong>data analysis, machine learning, and automation</strong>. After gaining industry experience, I returned to Turing College as a <strong>Mentor</strong> to give back to the community, where I now guide upcoming data experts through code reviews and technical challenges, helping them master the same path I took.
+          I started out at <strong>ISM University of Management and Economics</strong>, getting a grip on finance and how businesses tick. Then at <strong>Turing College</strong>, I dove into data analysis, machine learning, and automation. Now I’m back there as a mentor, helping newbies debug code and figure out the ropes.
         </div>
         <div class="body-text">
-          As an Analyst at <strong>Nord Security</strong>, I develop tools that help teams work better with data. I built data pipelines that automatically collect information from different sources like Ahrefs and YouTube. I also created a <strong>web scraper</strong> that, despite complex JavaScript rendering challenges, helps us understand what people are saying about our products across the internet, and a <strong>machine learning model</strong> that helps us find the right websites to work with.
+          At <strong>Nord Security</strong>, I’m an analyst building tools to wrangle data better. I’ve set up pipelines pulling from places like Ahrefs and YouTube, built a web scraper to snoop on what people say about us online, and made a model to pick out websites worth partnering with.
         </div>
         <div class="body-text">
-          To make our work easier, I created a <strong>centralized hub</strong> using React and PostgreSQL that, after solving complex state management and real-time data sync challenges, tracks daily API usage, automation script statuses, and marketing performance metrics for our growth operations. I also improved how we schedule and monitor our data processes, which <strong>reduced errors by 30%</strong> and saved time for everyone on the team.
+          I also put together a <strong>React and PostgreSQL hub</strong> to track API usage, script status, and marketing metrics. It cut errors by 30% and saved the team a bunch of time after I wrestled with some messy state and sync issues.
         </div>
         <div class="body-text">
-          Before this, I worked at CyberCare helping businesses use our products. This experience taught me how to <strong>communicate clearly</strong> with clients and understand what businesses need to succeed. I helped bring in over 200 new business clients and improved how we help our customers.
+          Before that, I was at CyberCare, figuring out how to explain tech to clients and racking up over 200 new business accounts. It taught me how to talk straight and spot what companies really need.
         </div>
       </div>
     </div>
 
-
     <!-- PROJECTS / MY WORK SECTION -->
     <div id="my-work-section">
-      <!-- TODO - Change the subheader-text to whatever I want the Projects section header to say -->
-      <span class="subheader-text">My Work / My Projects</span>
+      <span class="subheader-text">Projects</span>
 
       <div class="projects-container">
-        <!--
-
-            This is where the project cards live. Here's a base level project card for what to copy:
-            <div class="project-card">
-              <img src="./assets/images/IMAGE_NAME" class="project-image">
-              <div class="project-card-text-container">
-                <div class="subheader-text project-title">PROJECT_NAME</div>
-                <div class="body-text project-card-text">SMALL_PROJECT_DESCRIPTION</div>
-              </div>
-              <a class="button" href="./project-pages/PROJECT_PAGE_NAME.html">
-                <span class="button-text">Read More</span>
-                <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
-              </a>
-            </div>
-
-            - To add a project to the this area, I need to copy the above, paste it below this comment, and change the following:
-                - IMAGE_NAME: the name of the image file in assets/images
-                - PROJECT_NAME: the name of the project (keep it short, it only shows 1 line)
-                - SMALL_PROJECT_DESCRIPTION: a quick project description (max 4 lines)
-                - PROJECT_PAGE_NAME.html: the html filename for the project (must be in project-pages folder)
-
-
-                          -->
-
         <div class="project-card">
           <a href="./projects/stroke/index.html">
             <img src="./assets/images/stroke.jpeg" class="project-image">
           </a>
           <div class="project-card-text-container">
             <div class="subheader-text project-title">Stroke Risk Prediction</div>
-            <div class="body-text project-card-text">Developed a machine learning model to predict stroke risk,
-              identifying key factors and helping healthcare providers assess patient risk profiles.</div>
+            <div class="body-text project-card-text">Built a model to guess stroke risk, picking out what matters most for doctors to keep an eye on.</div>
           </div>
           <a class="button" href="./projects/stroke/index.html">
             <span class="button-text">Read More</span>
@@ -228,8 +195,7 @@
           </a>
           <div class="project-card-text-container">
             <div class="subheader-text project-title">Travel Insurance Analysis</div>
-            <div class="body-text project-card-text">Developed a machine learning model to predict travel insurance
-              purchases, identifying key factors in customer buying decisions.</div>
+            <div class="body-text project-card-text">Made a model to predict who’s buying travel insurance and why—turns out some patterns are pretty clear.</div>
           </div>
           <a class="button" href="./projects/insurance/index.html">
             <span class="button-text">Read More</span>
@@ -243,8 +209,7 @@
           </a>
           <div class="project-card-text-container">
             <div class="subheader-text project-title">Red Wine Analysis</div>
-            <div class="body-text project-card-text">Applied machine learning techniques to analyze red wine chemistry,
-              uncovering relationships between chemical properties and wine quality.</div>
+            <div class="body-text project-card-text">Dug into red wine chemistry with some ML tricks to see what makes a good bottle tick.</div>
           </div>
           <a class="button" href="./projects/red-wine/index.html">
             <span class="button-text">Read More</span>
@@ -258,8 +223,7 @@
           </a>
           <div class="project-card-text-container">
             <div class="subheader-text project-title">Podcasts Analysis</div>
-            <div class="body-text project-card-text">Utilized Python and SQL to analyze podcast reviews, identifying key
-              factors driving listener engagement and satisfaction.</div>
+            <div class="body-text project-card-text">Used Python and SQL to break down podcast reviews and figure out what keeps listeners hooked.</div>
           </div>
           <a class="button" href="./projects/podcasts/index.html">
             <span class="button-text">Read More</span>
@@ -273,8 +237,7 @@
           </a>
           <div class="project-card-text-container">
             <div class="subheader-text project-title">Mental Health Analysis</div>
-            <div class="body-text project-card-text">Investigated mental health trends in the tech industry using Python
-              and SQL, identifying key issues and potential support strategies.</div>
+            <div class="body-text project-card-text">Looked at mental health in tech with Python and SQL, spotting trends and ideas for support.</div>
           </div>
           <a class="button" href="./projects/mental-health/index.html">
             <span class="button-text">Read More</span>
@@ -288,15 +251,17 @@
           </a>
           <div class="project-card-text-container">
             <div class="subheader-text project-title">COVID-19 Analysis</div>
-            <div class="body-text project-card-text">Conducted comprehensive analysis of South Korea's COVID-19 data,
-              revealing pandemic patterns, spread dynamics, and demographic impacts.</div>
+            <div class="body-text project-card-text">Cracked open South Korea’s COVID-19 data to see how it spread and who it hit hardest.</div>
           </div>
           <a class="button" href="./projects/covid19/index.html">
             <span class="button-text">Read More</span>
             <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
           </a>
         </div>
+      </div>
+    </div>
 
+  </div>
 </body>
 
 </html>

@@ -94,11 +94,8 @@
 
   <div id="main-content">
     <div id="project-header">
-      <div class="main-title">Predictive Modeling of Travel Insurance Purchases: A Machine Learning Approach</div>
-      <div class="body-text">This project demonstrates the application of advanced data analysis and machine learning
-        techniques to predict travel insurance purchases. Using a dataset of nearly 2000 customers, we developed a
-        robust predictive model to identify key factors influencing insurance buying decisions, providing valuable
-        insights for targeted marketing strategies in the travel industry.</div>
+      <div class="main-title">Travel Insurance Prediction: Who's Buying It?</div>
+      <div class="body-text">I dug into a dataset from a Tour & Travels Company to figure out which customers are likely to grab their travel insurance package—complete with Covid cover. Using 2019 data on about 2,000 customers, I built a model to predict who's in and who's out, based on stuff like age, income, and travel habits.</div>
       <img class="project-header-image" src="../../assets/images/insurance.jpeg"
         alt="Travel Insurance Analysis Project Header">
     </div>
@@ -107,44 +104,39 @@
       <div class="subheader-text">Project Overview and Methodology</div>
       <div class="project-details-content">
         <div class="body-text">
-          <h3>Data Preprocessing and Exploratory Data Analysis</h3>
-          <p>The initial phase involved rigorous data cleaning and preprocessing. We handled missing values, encoded
-            categorical variables, and normalized numerical features. Exploratory Data Analysis (EDA) was conducted
-            using various statistical methods and visualization techniques, including histograms, box plots, and
-            correlation matrices.</p>
-
-          <h3>Feature Engineering and Selection</h3>
-          <p>We engineered new features and used statistical tests (Chi-square for categorical variables, Mann-Whitney U
-            for numerical) to identify the most significant predictors. This process revealed that employment type,
-            travel frequency, international travel experience, and annual income were highly influential factors.</p>
-
-          <h3>Model Development and Evaluation</h3>
-          <p>Multiple machine learning models were implemented and compared:</p>
+          <h3>What I Did</h3>
           <ul>
-            <li>Logistic Regression</li>
-            <li>Random Forest</li>
-            <li>Gradient Boosting</li>
-            <li>Support Vector Machine (SVM)</li>
+            <li><strong>Data Dive</strong>: Loaded up a dataset with customer details—age, job type, income in Euros (converted from rupees), family size, and more. Cleaned it up, tossed duplicates, and peeked at patterns with charts.</li>
+            <li><strong>Stats Check</strong>: Ran some tests (like Chi-Square and Mann-Whitney U) to spot what drives insurance buys. Income and travel experience stood out big time.</li>
+            <li><strong>Model Building</strong>: Tested four models—Logistic Regression, Random Forest, Gradient Boosting, and SVM. Tweaked them with random search to boost recall (catching more buyers), then mixed them into an ensemble for fun.</li>
+            <li><strong>Results</strong>: Random Forest came out on top. Tuned version hit a solid ROC AUC of 0.70, and the recall-optimized one nailed 100% recall—catching every buyer, though with some extra noise.</li>
           </ul>
-          <p>We used cross-validation and hyperparameter tuning to optimize each model's performance. Evaluation metrics
-            included accuracy, precision, recall, F1-score, and ROC AUC.</p>
 
-          <h3>Key Findings</h3>
-          <p>The Random Forest model emerged as the top performer, achieving an ROC AUC score of 0.7012. It demonstrated
-            superior ability in balancing precision and recall, crucial for practical application in customer targeting.
-          </p>
-          <p>Contrary to initial hypotheses, factors such as age, education level, and presence of chronic diseases
-            showed minimal impact on insurance purchase decisions.</p>
+          <h3>How It Played Out</h3>
+          <ul>
+            <li><strong>Data Prep</strong>: Started with 1,987 records, but 738 were repeats—yep, 37% duplicates. Dropped those, leaving 1,249 unique customers. Converted rupees to Euros (1 INR = 0.011 EUR) for a European vibe. No missing values, which was nice. Age ranged 25-35, income €3,300-€19,800.</li>
+            <li><strong>Exploration</strong>: Plotted histograms and bar charts. Age peaked around 28-29 and 32-33; income had clumps at €6,600 and €13,200. Most folks were private sector workers, grads, and not big flyers. Stats showed income, frequent flying, and overseas trips tied strongly to buying insurance.</li>
+            <li><strong>Model Run</strong>: First pass, Gradient Boosting led with 0.76 accuracy, but recall was meh (0.49). After tuning for recall, Random Forest shone—hit 100% recall with a 0.70 ROC AUC. The ensemble was decent too (0.68 ROC AUC). Trade-off? More false positives to catch everyone.</li>
+            <li><strong>Key Finds</strong>: Income's the star—higher earners buy more. Frequent flyers and globetrotters are in too. Age and family size matter a bit, but education and chronic diseases? Not so much.</li>
+          </ul>
 
-          <h3>Model Interpretation and Business Insights</h3>
-          <p>Feature importance analysis revealed that annual income, travel habits, and employment type were the most
-            influential predictors. This insight can guide personalized marketing strategies and product development in
-            the travel insurance sector.</p>
+          <h3>The Details</h3>
+          <ul>
+            <li><strong>Data</strong>: Post-cleanup, 1,249 customers. Features like age (mean 29.8), family size (2-9), chronic diseases (33% yes), and insurance uptake (39% yes).</li>
+            <li><strong>Stats</strong>: Income difference was huge (p < 0.001, CI €11,381-€12,116 for buyers vs. €9,100-€9,608 for non-buyers). Frequent flyers (p = 0.000009) and abroad travelers (p = 10^-26) were way more likely to buy.</li>
+            <li><strong>Model Specs</strong>: Random Forest won after 50 tuning rounds—max_depth 12, 193 trees, balanced weights. Recall-optimized threshold dropped to 0.0188 for 100% recall. Precision took a hit (0.40), but that's the cost of not missing anyone.</li>
+            <li><strong>Challenges</strong>: Duplicates were a mess—37% is wild. Small sample after cleanup (1,249) limited some stats power. Recall focus meant more false positives.</li>
+          </ul>
 
-          <h3>Challenges and Future Work</h3>
-          <p>A key challenge was balancing model complexity with interpretability. Future work could explore more
-            advanced ensemble methods or deep learning approaches, as well as incorporating additional data sources for
-            enhanced predictive power.</p>
+          <h3>What's Next</h3>
+          <ul>
+            <li>More data would help—1,249's a start, but thin for rare cases.</li>
+            <li>Could tweak thresholds based on business goals—fewer false positives if precision matters more.</li>
+            <li>Adding features like trip frequency or destination might sharpen it.</li>
+          </ul>
+
+          <h3>Why It's Cool</h3>
+          <p>This model flags who's likely to buy travel insurance—great for targeting marketing without bugging everyone. Random Forest gives a solid balance, or the recall-optimized version catches all potentials if you're okay with extra follow-ups. It's not a crystal ball, but it's a handy tool for the company to boost sales smarter. Code's on my GitHub if you want a look!</p>
         </div>
       </div>
     </div>

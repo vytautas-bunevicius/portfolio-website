@@ -97,51 +97,35 @@
 
     <!-- PROJECT HEADER -->
     <div id="project-header">
-      <!-- 
-            TODO
-
-            - I can change the 'main-title' text to the name of my project
-            - I can change the 'body-text' text to a short and sweet description of my project (maybe the same as the one on the project card)
-            - I can change "covid19.jpeg" to the image filename I have uploaded in the assets/images folder.
-          -->
-      <div class="main-title">Exploring Red Wine Characteristics with Machine Learning</div>
-      <div class="body-text">For centuries, winemakers have relied on experience and tradition to craft exceptional
-        wines. But what if we could use science to unveil the secrets behind a truly great bottle? Our project embarked
-        on a data-driven exploration of red wine, leveraging machine learning to identify the key factors influencing
-        its quality.</div>
+      <div class="main-title">Red Wine Quality: What Makes It Good?</div>
+      <div class="body-text">Wine folks obsess over quality—it's what keeps drinkers happy and brands solid. I took a crack at the Red Wine Quality dataset, using data analysis and some machine learning to figure out what makes a red wine tick. The plan? Dig into the chemical makeup—like acidity and alcohol—and see how it ties to that 0-10 quality score.</div>
       <image class="project-header-image" src="../../assets/images/red-wine.jpeg">
     </div>
 
     <!-- PROJECT DETAILS -->
-    <!-- 
-        TODO
-
-        - I can change the 'subheader-text' to whatever header I want my project details to be
-        - I can add paragraphs using the <div class="body-text"></div> elements in the "project-details-content"
-      -->
     <div id="project-details">
-      <div class="subheader-text">Summary / Findings</div>
+      <div class="subheader-text">What I Did</div>
       <div class="project-details-content">
-        <div class="body-text">Our analysis delved into a dataset of over 1,500 wines, examining their physicochemical
-          properties – the measurable characteristics that shape a wine's composition. This included factors like
-          acidity levels (both fixed and volatile), alcohol content, the presence of sulfur compounds, and even density.
-          Crucially, the dataset also included each wine's quality rating, providing a benchmark for our analysis.</div>
-        <div class="body-text">By applying machine learning algorithms, we were able to uncover fascinating connections
-          between these chemical properties and the perceived quality of the wine. For instance, we discovered a
-          positive correlation between alcohol content and quality. This suggests that wines with higher alcohol content
-          are generally perceived as being more enjoyable. However, the story doesn't end there. The analysis also
-          revealed a contrasting influence from volatile acidity. Higher levels of volatile acidity correlated with
-          lower quality ratings, indicating that an excessive amount can create unpleasant flavors and aromas.
-          Interestingly, our exploration also highlighted the importance of specific chemical properties like sulphates
-          and various acidity levels, providing a more nuanced understanding of the complex interplay between chemistry
-          and taste.</div>
-        <div class="body-text">This wasn't just an academic exercise. We further leveraged this newfound knowledge by
-          building models to predict both wine quality and alcohol content based on the analyzed features. These models
-          achieved promising accuracy, demonstrating the potential of data science to become a valuable tool in the
-          winemaker's arsenal. Imagine a future where winemakers can utilize scientific insights to optimize grape
-          selection, fermentation processes, and even predict the quality of their wines before bottling. Our project is
-          a glimpse into this exciting possibility, highlighting how data science can join hands with tradition to
-          elevate the art of winemaking.</div>
+        <div class="body-text">
+          <ul>
+            <li><strong>Data Setup</strong>: Grabbed a dataset with 11 chemical traits (think acidity, sugar, alcohol) and quality ratings for red wines. Cleaned it up, scaled the numbers, and kicked out duplicates.</li>
+            <li><strong>Exploration</strong>: Plotted histograms and heatmaps to spot patterns—like how alcohol and acidity play with quality.</li>
+            <li><strong>Stats Dive</strong>: Ran correlation tests (Pearson's) to nail down key links, like alcohol boosting quality or volatile acidity dragging it down.</li>
+            <li><strong>Modeling</strong>: Built linear regression models to predict quality and alcohol content from the chemical stuff. Checked how well they fit with R-squared and p-values.</li>
+            <li><strong>Results</strong>: Quality model explained 35% of the variance—decent, not amazing. Alcohol model hit 72%, way stronger. Alcohol and acidity were the stars.</li>
+          </ul>
+        </div>
+        <div class="body-text">
+          <strong>How It Went</strong><br>
+          Our data prep started with 1,599 wines, trimmed 240 duplicates, leaving 1,359 unique ones. No missing data—nice. Features like volatile acidity (0.12-1.58) and alcohol (8.4-14.9%) had wild ranges. Log-transformed the skewed ones to tame outliers (dropped from 502 to 360).
+        </div>
+        <div class="body-text">
+          EDA showed most traits skew right—lots of wines cluster low on sugar or sulfur, few go extreme. Quality's bell-shaped around 5-6. Heatmaps flagged alcohol (positive) and volatile acidity (negative) as big quality players. Stats confirmed alcohol's link to quality (r = 0.48, p ≈ 0) and volatile acidity's drag (r = -0.40, p ≈ 0). Fixed acidity and citric acid vibe together (r = 0.66), and citric acid lowers pH (r = -0.55). All super significant.
+        </div>
+        <div class="body-text">
+          <strong>Why It Matters</strong><br>
+          This shows what's behind a good red—alcohol lifts it, too much volatile acidity tanks it. Winemakers could tweak these to up their game, and the models (especially for alcohol) give a decent guess at what's in the bottle. It's not perfect—35% for quality leaves room to grow—but it's a solid start.
+        </div>
       </div>
     </div>
 
