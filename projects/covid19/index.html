@@ -1,26 +1,34 @@
 <!DOCTYPE html>
+<!-- Copyright 2025 Vytautas Bunevičius. All rights reserved. -->
+
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <link rel="icon" href="../../assets/images/1311.png" />
+  <!-- Favicon for the website -->
+  <link rel="icon" href="../../assets/images/1311.png">
   <title>Vytautas Bunevičius</title>
   <meta name="description"
     content="Explore Vytautas Bunevičius's comprehensive analysis of COVID-19 in South Korea using advanced data science techniques. This project delves into the spread patterns, demographic impacts, and effectiveness of government measures, illustrated through interactive visualizations.">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- External stylesheets -->
   <link rel="stylesheet" href="../../css/layout.css">
   <link rel="stylesheet" href="../../css/typography.css">
   <link rel="stylesheet" href="../../css/utilities.css">
 
+  <!-- Deferred JavaScript loading -->
   <script defer src="../../js/script.js"></script>
+
   <style>
+    /* Container for iframe display */
     #iframe-container {
       position: relative;
       width: 100%;
       height: 600px;
     }
 
+    /* Fullscreen toggle button styling */
     #fullscreenBtn {
       position: absolute;
       top: 10px;
@@ -41,6 +49,7 @@
       background-color: rgba(0, 0, 0, 0.7);
     }
 
+    /* Ensure button stays fixed in fullscreen mode across browsers */
     #iframe-container:-webkit-full-screen #fullscreenBtn,
     #iframe-container:-ms-fullscreen #fullscreenBtn,
     #iframe-container:fullscreen #fullscreenBtn {
@@ -49,6 +58,7 @@
       right: 10px;
     }
 
+    /* Responsive adjustments for smaller screens */
     @media (max-width: 768px) {
       #iframe-container {
         height: 400px;
@@ -64,6 +74,7 @@
 </head>
 
 <body>
+  <!-- Navigation bar -->
   <div class="navbar">
     <a class="nav-title-link" href="../../index.html">
       <span class="nav-title">Vytautas Bunevičius</span>
@@ -72,11 +83,11 @@
       <a class="button" href="mailto:vytautas@bunevicius.com">
         <span class="button-text">Contact</span>
       </a>
+      <!-- Dark mode toggle button with sun/moon icons -->
       <button id="darkModeToggle" class="button dark-mode-button">
         <svg width="30" height="30" id="light-icon">
           <circle cx="15" cy="15" r="6" fill="currentColor" />
-          <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4">
-          </line>
+          <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4" />
           <use href="#ray" transform="rotate(45 15 15)" />
           <use href="#ray" transform="rotate(90 15 15)" />
           <use href="#ray" transform="rotate(135 15 15)" />
@@ -92,48 +103,63 @@
     </div>
   </div>
 
-  <!-- MAIN PAGE CONTENT -->
+  <!-- Main content container -->
   <div id="main-content">
-
-    <!-- PROJECT HEADER -->
+    <!-- Project header section -->
     <div id="project-header">
       <div class="main-title">COVID-19 in South Korea: A Deep Dive</div>
-      <div class="body-text">South Korea was a pandemic poster child—early cases, quick moves, tons of data. I dug into 11 datasets to unpack how COVID-19 hit, spread, and got tamed there. From cases and demographics to weather and policies, it's a full-on look at what went down and why.</div>
-      <image class="project-header-image" src="../../assets/images/covid19.jpeg">
+      <div class="body-text">South Korea was a pandemic poster child—early cases, quick moves, tons of data. I dug into
+        11 datasets to unpack how COVID-19 hit, spread, and got tamed there. From cases and demographics to weather and
+        policies, it's a full-on look at what went down and why.</div>
+      <img class="project-header-image" src="../../assets/images/covid19.jpeg"
+        alt="COVID-19 in South Korea Project Header">
     </div>
 
-    <!-- PROJECT DETAILS -->
+    <!-- Project details section -->
     <div id="project-details">
       <div class="project-details-content">
         <div class="body-text">
           <div class="subheader-text">What I Did</div><br>
           <ul>
-            <li><strong>Data Prep</strong>: Loaded 11 datasets—cases, patients, timelines, regions, you name it. Cleaned up missing bits and funky formats.</li>
-            <li><strong>Exploration</strong>: Asked the biggies: How'd it spread? Who got hit hardest? Did policies work? Used maps, charts, and stats to find out.</li>
-            <li><strong>Analysis</strong>: Tracked trends over time, mapped hotspots, checked demographics, and tested stuff like weather's role.</li>
-            <li><strong>Results</strong>: Pieced together patterns—like Daegu's wild spike—and gauged what stopped the virus in its tracks.</li>
+            <li><strong>Data Prep</strong>: Loaded 11 datasets—cases, patients, timelines, regions, you name it. Cleaned
+              up missing bits and funky formats.</li>
+            <li><strong>Exploration</strong>: Asked the biggies: How'd it spread? Who got hit hardest? Did policies
+              work? Used maps, charts, and stats to find out.</li>
+            <li><strong>Analysis</strong>: Tracked trends over time, mapped hotspots, checked demographics, and tested
+              stuff like weather's role.</li>
+            <li><strong>Results</strong>: Pieced together patterns—like Daegu's wild spike—and gauged what stopped the
+              virus in its tracks.</li>
           </ul>
         </div>
 
         <div class="body-text">
           <div class="subheader-text">How It Went</div><br>
           <ul>
-            <li><strong>Data Setup</strong>: 11 tables—cases (174 rows), patients (5k+), time series, weather, policies, more. Some gaps (like 4k missing symptom dates), but mostly solid after cleanup.</li>
-            <li><strong>Spread</strong>: Daegu was ground zero—6,680 cases, Nam-gu alone at 4,511. Group infections (71%) ruled—think churches, clubs—over solo cases. Overseas inflows and close contacts fueled it too.</li>
-            <li><strong>Demographics</strong>: 20s led confirmed cases (post-imputation, females edged out), but 60s+ took the mortality hit. Men died more despite fewer cases—maybe smoking or heart issues.</li>
-            <li><strong>Time</strong>: Cases peaked February 2020, releases climbed by March, deaths stayed low-ish. Tests shot up fast—smart move.</li>
-            <li><strong>Places</strong>: Daegu dwarfed Seoul (1,280 cases). Smaller provinces dodged the worst. Seoul's floating crowd spiked in February—outbreak chaos?</li>
+            <li><strong>Data Setup</strong>: 11 tables—cases (174 rows), patients (5k+), time series, weather, policies,
+              more. Some gaps (like 4k missing symptom dates), but mostly solid after cleanup.</li>
+            <li><strong>Spread</strong>: Daegu was ground zero—6,680 cases, Nam-gu alone at 4,511. Group infections
+              (71%) ruled—think churches, clubs—over solo cases. Overseas inflows and close contacts fueled it too.</li>
+            <li><strong>Demographics</strong>: 20s led confirmed cases (post-imputation, females edged out), but 60s+
+              took the mortality hit. Men died more despite fewer cases—maybe smoking or heart issues.</li>
+            <li><strong>Time</strong>: Cases peaked February 2020, releases climbed by March, deaths stayed low-ish.
+              Tests shot up fast—smart move.</li>
+            <li><strong>Places</strong>: Daegu dwarfed Seoul (1,280 cases). Smaller provinces dodged the worst. Seoul's
+              floating crowd spiked in February—outbreak chaos?</li>
             <li><strong>Weather</strong>: Temp vs. cases? Barely a whisper (correlation 0.015)—no big link.</li>
-            <li><strong>Policies</strong>: Alerts (Level 4 by Feb 23), school shifts, bar bans—tight stuff rolled out fast. Searches for "coronavirus" spiked in March, showing people were dialed in.</li>
+            <li><strong>Policies</strong>: Alerts (Level 4 by Feb 23), school shifts, bar bans—tight stuff rolled out
+              fast. Searches for "coronavirus" spiked in March, showing people were dialed in.</li>
           </ul>
         </div>
 
         <div class="body-text">
           <div class="subheader-text">The Details</div><br>
           <ul>
-            <li><strong>Data</strong>: 174 cases, 5,166 patients, daily stats from Jan 2020. Lat/long mapped, provinces coded, policies dated.</li>
-            <li><strong>Stats</strong>: Group cases 71% (124/174), Daegu's 6,680 vs. Incheon's 202. Age 20s at 24% confirmed, 80s at 50% deceased (TimeAge). Temp correlation 0.015—meh.</li>
-            <li><strong>Trends</strong>: Feb peak (daily confirmed ~800), March releases soared, searches hit 100 in March.</li>
+            <li><strong>Data</strong>: 174 cases, 5,166 patients, daily stats from Jan 2020. Lat/long mapped, provinces
+              coded, policies dated.</li>
+            <li><strong>Stats</strong>: Group cases 71% (124/174), Daegu's 6,680 vs. Incheon's 202. Age 20s at 24%
+              confirmed, 80s at 50% deceased (TimeAge). Temp correlation 0.015—meh.</li>
+            <li><strong>Trends</strong>: Feb peak (daily confirmed ~800), March releases soared, searches hit 100 in
+              March.</li>
           </ul>
 
           <div class="subheader-text">What's Next</div><br>
@@ -144,12 +170,15 @@
           </ul>
 
           <div class="subheader-text">Why It Matters</div><br>
-          South Korea's story is a playbook: Daegu got slammed (group spread), young folks carried it, older ones bore the brunt. Fast testing and lockdowns crushed it—cases fell while releases rose. Small firms talked mental health more, big ones had resources. It's a blueprint for tackling the next big bug. Maps and charts are on my GitHub—dive in!
+          South Korea's story is a playbook: Daegu got slammed (group spread), young folks carried it, older ones bore
+          the brunt. Fast testing and lockdowns crushed it—cases fell while releases rose. Small firms talked mental
+          health more, big ones had resources. It's a blueprint for tackling the next big bug. Maps and charts are on my
+          GitHub—dive in!
         </div>
       </div>
     </div>
 
-
+    <!-- Embedded notebook section -->
     <div id="project-notebook">
       <div class="subheader-text">What the Data Showed</div><br>
       <div id="iframe-container">
@@ -158,6 +187,7 @@
       </div>
     </div>
 
+    <!-- Footer with social links -->
     <div id="footer">
       <a class="icon-link" target="_blank" href="https://github.com/vytautas-bunevicius/">
         <img src="../../assets/icons/github.svg" class="footer-icon" alt="GitHub Icon">
@@ -169,9 +199,7 @@
         <img src="../../assets/icons/mail.svg" class="footer-icon" alt="Email Icon">
       </a>
     </div>
-
   </div>
-
 </body>
 
 </html>

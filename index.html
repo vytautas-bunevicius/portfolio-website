@@ -1,35 +1,40 @@
 <!DOCTYPE html>
+<!-- Copyright 2025 Vytautas Bunevičius. All rights reserved. -->
+
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <link rel="icon" href="./assets/images/1311.png" />
+  <!-- Favicon for the portfolio website -->
+  <link rel="icon" href="./assets/images/1311.png">
   <title>Vytautas Bunevičius</title>
   <meta name="description"
     content="Portfolio showcasing skills, projects, and experience in data analysis, machine learning, and data engineering.">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Google tag (gtag.js) - Placed at the beginning of <head> -->
+  <!-- Google Analytics tracking code -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-46T0HTTZSL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-46T0HTTZSL');
   </script>
 
+  <!-- External stylesheets -->
   <link rel="stylesheet" href="./css/layout.css">
   <link rel="stylesheet" href="./css/typography.css">
   <link rel="stylesheet" href="./css/utilities.css">
 
   <style>
+    /* Styling for about section content */
     .about-section-content {
       text-align: justify;
       justify-content: space-between;
       padding: 10px 0 0 0;
     }
 
+    /* General body text styling */
     .body-text {
       text-align: justify;
       justify-content: space-between;
@@ -42,6 +47,7 @@
       margin-bottom: 0;
     }
 
+    /* Container for tool icons */
     #tool-icons-container {
       display: flex;
       justify-content: center;
@@ -55,7 +61,7 @@
       margin: 0 10px;
     }
 
-    /* Mobile styles */
+    /* Responsive adjustments for mobile devices */
     @media (max-width: 600px) {
       #tool-icons-container {
         flex-wrap: wrap;
@@ -71,6 +77,7 @@
       }
     }
 
+    /* My Work section adjustments */
     #my-work-section {
       margin-top: -60px;
       padding-top: 0;
@@ -91,46 +98,46 @@
     }
   </style>
 
+  <!-- Deferred JavaScript loading -->
   <script defer src="./js/script.js"></script>
 </head>
 
 <body>
-
+  <!-- Navigation bar -->
   <div class="navbar">
-      <a class="nav-title-link" href="../../index.html">
-        <span class="nav-title">Vytautas Bunevičius</span>
+    <a class="nav-title-link" href="../../index.html">
+      <span class="nav-title">Vytautas Bunevičius</span>
+    </a>
+    <div class="navbar-buttons">
+      <a class="button" href="mailto:vytautas@bunevicius.com">
+        <span class="button-text">Contact</span>
       </a>
-      <div class="navbar-buttons">
-        <a class="button" href="mailto:vytautas@bunevicius.com">
-          <span class="button-text">Contact</span>
-        </a>
-        <button id="darkModeToggle" class="button dark-mode-button">
-          <svg width="30" height="30" id="light-icon">
-            <circle cx="15" cy="15" r="6" fill="currentColor" />
-            <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4">
-            </line>
-            <use href="#ray" transform="rotate(45 15 15)" />
-            <use href="#ray" transform="rotate(90 15 15)" />
-            <use href="#ray" transform="rotate(135 15 15)" />
-            <use href="#ray" transform="rotate(180 15 15)" />
-            <use href="#ray" transform="rotate(225 15 15)" />
-            <use href="#ray" transform="rotate(270 15 15)" />
-            <use href="#ray" transform="rotate(315 15 15)" />
-          </svg>
-          <svg width="30" height="30" id="dark-icon">
-            <path fill="currentColor" d="M 23, 5 A 12 12 0 1 0 23, 25 A 12 12 0 0 1 23, 5" />
-          </svg>
-        </button>
-      </div>
+      <!-- Dark mode toggle button with sun/moon icons -->
+      <button id="darkModeToggle" class="button dark-mode-button">
+        <svg width="30" height="30" id="light-icon">
+          <circle cx="15" cy="15" r="6" fill="currentColor" />
+          <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4" />
+          <use href="#ray" transform="rotate(45 15 15)" />
+          <use href="#ray" transform="rotate(90 15 15)" />
+          <use href="#ray" transform="rotate(135 15 15)" />
+          <use href="#ray" transform="rotate(180 15 15)" />
+          <use href="#ray" transform="rotate(225 15 15)" />
+          <use href="#ray" transform="rotate(270 15 15)" />
+          <use href="#ray" transform="rotate(315 15 15)" />
+        </svg>
+        <svg width="30" height="30" id="dark-icon">
+          <path fill="currentColor" d="M 23, 5 A 12 12 0 1 0 23, 25 A 12 12 0 0 1 23, 5" />
+        </svg>
+      </button>
     </div>
+  </div>
 
-  <!-- MAIN PAGE CONTENT -->
+  <!-- Main page content container -->
   <div id="main-content">
-
-    <!-- PORTFOLIO HEADER -->
+    <!-- Portfolio header section -->
     <div id="portfolio-header">
       <div id="portfolio-header-image-container">
-        <img src="./assets/images/1311.png" class="portfolio-header-image" alt="">
+        <img src="./assets/images/1311.png" class="portfolio-header-image" alt="Portfolio Header Image">
         <a class="no-underline" target="_blank">
           <span class="image-caption"></span>
         </a>
@@ -140,151 +147,165 @@
         <div class="header-text">
           <span class="main-title">Hey, I'm Vytautas!</span>
           <div class="body-text" style="margin-top: 20px;">
-            I dig into data to make things happen—whether it's building models, sorting out pipelines, or spotting trends that actually matter.
+            I dig into data to make things happen—whether it's building models, sorting out pipelines, or spotting
+            trends that actually matter.
           </div>
         </div>
         <a class="button" id="my-work-link">
           <span class="button-text">See my projects</span>
-          <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"></image>
+          <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon" alt="Arrow Right">
         </a>
       </div>
     </div>
 
+    <!-- Tools section -->
     <div id="tools-section">
       <span class="subheader-text">Tools I Use</span>
       <div class="tools-section-content">
         <div id="tool-icons-container">
           <div class="tool-icon" data-tooltip="Python">
-            <img src="./assets/icons/python.svg" alt="Python">
+            <img src="./assets/icons/python.svg" alt="Python Icon">
           </div>
           <div class="tool-icon" data-tooltip="JavaScript">
-            <img src="./assets/icons/javascript.svg" alt="JavaScript">
+            <img src="./assets/icons/javascript.svg" alt="JavaScript Icon">
           </div>
           <div class="tool-icon" data-tooltip="Go">
-            <img src="./assets/icons/go.svg" alt="Go">
+            <img src="./assets/icons/go.svg" alt="Go Icon">
           </div>
           <div class="tool-icon" data-tooltip="MySQL">
-            <img src="./assets/icons/mysql.svg" alt="MySQL">
+            <img src="./assets/icons/mysql.svg" alt="MySQL Icon">
           </div>
           <div class="tool-icon" data-tooltip="Google Cloud Platform">
-            <img src="./assets/icons/cloud.svg" alt="Google Cloud Platform">
+            <img src="./assets/icons/cloud.svg" alt="Google Cloud Platform Icon">
           </div>
           <div class="tool-icon" data-tooltip="Docker">
-            <img src="./assets/icons/docker.svg" alt="Docker">
+            <img src="./assets/icons/docker.svg" alt="Docker Icon">
           </div>
         </div>
       </div>
     </div>
 
+    <!-- About section -->
     <div id="about-section">
       <span class="subheader-text">About Me</span>
       <div class="about-section-content">
         <div class="body-text">
-          I started out at <strong>ISM University of Management and Economics</strong>, getting a grip on finance and how businesses tick. Then at <strong>Turing College</strong>, I dove into data analysis, machine learning, and automation. Now I'm back there as a mentor, helping newbies debug code and figure out the ropes.
+          I started out at <strong>ISM University of Management and Economics</strong>, getting a grip on finance and
+          how businesses tick. Then at <strong>Turing College</strong>, I dove into data analysis, machine learning, and
+          automation. Now I'm back there as a mentor, helping newbies debug code and figure out the ropes.
         </div>
         <div class="body-text">
-          At <strong>Nord Security</strong>, I'm an analyst building tools to wrangle data better. I've set up pipelines pulling from places like Ahrefs and YouTube, built a web scraper to snoop on what people say about us online, and made a model to pick out websites worth partnering with.
+          At <strong>Nord Security</strong>, I'm an analyst building tools to wrangle data better. I've set up pipelines
+          pulling from places like Ahrefs and YouTube, built a web scraper to snoop on what people say about us online,
+          and made a model to pick out websites worth partnering with.
         </div>
         <div class="body-text">
-          I also put together a <strong>React and PostgreSQL hub</strong> to track API usage, script status, and marketing metrics. It cut errors by 30% and saved the team a bunch of time after I wrestled with some messy state and sync issues.
+          I also put together a <strong>React and PostgreSQL hub</strong> to track API usage, script status, and
+          marketing metrics. It cut errors by 30% and saved the team a bunch of time after I wrestled with some messy
+          state and sync issues.
         </div>
         <div class="body-text">
-          Before that, I was at CyberCare, figuring out how to explain tech to clients and racking up over 200 new business accounts. It taught me how to talk straight and spot what companies really need.
+          Before that, I was at CyberCare, figuring out how to explain tech to clients and racking up over 200 new
+          business accounts. It taught me how to talk straight and spot what companies really need.
         </div>
       </div>
     </div>
 
-    <!-- PROJECTS / MY WORK SECTION -->
+    <!-- Projects section -->
     <div id="my-work-section">
       <span class="subheader-text">Projects</span>
-
       <div class="projects-container">
         <div class="project-card">
           <a href="./projects/stroke/index.html">
-            <img src="./assets/images/stroke.jpeg" class="project-image">
+            <img src="./assets/images/stroke.jpeg" class="project-image" alt="Stroke Risk Prediction">
           </a>
           <div class="project-card-text-container">
             <div class="subheader-text project-title">Stroke Risk Prediction</div>
-            <div class="body-text project-card-text">Built a model to guess stroke risk, picking out what matters most for doctors to keep an eye on.</div>
+            <div class="body-text project-card-text">Built a model to guess stroke risk, picking out what matters most
+              for doctors to keep an eye on.</div>
           </div>
           <a class="button" href="./projects/stroke/index.html">
             <span class="button-text">Read More</span>
-            <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
+            <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon" alt="Arrow Right">
           </a>
         </div>
 
         <div class="project-card">
           <a href="./projects/insurance/index.html">
-            <img src="./assets/images/insurance.jpeg" class="project-image">
+            <img src="./assets/images/insurance.jpeg" class="project-image" alt="Travel Insurance Analysis">
           </a>
           <div class="project-card-text-container">
             <div class="subheader-text project-title">Travel Insurance Analysis</div>
-            <div class="body-text project-card-text">Made a model to predict who's buying travel insurance and why—turns out some patterns are pretty clear.</div>
+            <div class="body-text project-card-text">Made a model to predict who's buying travel insurance and why—turns
+              out some patterns are pretty clear.</div>
           </div>
           <a class="button" href="./projects/insurance/index.html">
             <span class="button-text">Read More</span>
-            <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
+            <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon" alt="Arrow Right">
           </a>
         </div>
 
         <div class="project-card">
           <a href="./projects/red-wine/index.html">
-            <img src="./assets/images/red-wine.jpeg" class="project-image">
+            <img src="./assets/images/red-wine.jpeg" class="project-image" alt="Red Wine Analysis">
           </a>
           <div class="project-card-text-container">
             <div class="subheader-text project-title">Red Wine Analysis</div>
-            <div class="body-text project-card-text">Dug into red wine chemistry with some ML tricks to see what makes a good bottle tick.</div>
+            <div class="body-text project-card-text">Dug into red wine chemistry with some ML tricks to see what makes a
+              good bottle tick.</div>
           </div>
           <a class="button" href="./projects/red-wine/index.html">
             <span class="button-text">Read More</span>
-            <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
+            <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon" alt="Arrow Right">
           </a>
         </div>
 
         <div class="project-card">
           <a href="./projects/podcasts/index.html">
-            <img src="./assets/images/podcasts.jpeg" class="project-image">
+            <img src="./assets/images/podcasts.jpeg" class="project-image" alt="Podcasts Analysis">
           </a>
           <div class="project-card-text-container">
             <div class="subheader-text project-title">Podcasts Analysis</div>
-            <div class="body-text project-card-text">Used Python and SQL to break down podcast reviews and figure out what keeps listeners hooked.</div>
+            <div class="body-text project-card-text">Used Python and SQL to break down podcast reviews and figure out
+              what keeps listeners hooked.</div>
           </div>
           <a class="button" href="./projects/podcasts/index.html">
             <span class="button-text">Read More</span>
-            <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
+            <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon" alt="Arrow Right">
           </a>
         </div>
 
         <div class="project-card">
           <a href="./projects/mental-health/index.html">
-            <img src="./assets/images/mental.jpeg" class="project-image">
+            <img src="./assets/images/mental.jpeg" class="project-image" alt="Mental Health Analysis">
           </a>
           <div class="project-card-text-container">
             <div class="subheader-text project-title">Mental Health Analysis</div>
-            <div class="body-text project-card-text">Looked at mental health in tech with Python and SQL, spotting trends and ideas for support.</div>
+            <div class="body-text project-card-text">Looked at mental health in tech with Python and SQL, spotting
+              trends and ideas for support.</div>
           </div>
           <a class="button" href="./projects/mental-health/index.html">
             <span class="button-text">Read More</span>
-            <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
+            <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon" alt="Arrow Right">
           </a>
         </div>
 
         <div class="project-card">
           <a href="./projects/covid19/index.html">
-            <img src="./assets/images/covid19.jpeg" class="project-image">
+            <img src="./assets/images/covid19.jpeg" class="project-image" alt="COVID-19 Analysis">
           </a>
           <div class="project-card-text-container">
             <div class="subheader-text project-title">COVID-19 Analysis</div>
-            <div class="body-text project-card-text">Cracked open South Korea's COVID-19 data to see how it spread and who it hit hardest.</div>
+            <div class="body-text project-card-text">Cracked open South Korea's COVID-19 data to see how it spread and
+              who it hit hardest.</div>
           </div>
           <a class="button" href="./projects/covid19/index.html">
             <span class="button-text">Read More</span>
-            <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
+            <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon" alt="Arrow Right">
           </a>
         </div>
       </div>
     </div>
-
   </div>
 </body>
 

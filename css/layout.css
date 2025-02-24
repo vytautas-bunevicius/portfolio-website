@@ -1,24 +1,36 @@
+/* Copyright 2025 Vytautas Bunevičius. All rights reserved. */
+
+/* Root variables for consistent theming */
 :root {
   --primary-color: #333;
+  /* Primary color for elements */
   --background-color: #fff;
+  /* Default background color */
   --text-color: #363636;
+  /* Default text color */
   --button-hover-color: #f5f5f5;
+  /* Button hover state color */
   --font-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* Font fallback stack */
 }
 
+/* Dark mode base styling */
 .dark-mode {
   background-color: #363636;
   color: white;
 }
 
+/* Dark mode tooltip text color */
 .dark-mode .tool-icon::after {
   color: white;
 }
 
+/* Global box-sizing reset */
 * {
   box-sizing: border-box;
 }
 
+/* Prevent text size adjustment on orientation change */
 html {
   text-size-adjust: none;
   -webkit-text-size-adjust: none;
@@ -26,13 +38,14 @@ html {
   -ms-text-size-adjust: none;
 }
 
+/* Base body styling */
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Main Page Layout */
+/* Main content layout */
 #main-content {
   margin: 225px 425px;
   display: flex;
@@ -40,7 +53,7 @@ body {
   gap: 96px;
 }
 
-/* Portfolio Header */
+/* Portfolio header layout */
 #portfolio-header {
   display: flex;
   gap: 20px;
@@ -66,7 +79,7 @@ body {
   flex-basis: 50%;
 }
 
-/* About Section */
+/* About section layout */
 #about-section {
   display: flex;
   flex-direction: column;
@@ -79,7 +92,7 @@ body {
   gap: 34px;
 }
 
-/* Project Section */
+/* Project section layout */
 #my-work-section {
   display: flex;
   flex-direction: column;
@@ -92,7 +105,7 @@ body {
   flex-wrap: wrap;
 }
 
-/* Project Cards */
+/* Project card styling */
 .project-card {
   max-width: calc((100% - 32px) / 3);
   display: flex;
@@ -119,7 +132,7 @@ body {
   margin-top: auto;
 }
 
-/* Project Pages */
+/* Project page header layout */
 #project-header {
   display: flex;
   flex-direction: column;
@@ -131,6 +144,7 @@ body {
   height: auto;
 }
 
+/* Project details layout */
 #project-details {
   display: flex;
   flex-direction: column;
@@ -143,7 +157,7 @@ body {
   gap: 34px;
 }
 
-/* Project Gallery */
+/* Project gallery layout */
 #project-gallery {
   display: flex;
   flex-direction: column;
@@ -172,6 +186,7 @@ body {
   height: auto;
 }
 
+/* Tool icons layout and interactivity */
 #tool-icons-container {
   display: flex;
   gap: 1px;
@@ -216,6 +231,7 @@ body {
   transform: translateX(-50%) translateY(-5px);
 }
 
+/* Dark mode button overrides */
 .dark-mode-button {
   outline: none !important;
   box-shadow: none !important;
@@ -226,7 +242,7 @@ body {
   box-shadow: none !important;
 }
 
-/* Media Queries */
+/* Responsive adjustments for various screen sizes */
 @media only screen and (max-width: 1600px) {
   #main-content {
     margin: 225px 275px;
@@ -269,7 +285,7 @@ body {
   }
 }
 
-/* New media query for screens 2560px and wider */
+/* Responsive adjustments for screens 2560px and wider */
 @media only screen and (min-width: 2560px) {
   #main-content {
     margin: 225px auto;
@@ -290,7 +306,8 @@ body {
   }
 
   .project-card-text-container {
-    min-height: 150px; /* Adjust this value as needed */
+    min-height: 150px;
+    /* Ensures consistent card height */
   }
 
   #tools-section {
@@ -320,7 +337,7 @@ body {
   }
 }
 
-/* Additional media query for even larger screens */
+/* Responsive adjustments for screens 3840px and wider */
 @media only screen and (min-width: 3840px) {
   #main-content {
     max-width: 2560px;
@@ -331,7 +348,8 @@ body {
   }
 
   .project-card-text-container {
-    min-height: 200px; /* Adjust this value as needed */
+    min-height: 200px;
+    /* Ensures consistent card height */
   }
 
   #tool-icons-container {

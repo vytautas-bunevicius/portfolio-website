@@ -1,26 +1,34 @@
 <!DOCTYPE html>
+<!-- Copyright 2025 Vytautas Bunevičius. All rights reserved. -->
+
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <link rel="icon" href="../../assets/images/1311.png" />
+  <!-- Favicon for the website -->
+  <link rel="icon" href="../../assets/images/1311.png">
   <title>Vytautas Bunevičius</title>
   <meta name="description"
     content="Vytautas Bunevičius delves into red wine characteristics using machine learning to uncover the scientific factors that influence wine quality. Discover our data-driven approach to enhancing traditional winemaking practices.">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- External stylesheets -->
   <link rel="stylesheet" href="../../css/layout.css">
   <link rel="stylesheet" href="../../css/typography.css">
   <link rel="stylesheet" href="../../css/utilities.css">
 
+  <!-- Deferred JavaScript loading -->
   <script defer src="../../js/script.js"></script>
+
   <style>
+    /* Container for iframe display */
     #iframe-container {
       position: relative;
       width: 100%;
       height: 600px;
     }
 
+    /* Fullscreen toggle button styling */
     #fullscreenBtn {
       position: absolute;
       top: 10px;
@@ -41,6 +49,7 @@
       background-color: rgba(0, 0, 0, 0.7);
     }
 
+    /* Ensure button stays fixed in fullscreen mode across browsers */
     #iframe-container:-webkit-full-screen #fullscreenBtn,
     #iframe-container:-ms-fullscreen #fullscreenBtn,
     #iframe-container:fullscreen #fullscreenBtn {
@@ -49,6 +58,7 @@
       right: 10px;
     }
 
+    /* Responsive adjustments for smaller screens */
     @media (max-width: 768px) {
       #iframe-container {
         height: 400px;
@@ -64,6 +74,7 @@
 </head>
 
 <body>
+  <!-- Navigation bar -->
   <div class="navbar">
     <a class="nav-title-link" href="../../index.html">
       <span class="nav-title">Vytautas Bunevičius</span>
@@ -72,11 +83,11 @@
       <a class="button" href="mailto:vytautas@bunevicius.com">
         <span class="button-text">Contact</span>
       </a>
+      <!-- Dark mode toggle button with sun/moon icons -->
       <button id="darkModeToggle" class="button dark-mode-button">
         <svg width="30" height="30" id="light-icon">
           <circle cx="15" cy="15" r="6" fill="currentColor" />
-          <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4">
-          </line>
+          <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4" />
           <use href="#ray" transform="rotate(45 15 15)" />
           <use href="#ray" transform="rotate(90 15 15)" />
           <use href="#ray" transform="rotate(135 15 15)" />
@@ -92,44 +103,59 @@
     </div>
   </div>
 
-  <!-- MAIN PAGE CONTENT -->
+  <!-- Main content container -->
   <div id="main-content">
-
-    <!-- PROJECT HEADER -->
+    <!-- Project header section -->
     <div id="project-header">
       <div class="main-title">Red Wine Quality: What Makes It Good?</div>
-      <div class="body-text">Wine folks obsess over quality—it's what keeps drinkers happy and brands solid. I took a crack at the Red Wine Quality dataset, using data analysis and some machine learning to figure out what makes a red wine tick. The plan? Dig into the chemical makeup—like acidity and alcohol—and see how it ties to that 0-10 quality score.</div>
-      <image class="project-header-image" src="../../assets/images/red-wine.jpeg">
+      <div class="body-text">Wine folks obsess over quality—it's what keeps drinkers happy and brands solid. I took a
+        crack at the Red Wine Quality dataset, using data analysis and some machine learning to figure out what makes a
+        red wine tick. The plan? Dig into the chemical makeup—like acidity and alcohol—and see how it ties to that 0-10
+        quality score.</div>
+      <img class="project-header-image" src="../../assets/images/red-wine.jpeg" alt="Red Wine Quality Project Header">
     </div>
 
-    <!-- PROJECT DETAILS -->
+    <!-- Project details section -->
     <div id="project-details">
       <div class="subheader-text">What I Did</div>
       <div class="project-details-content">
         <div class="body-text">
           <ul>
-            <li><strong>Data Setup</strong>: Grabbed a dataset with 11 chemical traits (think acidity, sugar, alcohol) and quality ratings for red wines. Cleaned it up, scaled the numbers, and kicked out duplicates.</li>
-            <li><strong>Exploration</strong>: Plotted histograms and heatmaps to spot patterns—like how alcohol and acidity play with quality.</li>
-            <li><strong>Stats Dive</strong>: Ran correlation tests (Pearson's) to nail down key links, like alcohol boosting quality or volatile acidity dragging it down.</li>
-            <li><strong>Modeling</strong>: Built linear regression models to predict quality and alcohol content from the chemical stuff. Checked how well they fit with R-squared and p-values.</li>
-            <li><strong>Results</strong>: Quality model explained 35% of the variance—decent, not amazing. Alcohol model hit 72%, way stronger. Alcohol and acidity were the stars.</li>
+            <li><strong>Data Setup</strong>: Grabbed a dataset with 11 chemical traits (think acidity, sugar, alcohol)
+              and quality ratings for red wines. Cleaned it up, scaled the numbers, and kicked out duplicates.</li>
+            <li><strong>Exploration</strong>: Plotted histograms and heatmaps to spot patterns—like how alcohol and
+              acidity play with quality.</li>
+            <li><strong>Stats Dive</strong>: Ran correlation tests (Pearson's) to nail down key links, like alcohol
+              boosting quality or volatile acidity dragging it down.</li>
+            <li><strong>Modeling</strong>: Built linear regression models to predict quality and alcohol content from
+              the chemical stuff. Checked how well they fit with R-squared and p-values.</li>
+            <li><strong>Results</strong>: Quality model explained 35% of the variance—decent, not amazing. Alcohol model
+              hit 72%, way stronger. Alcohol and acidity were the stars.</li>
           </ul>
         </div>
         <div class="subheader-text">How It Went</div>
         <div class="body-text">
-          Our data prep started with 1,599 wines, trimmed 240 duplicates, leaving 1,359 unique ones. No missing data—nice. Features like volatile acidity (0.12-1.58) and alcohol (8.4-14.9%) had wild ranges. Log-transformed the skewed ones to tame outliers (dropped from 502 to 360).
+          Our data prep started with 1,599 wines, trimmed 240 duplicates, leaving 1,359 unique ones. No missing
+          data—nice. Features like volatile acidity (0.12-1.58) and alcohol (8.4-14.9%) had wild ranges. Log-transformed
+          the skewed ones to tame outliers (dropped from 502 to 360).
         </div>
         <div class="body-text">
-          EDA showed most traits skew right—lots of wines cluster low on sugar or sulfur, few go extreme. Quality's bell-shaped around 5-6. Heatmaps flagged alcohol (positive) and volatile acidity (negative) as big quality players. Stats confirmed alcohol's link to quality (r = 0.48, p ≈ 0) and volatile acidity's drag (r = -0.40, p ≈ 0). Fixed acidity and citric acid vibe together (r = 0.66), and citric acid lowers pH (r = -0.55). All super significant.
+          EDA showed most traits skew right—lots of wines cluster low on sugar or sulfur, few go extreme. Quality's
+          bell-shaped around 5-6. Heatmaps flagged alcohol (positive) and volatile acidity (negative) as big quality
+          players. Stats confirmed alcohol's link to quality (r = 0.48, p ≈ 0) and volatile acidity's drag (r = -0.40, p
+          ≈ 0). Fixed acidity and citric acid vibe together (r = 0.66), and citric acid lowers pH (r = -0.55). All super
+          significant.
         </div>
         <div class="subheader-text">Why It Matters</div>
         <div class="body-text">
-          This shows what's behind a good red—alcohol lifts it, too much volatile acidity tanks it. Winemakers could tweak these to up their game, and the models (especially for alcohol) give a decent guess at what's in the bottle. It's not perfect—35% for quality leaves room to grow—but it's a solid start.
+          This shows what's behind a good red—alcohol lifts it, too much volatile acidity tanks it. Winemakers could
+          tweak these to up their game, and the models (especially for alcohol) give a decent guess at what's in the
+          bottle. It's not perfect—35% for quality leaves room to grow—but it's a solid start.
         </div>
       </div>
     </div>
 
-    <!-- IMAGE GALLERY -->
+    <!-- Embedded notebook section -->
     <div id="project-notebook">
       <div class="subheader-text">What the Data Showed</div><br>
       <div id="iframe-container">
@@ -138,6 +164,7 @@
       </div>
     </div>
 
+    <!-- Footer with social links -->
     <div id="footer">
       <a class="icon-link" target="_blank" href="https://github.com/vytautas-bunevicius/">
         <img src="../../assets/icons/github.svg" class="footer-icon" alt="GitHub Icon">
@@ -149,9 +176,7 @@
         <img src="../../assets/icons/mail.svg" class="footer-icon" alt="Email Icon">
       </a>
     </div>
-
   </div>
-
 </body>
 
 </html>

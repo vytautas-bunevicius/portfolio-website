@@ -1,4 +1,6 @@
-/* Icons */
+/* Copyright 2025 Vytautas Bunevičius. All rights reserved. */
+
+/* Icon Styling */
 .right-arrow-icon {
   width: 16px;
   height: 16px;
@@ -16,7 +18,7 @@ a.icon-link {
 
 a.icon-link:hover {
   cursor: pointer;
-  stroke-width: 5;
+  stroke-width: 5; /* Note: Only applies to SVG icons with stroke */
   margin: 0;
   transform: rotate(15deg);
 }
@@ -47,7 +49,7 @@ a.icon-link:hover {
   text-decoration: underline;
 }
 
-/* Dark mode styles for navbar links */
+/* Dark mode adjustments for navbar links */
 body.dark-mode .nav-title-link {
   color: white;
 }
@@ -85,7 +87,7 @@ body.dark-mode .nav-title-link:hover {
   background-color: transparent;
   border: none;
   padding: 8px 16px;
-  transition: none;
+  transition: none; /* Overrides general button transition */
   outline: none;
   box-shadow: none;
   -webkit-tap-highlight-color: transparent;
@@ -112,7 +114,7 @@ body.dark-mode .nav-title-link:hover {
   user-select: none;
 }
 
-/* Dark Mode Specific Styles */
+/* Dark Mode Specific Styles for Buttons */
 body.dark-mode .button:not(.dark-mode-button) {
   border-color: white;
   color: white;
@@ -154,16 +156,16 @@ a.no-underline:hover {
   z-index: 9999;
 }
 
-/* Dark Mode Specific Styles */
+/* Dark Mode Specific Icon Styles */
 body.dark-mode .right-arrow-icon {
-  filter: invert(1);
+  filter: invert(1); /* Inverts colors for visibility in dark mode */
 }
 
 body.dark-mode .footer-icon {
-  filter: invert(1);
+  filter: invert(1); /* Inverts colors for visibility in dark mode */
 }
 
-/* Light mode styles */
+/* Light Mode Navbar Background */
 body:not(.dark-mode) .navbar {
   background-color: white;
 }
@@ -179,7 +181,7 @@ body:not(.dark-mode) .navbar {
   height: 40px;
   border-radius: 50%;
   box-sizing: border-box;
-  transition: transform .3s;
+  transition: transform 0.3s;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -191,24 +193,24 @@ body:not(.dark-mode) .navbar {
 }
 
 #fullscreen-button svg:nth-child(2) {
-  display: none;
+  display: none; /* Hides exit fullscreen icon by default */
 }
 
 .fullscreen #fullscreen-button svg:nth-child(1) {
-  display: none;
+  display: none; /* Hides enter fullscreen icon in fullscreen mode */
 }
 
 .fullscreen #fullscreen-button svg:nth-child(2) {
-  display: inline-block;
+  display: inline-block; /* Shows exit fullscreen icon in fullscreen mode */
 }
 
-/* Small devices (portrait tablets and large phones, 800px and below) */
+/* Responsive adjustments for small devices (up to 800px) */
 @media only screen and (max-width: 800px) {
   .navbar {
     padding: 20px 20px;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #363636;
+    background-color: #363636; /* Consistent background for small screens */
   }
 
   .navbar-buttons {
@@ -238,7 +240,7 @@ body:not(.dark-mode) .navbar {
   }
 }
 
-/* Media query for larger phones (including 6.9 inch screens) */
+/* Responsive adjustments for larger phones (390px to 800px) */
 @media only screen and (min-width: 390px) and (max-width: 800px) {
   .nav-title-link {
     font-size: 18px;
@@ -248,7 +250,7 @@ body:not(.dark-mode) .navbar {
   }
 }
 
-/* Extra large phones specific adjustments */
+/* Responsive adjustments for extra large phones (428px to 800px) */
 @media only screen and (min-width: 428px) and (max-width: 800px) {
   .nav-title-link {
     max-width: 140px;

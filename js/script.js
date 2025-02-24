@@ -1,25 +1,38 @@
+/**
+ * Initializes event listeners and functionality when the DOM is fully loaded.
+ * Handles smooth scrolling, fullscreen toggling, and dark mode features.
+ * @param {Event} event - The DOMContentLoaded event.
+ */
 document.addEventListener('DOMContentLoaded', (event) => {
-  // Link to scroll to "My Work" section
-  if (document.getElementById('my-work-link')) {
-    document.getElementById('my-work-link').addEventListener('click', () => {
-      document.getElementById('my-work-section').scrollIntoView({ behavior: "smooth" });
+  // Smooth scrolling to "My Work" section
+  const myWorkLink = document.getElementById('my-work-link');
+  if (myWorkLink) {
+    myWorkLink.addEventListener('click', () => {
+      document.getElementById('my-work-section').scrollIntoView({ behavior: 'smooth' });
     });
   }
 
-  // Fullscreen functionality
-  if (document.getElementById('fullscreenBtn')) {
-    const fullscreenBtn = document.getElementById('fullscreenBtn');
+  // Fullscreen functionality for iframe content
+  const fullscreenBtn = document.getElementById('fullscreenBtn');
+  if (fullscreenBtn) {
     const iframeContainer = document.getElementById('iframe-container');
     const iframe = document.getElementById('myIframe');
     let isFullScreen = false;
 
-    // Check if native fullscreen is supported
-    const fullscreenEnabled = document.fullscreenEnabled || document.webkitFullscreenEnabled || document.mozFullScreenEnabled || document.msFullscreenEnabled;
+    // Check browser support for fullscreen API
+    const fullscreenEnabled = document.fullscreenEnabled ||
+      document.webkitFullscreenEnabled ||
+      document.mozFullScreenEnabled ||
+      document.msFullscreenEnabled;
 
+    /**
+     * Toggles fullscreen mode using native API or fallback styling.
+     */
     function toggleFullScreen() {
       if (fullscreenEnabled) {
-        // Desktop logic
-        if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
+        // Handle native fullscreen for desktop browsers
+        if (!document.fullscreenElement && !document.mozFullScreenElement &&
+          !document.webkitFullscreenElement && !document.msFullscreenElement) {
           if (iframeContainer.requestFullscreen) {
             iframeContainer.requestFullscreen();
           } else if (iframeContainer.mozRequestFullScreen) {
@@ -41,7 +54,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
           }
         }
       } else {
-        // Mobile fallback
+        // Fallback for mobile devices without fullscreen API
         isFullScreen = !isFullScreen;
         if (isFullScreen) {
           iframeContainer.style.position = 'fixed';
@@ -74,21 +87,26 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     fullscreenBtn.addEventListener('click', toggleFullScreen);
 
+    /**
+     * Updates the fullscreen button's visual state based on fullscreen status.
+     */
     function updateFullscreenButtonState() {
       if (fullscreenEnabled) {
-        isFullScreen = !!(document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement);
+        isFullScreen = !!(document.fullscreenElement || document.mozFullScreenElement ||
+          document.webkitFullscreenElement || document.msFullscreenElement);
       }
       fullscreenBtn.textContent = isFullScreen ? '✖' : '⛶';
     }
 
     if (fullscreenEnabled) {
+      // Add fullscreen change listeners for all browser variants
       document.addEventListener('fullscreenchange', updateFullscreenButtonState);
       document.addEventListener('mozfullscreenchange', updateFullscreenButtonState);
       document.addEventListener('webkitfullscreenchange', updateFullscreenButtonState);
       document.addEventListener('MSFullscreenChange', updateFullscreenButtonState);
     }
 
-    // Ensure correct button state when leaving fullscreen via Escape key
+    // Handle Escape key press to exit fullscreen
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && isFullScreen) {
         isFullScreen = false;
@@ -96,34 +114,36 @@ document.addEventListener('DOMContentLoaded', (event) => {
       }
     });
 
-    // Initial update of button state
+    // Set initial button state
     updateFullscreenButtonState();
   }
 
-  // Dark mode functionality
+  // Dark mode toggle functionality
   const darkModeToggle = document.getElementById('darkModeToggle');
-  const lightIcon = document.getElementById("light-icon");
-  const darkIcon = document.getElementById("dark-icon");
-  
-  // Check for saved dark mode preference or default to false
+  const lightIcon = document.getElementById('light-icon');
+  const darkIcon = document.getElementById('dark-icon');
+
+  // Initialize dark mode from localStorage, default to false
   let darkMode = localStorage.getItem('darkMode') === 'true';
 
-  // Function to set the dark mode
+  /**
+   * Applies or removes dark mode styling and updates localStorage.
+   * @param {boolean} isDark - Whether dark mode should be enabled.
+   */
   function setDarkMode(isDark) {
-    document.body.classList.toggle("dark-mode", isDark);
+    document.body.classList.toggle('dark-mode', isDark);
     if (lightIcon && darkIcon) {
-      lightIcon.style.display = isDark ? "block" : "none";
-      darkIcon.style.display = isDark ? "none" : "block";
+      lightIcon.style.display = isDark ? 'block' : 'none';
+      darkIcon.style.display = isDark ? 'none' : 'block';
     }
     localStorage.setItem('darkMode', isDark);
   }
 
-  // Set initial dark mode
+  // Apply initial dark mode state
   setDarkMode(darkMode);
 
-  // Toggle dark mode when the button is clicked
   if (darkModeToggle) {
-    darkModeToggle.addEventListener('click', function() {
+    darkModeToggle.addEventListener('click', () => {
       darkMode = !darkMode;
       setDarkMode(darkMode);
     });
