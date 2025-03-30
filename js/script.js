@@ -95,7 +95,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
         isFullScreen = !!(document.fullscreenElement || document.mozFullScreenElement ||
           document.webkitFullscreenElement || document.msFullscreenElement);
       }
-      fullscreenBtn.textContent = isFullScreen ? '✖' : '⛶';
+
+      // Create SVG for minimize (exit fullscreen)
+      const minimizeSvg = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="5,11 1,15 5,15"></polyline>
+          <polyline points="11,15 15,15 15,11"></polyline>
+          <polyline points="15,5 15,1 11,1"></polyline>
+          <polyline points="5,1 1,1 1,5"></polyline>
+        </svg>
+      `;
+
+      // Create SVG for maximize (enter fullscreen)
+      const maximizeSvg = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="5,1 1,1 1,5"></polyline>
+          <polyline points="15,5 15,1 11,1"></polyline>
+          <polyline points="1,11 1,15 5,15"></polyline>
+          <polyline points="11,15 15,15 15,11"></polyline>
+        </svg>
+      `;
+
+      fullscreenBtn.innerHTML = isFullScreen ? minimizeSvg : maximizeSvg;
     }
 
     if (fullscreenEnabled) {

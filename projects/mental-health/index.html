@@ -16,61 +16,10 @@
   <link rel="stylesheet" href="../../css/layout.css">
   <link rel="stylesheet" href="../../css/typography.css">
   <link rel="stylesheet" href="../../css/utilities.css">
+  <link rel="stylesheet" href="../../css/fullscreen.css">
 
   <!-- Deferred JavaScript loading -->
   <script defer src="../../js/script.js"></script>
-
-  <style>
-    /* Container for iframe display */
-    #iframe-container {
-      position: relative;
-      width: 100%;
-      height: 600px;
-    }
-
-    /* Fullscreen toggle button styling */
-    #fullscreenBtn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background-color: rgba(0, 0, 0, 0.5);
-      color: white;
-      border: none;
-      border-radius: 4px;
-      padding: 5px 10px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      z-index: 9999;
-      font-weight: bold;
-    }
-
-    #fullscreenBtn:hover {
-      background-color: rgba(0, 0, 0, 0.7);
-    }
-
-    /* Ensure button stays fixed in fullscreen mode across browsers */
-    #iframe-container:-webkit-full-screen #fullscreenBtn,
-    #iframe-container:-ms-fullscreen #fullscreenBtn,
-    #iframe-container:fullscreen #fullscreenBtn {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-    }
-
-    /* Responsive adjustments for smaller screens */
-    @media (max-width: 768px) {
-      #iframe-container {
-        height: 400px;
-      }
-
-      #fullscreenBtn {
-        padding: 8px 16px;
-        font-size: 18px;
-        font-weight: bold;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -185,7 +134,14 @@
       <div id="iframe-container">
         <iframe id="myIframe" src="../mental-health/analysis/mental-health-tech-analysis.html" width="100%"
           height="100%"></iframe>
-        <button id="fullscreenBtn">⛶</button>
+        <button id="fullscreenBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="5,1 1,1 1,5"></polyline>
+            <polyline points="15,5 15,1 11,1"></polyline>
+            <polyline points="1,11 1,15 5,15"></polyline>
+            <polyline points="11,15 15,15 15,11"></polyline>
+          </svg>
+        </button>
       </div>
     </div>
 

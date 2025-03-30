@@ -18,7 +18,8 @@ a.icon-link {
 
 a.icon-link:hover {
   cursor: pointer;
-  stroke-width: 5; /* Note: Only applies to SVG icons with stroke */
+  stroke-width: 5;
+  /* Note: Only applies to SVG icons with stroke */
   margin: 0;
   transform: rotate(15deg);
 }
@@ -87,7 +88,8 @@ body.dark-mode .nav-title-link:hover {
   background-color: transparent;
   border: none;
   padding: 8px 16px;
-  transition: none; /* Overrides general button transition */
+  transition: none;
+  /* Overrides general button transition */
   outline: none;
   box-shadow: none;
   -webkit-tap-highlight-color: transparent;
@@ -158,11 +160,13 @@ a.no-underline:hover {
 
 /* Dark Mode Specific Icon Styles */
 body.dark-mode .right-arrow-icon {
-  filter: invert(1); /* Inverts colors for visibility in dark mode */
+  filter: invert(1);
+  /* Inverts colors for visibility in dark mode */
 }
 
 body.dark-mode .footer-icon {
-  filter: invert(1); /* Inverts colors for visibility in dark mode */
+  filter: invert(1);
+  /* Inverts colors for visibility in dark mode */
 }
 
 /* Light Mode Navbar Background */
@@ -193,15 +197,18 @@ body:not(.dark-mode) .navbar {
 }
 
 #fullscreen-button svg:nth-child(2) {
-  display: none; /* Hides exit fullscreen icon by default */
+  display: none;
+  /* Hides exit fullscreen icon by default */
 }
 
 .fullscreen #fullscreen-button svg:nth-child(1) {
-  display: none; /* Hides enter fullscreen icon in fullscreen mode */
+  display: none;
+  /* Hides enter fullscreen icon in fullscreen mode */
 }
 
 .fullscreen #fullscreen-button svg:nth-child(2) {
-  display: inline-block; /* Shows exit fullscreen icon in fullscreen mode */
+  display: inline-block;
+  /* Shows exit fullscreen icon in fullscreen mode */
 }
 
 /* Responsive adjustments for small devices (up to 800px) */
@@ -210,7 +217,8 @@ body:not(.dark-mode) .navbar {
     padding: 20px 20px;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #363636; /* Consistent background for small screens */
+    background-color: #363636;
+    /* Consistent background for small screens */
   }
 
   .navbar-buttons {
