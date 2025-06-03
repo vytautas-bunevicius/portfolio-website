@@ -7,7 +7,7 @@
   right: 10px;
   background-color: transparent;
   color: var(--text-color, #363636);
-  border: 3px solid #141414;
+  border: 3px solid var(--text-color, #363636);
   border-radius: 50px;
   padding: 8px 16px;
   font-size: 14px;
@@ -29,16 +29,13 @@
   text-decoration: underline;
 }
 
-/* Dark mode styling to match project buttons */
+/* Dark mode - dark background with black border and white icon */
 body.dark-mode #fullscreenBtn {
-  border-color: #fff;
+  background-color: #363636;
+  border-color: #363636;
   color: #fff;
-  background-color: transparent;
 }
 
-body.dark-mode #fullscreenBtn:hover {
-  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
-}
 
 /* Ensure button stays fixed in fullscreen mode across browsers */
 #iframe-container:-webkit-full-screen #fullscreenBtn,
