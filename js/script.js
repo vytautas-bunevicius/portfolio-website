@@ -1,9 +1,8 @@
 /**
  * Initializes event listeners and functionality when the DOM is fully loaded.
  * Handles smooth scrolling, fullscreen toggling, and dark mode features.
- * @param {Event} event - The DOMContentLoaded event.
  */
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', () => {
   // Smooth scrolling to "My Work" section
   const myWorkLink = document.getElementById('my-work-link');
   if (myWorkLink) {
@@ -18,43 +17,48 @@ document.addEventListener('DOMContentLoaded', (event) => {
   fullscreenBtns.forEach(function(fullscreenBtn) {
     if (fullscreenBtn) {
       const iframeContainer = fullscreenBtn.closest('.iframe-container') || fullscreenBtn.closest('#iframe-container');
-      const iframe = iframeContainer ? iframeContainer.querySelector('iframe') : null;
       let isFullScreen = false;
 
-      // Check browser support for fullscreen API
-      const fullscreenEnabled = document.fullscreenEnabled ||
+      const fullscreenEnabled = !!(document.fullscreenEnabled ||
         document.webkitFullscreenEnabled ||
         document.mozFullScreenEnabled ||
-        document.msFullscreenEnabled;
+        document.msFullscreenEnabled);
 
       /**
        * Toggles fullscreen mode using native API or fallback styling.
        */
-      function toggleFullScreen() {
-      if (fullscreenEnabled) {
-        // Handle native fullscreen for desktop browsers
-        if (!document.fullscreenElement && !document.mozFullScreenElement &&
-          !document.webkitFullscreenElement && !document.msFullscreenElement) {
-          if (iframeContainer.requestFullscreen) {
-            iframeContainer.requestFullscreen();
-          } else if (iframeContainer.mozRequestFullScreen) {
-            iframeContainer.mozRequestFullScreen();
-          } else if (iframeContainer.webkitRequestFullscreen) {
-            iframeContainer.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-          } else if (iframeContainer.msRequestFullscreen) {
-            iframeContainer.msRequestFullscreen();
+      async function toggleFullScreen() {
+        if (fullscreenEnabled && iframeContainer) {
+          try {
+            // Handle native fullscreen for desktop browsers
+            if (!document.fullscreenElement && 
+                !document.mozFullScreenElement &&
+                !document.webkitFullscreenElement && 
+                !document.msFullscreenElement) {
+              
+              if (iframeContainer.requestFullscreen) {
+                await iframeContainer.requestFullscreen();
+              } else if (iframeContainer.mozRequestFullScreen) {
+                await iframeContainer.mozRequestFullScreen();
+              } else if (iframeContainer.webkitRequestFullscreen) {
+                await iframeContainer.webkitRequestFullscreen();
+              } else if (iframeContainer.msRequestFullscreen) {
+                await iframeContainer.msRequestFullscreen();
+              }
+            } else {
+              if (document.exitFullscreen) {
+                await document.exitFullscreen();
+              } else if (document.mozCancelFullScreen) {
+                await document.mozCancelFullScreen();
+              } else if (document.webkitExitFullscreen) {
+                await document.webkitExitFullscreen();
+              } else if (document.msExitFullscreen) {
+                await document.msExitFullscreen();
+              }
+            }
+          } catch (error) {
+            console.warn('Fullscreen operation failed:', error);
           }
-        } else {
-          if (document.exitFullscreen) {
-            document.exitFullscreen();
-          } else if (document.mozCancelFullScreen) {
-            document.mozCancelFullScreen();
-          } else if (document.webkitExitFullscreen) {
-            document.webkitExitFullscreen();
-          } else if (document.msExitFullscreen) {
-            document.msExitFullscreen();
-          }
-        }
       } else {
         // Fallback for mobile devices without fullscreen API
         isFullScreen = !isFullScreen;
@@ -93,14 +97,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
        * Updates the fullscreen button's visual state based on fullscreen status.
        */
       function updateFullscreenButtonState() {
-      if (fullscreenEnabled) {
-        isFullScreen = !!(document.fullscreenElement || document.mozFullScreenElement ||
-          document.webkitFullscreenElement || document.msFullscreenElement);
-      }
+        if (fullscreenEnabled) {
+          isFullScreen = !!(document.fullscreenElement || 
+            document.mozFullScreenElement ||
+            document.webkitFullscreenElement || 
+            document.msFullscreenElement);
+        }
 
       // Create SVG for minimize (exit fullscreen)
       const minimizeSvg = `
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="16" height="16" viewBox="0 0 16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="5,11 1,15 5,15"></polyline>
           <polyline points="11,15 15,15 15,11"></polyline>
           <polyline points="15,5 15,1 11,1"></polyline>
@@ -110,7 +116,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
       // Create SVG for maximize (enter fullscreen)
       const maximizeSvg = `
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="16" height="16" viewBox="0 0 16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="5,1 1,1 1,5"></polyline>
           <polyline points="15,5 15,1 11,1"></polyline>
           <polyline points="1,11 1,15 5,15"></polyline>
@@ -160,7 +166,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       lightIcon.style.display = isDark ? 'none' : 'block';
       darkIcon.style.display = isDark ? 'block' : 'none';
     }
-    localStorage.setItem('darkMode', isDark);
+    localStorage.setItem('darkMode', isDark.toString());
   }
 
   // Apply initial dark mode state
