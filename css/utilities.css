@@ -27,13 +27,23 @@ a.icon-link:hover {
 /* Navbar Styling */
 .navbar {
   width: 100%;
-  padding: 30px 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 32px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   position: fixed;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  background-color: var(--background-color);
+}
+
+/* Dark mode navbar background */
+body.dark-mode .navbar {
+  background-color: #363636;
 }
 
 .navbar-buttons {
@@ -42,7 +52,7 @@ a.icon-link:hover {
 }
 
 .nav-title-link {
-  color: black;
+  color: var(--text-color);
   text-decoration: none;
 }
 
@@ -50,23 +60,53 @@ a.icon-link:hover {
   text-decoration: underline;
 }
 
-/* Dark mode adjustments for navbar links */
+/* Dark mode navbar text */
 body.dark-mode .nav-title-link {
   color: white;
 }
 
-body.dark-mode .nav-title-link:hover {
-  text-decoration: underline;
-  text-decoration-color: white;
+body.dark-mode .navbar .button {
+  color: white;
+  border-color: white;
+}
+
+body.dark-mode .navbar .button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive navbar adjustments */
+@media only screen and (max-width: 768px) {
+  .navbar {
+    padding: 20px 20px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .navbar {
+    padding: 16px 16px;
+  }
+  
+  .nav-title {
+    font-size: 20px;
+  }
+  
+  .navbar-buttons {
+    gap: 12px;
+  }
+  
+  .button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
 }
 
 /* Button Styling */
 .button {
   padding: 8px 16px;
-  border: 3px solid #141414;
+  border: 3px solid var(--text-color);
   border-radius: 50px;
-  color: black;
-  background-color: white;
+  color: var(--text-color);
+  background-color: var(--background-color);
   text-decoration: none;
   width: fit-content;
   display: flex;
@@ -80,6 +120,7 @@ body.dark-mode .nav-title-link:hover {
   text-decoration: underline;
   text-decoration-thickness: 2px;
   cursor: pointer;
+  background-color: var(--button-hover-color);
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

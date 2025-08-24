@@ -47,56 +47,45 @@ body {
 
 /* Main content layout */
 #main-content {
-  margin: 225px 425px;
+  max-width: 1200px;
+  margin: 120px auto;
+  padding: 0 32px;
   display: flex;
   flex-direction: column;
-  gap: 96px;
+  gap: 80px;
 }
 
 /* Portfolio header layout */
 #portfolio-header {
   display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-#portfolio-header-image-container {
-  display: flex;
   flex-direction: column;
-  gap: 10px;
-  flex-basis: 50%;
-}
-
-.portfolio-header-image {
-  width: 100%;
-  height: auto;
+  gap: 32px;
 }
 
 #portfolio-header-text-container {
   display: flex;
   flex-direction: column;
-  gap: 34px;
-  flex-basis: 50%;
+  gap: 24px;
 }
 
 /* About section layout */
 #about-section {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 }
 
 .about-section-content {
   display: flex;
   flex-direction: column;
-  gap: 34px;
+  gap: 18px;
 }
 
 /* Project section layout */
 #my-work-section {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 32px;
 }
 
 .projects-container {
@@ -117,7 +106,7 @@ body {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
 }
 
 .project-image {
@@ -128,6 +117,44 @@ body {
 }
 
 .project-card .button {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* Notebook cards styling */
+.notebook-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.notebook-card {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  border: 1px solid var(--button-hover-color);
+  border-radius: 8px;
+}
+
+.dark-mode .notebook-card {
+  border-color: #555;
+}
+
+.notebook-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-bottom: 8px;
+}
+
+.dark-mode .notebook-title {
+  color: white;
+}
+
+.notebook-card .button {
   align-self: flex-start;
   margin-top: auto;
 }
@@ -242,44 +269,68 @@ body {
   box-shadow: none !important;
 }
 
+/* Hide dark icon by default (light mode) */
+#dark-icon {
+  display: none;
+}
+
 /* Responsive adjustments for various screen sizes */
-@media only screen and (max-width: 1600px) {
+@media only screen and (max-width: 1024px) {
   #main-content {
-    margin: 225px 275px;
-  }
-}
-
-@media only screen and (max-width: 1200px) {
-  #main-content {
-    margin: 225px 175px;
-  }
-}
-
-@media only screen and (max-width: 1000px) {
-  #main-content {
-    margin: 225px 75px;
-  }
-}
-
-@media only screen and (max-width: 800px) {
-  #main-content {
-    margin: 150px 50px;
-  }
-
-  #portfolio-header {
-    flex-direction: column;
+    padding: 0 24px;
+    gap: 64px;
   }
 
   .project-card {
     max-width: calc((100% - 16px) / 2);
   }
+  
+  .projects-container {
+    gap: 24px 16px;
+  }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   #main-content {
-    margin: 125px 20px;
+    margin: 80px auto;
+    padding: 0 20px;
+    gap: 48px;
   }
 
+  .project-card {
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+  
+  .projects-container {
+    gap: 24px 0;
+  }
+
+  .notebook-links {
+    flex-direction: column;
+  }
+
+  .notebook-card {
+    min-width: auto;
+    padding: 16px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #main-content {
+    margin: 60px auto;
+    padding: 0 16px;
+    gap: 32px;
+  }
+
+  #portfolio-header-text-container {
+    gap: 20px;
+  }
+  
+  .projects-container {
+    gap: 20px 0;
+  }
+  
   .project-card {
     max-width: 100%;
   }

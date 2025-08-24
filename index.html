@@ -54,28 +54,39 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: 100px;
+      gap: 16px;
+      margin-top: 24px;
     }
 
     #tool-icons-container img {
       width: 64px;
       height: 64px;
-      margin: 0 10px;
     }
 
     /* Responsive adjustments for mobile devices */
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       #tool-icons-container {
         flex-wrap: wrap;
-        max-height: 400px;
-        overflow-y: auto;
-        margin-top: 50px;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 20px;
       }
 
       #tool-icons-container img {
         width: 48px;
         height: 48px;
-        margin: 5px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      #tool-icons-container {
+        gap: 8px;
+        margin-top: 16px;
+      }
+
+      #tool-icons-container img {
+        width: 40px;
+        height: 40px;
       }
     }
 
@@ -97,6 +108,17 @@
 
     .projects-container {
       margin-top: 20px;
+    }
+    
+    /* Mobile-only fix for overlap issue */
+    @media (max-width: 768px) {
+      #my-work-section {
+        margin-top: 0;
+      }
+      
+      .projects-container {
+        margin-top: 16px;
+      }
     }
   </style>
 
@@ -138,13 +160,6 @@
   <div id="main-content">
     <!-- Portfolio header section -->
     <div id="portfolio-header">
-      <div id="portfolio-header-image-container">
-        <img src="./assets/images/1311.png" class="portfolio-header-image" alt="Portfolio Header Image">
-        <a class="no-underline" target="_blank">
-          <span class="image-caption"></span>
-        </a>
-      </div>
-
       <div id="portfolio-header-text-container">
         <div class="header-text">
           <span class="main-title">Hey, I'm Vytautas!</span>
@@ -168,8 +183,8 @@
           <div class="tool-icon" data-tooltip="Python">
             <img src="./assets/icons/python.svg" alt="Python Icon">
           </div>
-          <div class="tool-icon" data-tooltip="JavaScript">
-            <img src="./assets/icons/javascript.svg" alt="JavaScript Icon">
+          <div class="tool-icon" data-tooltip="TypeScript">
+            <img src="./assets/icons/typescript.svg" alt="TypeScript Icon">
           </div>
           <div class="tool-icon" data-tooltip="Go">
             <img src="./assets/icons/go.svg" alt="Go Icon">
@@ -217,6 +232,20 @@
     <div id="my-work-section">
       <span class="subheader-text">Projects</span>
       <div class="projects-container">
+        <div class="project-card">
+          <a href="projects/windows-malware-detection/index.html">
+            <img src="./assets/images/malware.jpeg" class="project-image" alt="Windows Malware Detection">
+          </a>
+          <div class="project-card-text-container">
+            <div class="subheader-text project-title">Windows Malware Detection</div>
+            <div class="body-text project-card-text">Built a machine learning system to detect malicious Windows PE files using advanced feature engineering and model optimization.</div>
+          </div>
+          <a class="button" href="projects/windows-malware-detection/index.html">
+            <span class="button-text">Read More</span>
+            <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon" alt="Arrow Right">
+          </a>
+        </div>
+
         <div class="project-card">
           <a href="projects/stroke-risk/index.html">
             <img src="./assets/images/stroke.jpeg" class="project-image" alt="Stroke Risk Prediction">
@@ -292,20 +321,6 @@
           </a>
         </div>
 
-        <div class="project-card">
-          <a href="./projects/covid19/index.html">
-            <img src="./assets/images/covid19.jpeg" class="project-image" alt="COVID-19 Analysis">
-          </a>
-          <div class="project-card-text-container">
-            <div class="subheader-text project-title">COVID-19 Analysis</div>
-            <div class="body-text project-card-text">Cracked open South Korea's COVID-19 data to see how it spread and
-              who it hit hardest.</div>
-          </div>
-          <a class="button" href="./projects/covid19/index.html">
-            <span class="button-text">Read More</span>
-            <img src="./assets/icons/arrow-right.svg" class="right-arrow-icon" alt="Arrow Right">
-          </a>
-        </div>
       </div>
     </div>
   </div>

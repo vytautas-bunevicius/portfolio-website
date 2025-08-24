@@ -2,11 +2,16 @@
 
 /* Root variables for consistent theming */
 :root {
-  --primary-color: #333;         /* Primary color for elements */
-  --background-color: #fff;      /* Default background color */
-  --text-color: #363636;         /* Default text color */
-  --button-hover-color: #f5f5f5; /* Button hover state color */
-  --font-stack: "Helvetica Neue", Helvetica, Arial, sans-serif; /* Font fallback stack */
+  --primary-color: #333;
+  /* Primary color for elements */
+  --background-color: #fff;
+  /* Default background color */
+  --text-color: #363636;
+  /* Default text color */
+  --button-hover-color: #f5f5f5;
+  /* Button hover state color */
+  --font-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* Font fallback stack */
 }
 
 /* Base styling for the body */

@@ -13,22 +13,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   // Fullscreen functionality for iframe content
-  const fullscreenBtn = document.getElementById('fullscreenBtn');
-  if (fullscreenBtn) {
-    const iframeContainer = document.getElementById('iframe-container');
-    const iframe = document.getElementById('myIframe');
-    let isFullScreen = false;
+  const fullscreenBtns = document.querySelectorAll('.fullscreen-btn, #fullscreenBtn');
+  
+  fullscreenBtns.forEach(function(fullscreenBtn) {
+    if (fullscreenBtn) {
+      const iframeContainer = fullscreenBtn.closest('.iframe-container') || fullscreenBtn.closest('#iframe-container');
+      const iframe = iframeContainer ? iframeContainer.querySelector('iframe') : null;
+      let isFullScreen = false;
 
-    // Check browser support for fullscreen API
-    const fullscreenEnabled = document.fullscreenEnabled ||
-      document.webkitFullscreenEnabled ||
-      document.mozFullScreenEnabled ||
-      document.msFullscreenEnabled;
+      // Check browser support for fullscreen API
+      const fullscreenEnabled = document.fullscreenEnabled ||
+        document.webkitFullscreenEnabled ||
+        document.mozFullScreenEnabled ||
+        document.msFullscreenEnabled;
 
-    /**
-     * Toggles fullscreen mode using native API or fallback styling.
-     */
-    function toggleFullScreen() {
+      /**
+       * Toggles fullscreen mode using native API or fallback styling.
+       */
+      function toggleFullScreen() {
       if (fullscreenEnabled) {
         // Handle native fullscreen for desktop browsers
         if (!document.fullscreenElement && !document.mozFullScreenElement &&
@@ -82,15 +84,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
           fullscreenBtn.style.zIndex = '';
         }
       }
-      updateFullscreenButtonState();
-    }
+        updateFullscreenButtonState();
+      }
 
-    fullscreenBtn.addEventListener('click', toggleFullScreen);
+      fullscreenBtn.addEventListener('click', toggleFullScreen);
 
-    /**
-     * Updates the fullscreen button's visual state based on fullscreen status.
-     */
-    function updateFullscreenButtonState() {
+      /**
+       * Updates the fullscreen button's visual state based on fullscreen status.
+       */
+      function updateFullscreenButtonState() {
       if (fullscreenEnabled) {
         isFullScreen = !!(document.fullscreenElement || document.mozFullScreenElement ||
           document.webkitFullscreenElement || document.msFullscreenElement);
@@ -116,28 +118,29 @@ document.addEventListener('DOMContentLoaded', (event) => {
         </svg>
       `;
 
-      fullscreenBtn.innerHTML = isFullScreen ? minimizeSvg : maximizeSvg;
-    }
-
-    if (fullscreenEnabled) {
-      // Add fullscreen change listeners for all browser variants
-      document.addEventListener('fullscreenchange', updateFullscreenButtonState);
-      document.addEventListener('mozfullscreenchange', updateFullscreenButtonState);
-      document.addEventListener('webkitfullscreenchange', updateFullscreenButtonState);
-      document.addEventListener('MSFullscreenChange', updateFullscreenButtonState);
-    }
-
-    // Handle Escape key press to exit fullscreen
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && isFullScreen) {
-        isFullScreen = false;
-        updateFullscreenButtonState();
+        fullscreenBtn.innerHTML = isFullScreen ? minimizeSvg : maximizeSvg;
       }
-    });
 
-    // Set initial button state
-    updateFullscreenButtonState();
-  }
+      if (fullscreenEnabled) {
+        // Add fullscreen change listeners for all browser variants
+        document.addEventListener('fullscreenchange', updateFullscreenButtonState);
+        document.addEventListener('mozfullscreenchange', updateFullscreenButtonState);
+        document.addEventListener('webkitfullscreenchange', updateFullscreenButtonState);
+        document.addEventListener('MSFullscreenChange', updateFullscreenButtonState);
+      }
+
+      // Handle Escape key press to exit fullscreen
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && isFullScreen) {
+          isFullScreen = false;
+          updateFullscreenButtonState();
+        }
+      });
+
+      // Set initial button state
+      updateFullscreenButtonState();
+    }
+  });
 
   // Dark mode toggle functionality
   const darkModeToggle = document.getElementById('darkModeToggle');
@@ -154,8 +157,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   function setDarkMode(isDark) {
     document.body.classList.toggle('dark-mode', isDark);
     if (lightIcon && darkIcon) {
-      lightIcon.style.display = isDark ? 'block' : 'none';
-      darkIcon.style.display = isDark ? 'none' : 'block';
+      lightIcon.style.display = isDark ? 'none' : 'block';
+      darkIcon.style.display = isDark ? 'block' : 'none';
     }
     localStorage.setItem('darkMode', isDark);
   }

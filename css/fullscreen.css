@@ -1,7 +1,8 @@
 /* Copyright 2025 Vytautas Bunevičius. All rights reserved. */
 
 /* Fullscreen Button Base Styling - Matching Project Design System */
-#fullscreenBtn {
+#fullscreenBtn,
+.fullscreen-btn {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -23,14 +24,16 @@
   text-decoration: none;
 }
 
-#fullscreenBtn:hover {
+#fullscreenBtn:hover,
+.fullscreen-btn:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   text-decoration: underline;
 }
 
 /* Dark mode - dark background with black border and white icon */
-body.dark-mode #fullscreenBtn {
+body.dark-mode #fullscreenBtn,
+body.dark-mode .fullscreen-btn {
   background-color: #363636;
   border-color: #363636;
   color: #fff;
@@ -40,26 +43,33 @@ body.dark-mode #fullscreenBtn {
 /* Ensure button stays fixed in fullscreen mode across browsers */
 #iframe-container:-webkit-full-screen #fullscreenBtn,
 #iframe-container:-ms-fullscreen #fullscreenBtn,
-#iframe-container:fullscreen #fullscreenBtn {
+#iframe-container:fullscreen #fullscreenBtn,
+.iframe-container:-webkit-full-screen .fullscreen-btn,
+.iframe-container:-ms-fullscreen .fullscreen-btn,
+.iframe-container:fullscreen .fullscreen-btn {
   position: fixed;
   top: 10px;
   right: 10px;
 }
 
 /* Container for iframe display */
-#iframe-container {
+#iframe-container,
+.iframe-container {
   position: relative;
   width: 100%;
   height: 600px;
+  z-index: 1;
 }
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
-  #iframe-container {
+  #iframe-container,
+  .iframe-container {
     height: 400px;
   }
 
-  #fullscreenBtn {
+  #fullscreenBtn,
+  .fullscreen-btn {
     padding: 8px 12px;
     border-radius: 50px;
     right: 10px;
@@ -68,11 +78,13 @@ body.dark-mode #fullscreenBtn {
     gap: 0;
   }
   
-  #fullscreenBtn span {
+  #fullscreenBtn span,
+  .fullscreen-btn span {
     display: none;
   }
 
-  #fullscreenBtn svg {
+  #fullscreenBtn svg,
+  .fullscreen-btn svg {
     width: 18px;
     height: 18px;
   }
