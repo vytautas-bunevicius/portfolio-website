@@ -7,9 +7,16 @@
   <meta charset="utf-8">
   <!-- Favicon for the portfolio website -->
   <link rel="icon" href="./assets/images/1311.png">
-  <title>Vytautas Bunevičius</title>
+  <title>Vytautas Bunevičius | Software Engineer</title>
   <meta name="description"
-    content="Portfolio showcasing skills, projects, and experience in data analysis, machine learning, and data engineering.">
+    content="Software engineer building machine learning systems and data platforms. Portfolio of models, data pipelines, and full stack tools.">
+  <link rel="canonical" href="https://bunevicius.com/">
+  <meta property="og:title" content="Vytautas Bunevičius | Software Engineer">
+  <meta property="og:description" content="Software engineer building machine learning systems and data platforms. Portfolio of models, data pipelines, and full stack tools.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bunevicius.com/">
+  <meta property="og:image" content="https://bunevicius.com/assets/images/1311.png">
+  <meta property="og:site_name" content="Vytautas Bunevičius">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Google Analytics tracking code -->
@@ -63,6 +70,12 @@
       height: 64px;
     }
 
+    /* Slightly reduce TypeScript icon to match visual weight */
+    #tool-icons-container .tool-icon[data-tooltip="TypeScript"] img {
+      width: 56px;
+      height: 56px;
+    }
+
     /* Responsive adjustments for mobile devices */
     @media (max-width: 768px) {
       #tool-icons-container {
@@ -76,6 +89,12 @@
         width: 48px;
         height: 48px;
       }
+
+      /* Mobile tablet: scale TypeScript icon down slightly */
+      #tool-icons-container .tool-icon[data-tooltip="TypeScript"] img {
+        width: 44px;
+        height: 44px;
+      }
     }
     
     @media (max-width: 480px) {
@@ -87,6 +106,12 @@
       #tool-icons-container img {
         width: 40px;
         height: 40px;
+      }
+
+      /* Small phones: scale TypeScript icon down slightly */
+      #tool-icons-container .tool-icon[data-tooltip="TypeScript"] img {
+        width: 36px;
+        height: 36px;
       }
     }
 
@@ -124,6 +149,20 @@
 
   <!-- Deferred JavaScript loading -->
   <script defer src="./js/script.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Vytautas Bunevičius",
+    "url": "https://bunevicius.com/",
+    "jobTitle": "Software Engineer",
+    "email": "mailto:vytautas@bunevicius.com",
+    "image": "https://bunevicius.com/assets/images/1311.png",
+    "sameAs": [
+      "https://www.linkedin.com/in/vytautas-bunevicius/"
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -162,10 +201,9 @@
     <div id="portfolio-header">
       <div id="portfolio-header-text-container">
         <div class="header-text">
-          <span class="main-title">Hey, I'm Vytautas!</span>
+          <h1 class="main-title">Hey, I'm Vytautas!</h1>
           <div class="body-text" style="margin-top: 20px;">
-            I dig into data to make things happen—whether it's building models, sorting out pipelines, or spotting
-            trends that actually matter.
+            I'm a software engineer focused on machine learning systems and data platforms. I build models, data pipelines, and tools that solve real problems.
           </div>
         </div>
         <a class="button" id="my-work-link">
@@ -212,7 +250,7 @@
           automation. Now I'm back there as a mentor, helping newbies debug code and figure out the ropes.
         </div>
         <div class="body-text">
-          At <strong>Nord Security</strong>, I'm an analyst building tools to wrangle data better. I've set up pipelines
+          At <strong>Nord Security</strong>, I'm a software engineer working on machine learning systems and data platforms. I've set up pipelines
           pulling from places like Ahrefs and YouTube, built a web scraper to snoop on what people say about us online,
           and made a model to pick out websites worth partnering with.
         </div>
@@ -267,7 +305,7 @@
           </a>
           <div class="project-card-text-container">
             <div class="subheader-text project-title">Travel Insurance Analysis</div>
-            <div class="body-text project-card-text">Made a model to predict who's buying travel insurance and why—turns
+            <div class="body-text project-card-text">Built a model to predict who buys travel insurance and why. It
               out some patterns are pretty clear.</div>
           </div>
           <a class="button" href="./projects/insurance/index.html">

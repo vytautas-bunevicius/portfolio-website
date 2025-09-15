@@ -7,9 +7,15 @@
   <meta charset="utf-8">
   <!-- Favicon for the website -->
   <link rel="icon" href="../../assets/images/1311.png">
-  <title>Vytautas Bunevičius</title>
+  <title>Podcast Reviews Analysis | Vytautas Bunevičius</title>
   <meta name="description"
-    content="Explore Vytautas Bunevičius's in-depth analysis of podcast reviews using Python and SQLite. Discover how listener preferences and sentiments are uncovered through advanced data techniques, providing unique insights into podcast popularity and trends.">
+    content="Analysis of 2 million podcast reviews with Python and SQLite. Ratings, sentiment, and trends across shows and categories.">
+  <link rel="canonical" href="https://bunevicius.com/projects/podcasts/">
+  <meta property="og:title" content="Podcast Reviews Analysis | Vytautas Bunevičius">
+  <meta property="og:description" content="Analysis of 2 million podcast reviews with Python and SQLite. Ratings, sentiment, and trends across shows and categories.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://bunevicius.com/projects/podcasts/">
+  <meta property="og:image" content="https://bunevicius.com/assets/images/podcasts.jpeg">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Google Analytics tracking code -->
@@ -29,6 +35,20 @@
 
   <!-- Deferred JavaScript loading -->
   <script defer src="../../js/script.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "Podcast Reviews Analysis",
+    "url": "https://bunevicius.com/projects/podcasts/",
+    "description": "Analysis of 2 million podcast reviews with Python and SQLite.",
+    "image": "https://bunevicius.com/assets/images/podcasts.jpeg",
+    "author": {
+      "@type": "Person",
+      "name": "Vytautas Bunevičius"
+    }
+  }
+  </script>
 </head>
 
 <body>
@@ -65,7 +85,7 @@
   <div id="main-content">
     <!-- Project header section -->
     <div id="project-header">
-      <div class="main-title">Podcast Reviews: What's the Buzz?</div>
+      <h1 class="main-title">Podcast Reviews: What's the Buzz?</h1>
       <div class="body-text">I dove into a massive dataset of 2 million podcast reviews across 100,000 shows to see
         what's clicking with listeners. Stored in a SQLite database with tables for categories, podcasts, reviews, and
         runs, it's a goldmine of listener vibes. The goal? Figure out what makes a podcast pop, how ratings shake out,
@@ -147,8 +167,7 @@
     <div id="project-notebook">
       <div class="subheader-text">What the Data Showed</div><br>
       <div id="iframe-container">
-        <iframe id="myIframe" src="../podcasts/analysis/podcast-reviews-analysis.html" width="100%"
-          height="100%"></iframe>
+        <iframe id="myIframe" src="../podcasts/analysis/podcast-reviews-analysis.html"></iframe>
         <button id="fullscreenBtn">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="5,1 1,1 1,5"></polyline>

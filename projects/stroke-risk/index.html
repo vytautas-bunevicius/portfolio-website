@@ -7,9 +7,15 @@
   <meta charset="utf-8">
   <!-- Favicon for the website -->
   <link rel="icon" href="../../assets/images/1311.png">
-  <title>Vytautas Bunevičius</title>
+  <title>Stroke Risk Prediction | Vytautas Bunevičius</title>
   <meta name="description"
-    content="Discover the Stroke Risk Prediction project by Vytautas Bunevičius, which leverages advanced machine learning techniques to predict stroke risks using comprehensive data analysis. Explore our insights and methodologies for early detection and prevention strategies in healthcare.">
+    content="Model to predict stroke risk from patient data with a focus on recall and early warning. Includes methods, results, and code.">
+  <link rel="canonical" href="https://bunevicius.com/projects/stroke-risk/">
+  <meta property="og:title" content="Stroke Risk Prediction | Vytautas Bunevičius">
+  <meta property="og:description" content="Model to predict stroke risk from patient data with a focus on recall and early warning. Includes methods, results, and code.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://bunevicius.com/projects/stroke-risk/">
+  <meta property="og:image" content="https://bunevicius.com/assets/images/stroke.jpeg">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- External stylesheets -->
@@ -20,6 +26,20 @@
 
   <!-- Deferred JavaScript loading -->
   <script defer src="../../js/script.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "Stroke Risk Prediction",
+    "url": "https://bunevicius.com/projects/stroke-risk/",
+    "description": "Predict stroke risk from patient data with a focus on recall and early warning.",
+    "image": "https://bunevicius.com/assets/images/stroke.jpeg",
+    "author": {
+      "@type": "Person",
+      "name": "Vytautas Bunevičius"
+    }
+  }
+  </script>
 </head>
 
 <body>
@@ -56,11 +76,11 @@
   <div id="main-content">
     <!-- Project header section -->
     <div id="project-header">
-      <div class="main-title">Stroke Risk Prediction: Figuring Out Who's at Risk</div>
+      <h1 class="main-title">Stroke Risk Prediction: Figuring Out Who's at Risk</h1>
       <div class="body-text">I built a machine learning model to spot people at risk of a stroke, using data from over
-        5,000 patients. The goal? Catch the warning signs early so doctors can step in before things get bad. Strokes
-        are a big deal—second leading cause of death worldwide, according to the World Health Organization—so this could
-        really help.</div>
+        5,000 patients. The goal is to catch warning signs early so doctors can step in before things get bad. Strokes
+        are a big deal. The World Health Organization lists them as the second leading cause of death worldwide, so this
+        kind of tool could help.</div>
       <img class="project-header-image" src="../../assets/images/stroke.jpeg"
         alt="Stroke Risk Prediction Project Header">
     </div>
@@ -126,7 +146,7 @@
     <div id="project-notebook">
       <div class="subheader-text">What the Data Showed</div><br>
       <div id="iframe-container">
-        <iframe id="myIframe" src="./analysis/stroke-risk-analysis.html" width="100%" height="100%"></iframe>
+        <iframe id="myIframe" src="./analysis/stroke-risk-analysis.html"></iframe>
         <button id="fullscreenBtn">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="5,1 1,1 1,5"></polyline>

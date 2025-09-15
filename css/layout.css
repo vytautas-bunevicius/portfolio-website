@@ -258,16 +258,7 @@ body {
   transform: translateX(-50%) translateY(-5px);
 }
 
-/* Dark mode button overrides */
-.dark-mode-button {
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-.dark-mode-button:focus {
-  outline: none !important;
-  box-shadow: none !important;
-}
+/* Dark mode button overrides (handled in utilities.css) */
 
 /* Hide dark icon by default (light mode) */
 #dark-icon {

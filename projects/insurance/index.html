@@ -7,9 +7,15 @@
   <meta charset="utf-8">
   <!-- Favicon for the website -->
   <link rel="icon" href="../../assets/images/1311.png">
-  <title>Vytautas Bunevičius</title>
+  <title>Travel Insurance Prediction | Vytautas Bunevičius</title>
   <meta name="description"
-    content="Explore Vytautas Bunevičius's project on Predictive Modeling of Travel Insurance Purchases. Discover how advanced machine learning techniques are applied to analyze customer data and predict purchasing behaviors, providing actionable insights for the travel insurance sector.">
+    content="Predict who buys travel insurance using customer data. Simple, clear walk-through with models, results, and code.">
+  <link rel="canonical" href="https://bunevicius.com/projects/insurance/">
+  <meta property="og:title" content="Travel Insurance Prediction | Vytautas Bunevičius">
+  <meta property="og:description" content="Predict who buys travel insurance using customer data. Simple, clear walk-through with models, results, and code.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://bunevicius.com/projects/insurance/">
+  <meta property="og:image" content="https://bunevicius.com/assets/images/insurance.jpeg">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- External stylesheets -->
@@ -20,6 +26,20 @@
 
   <!-- Deferred JavaScript loading -->
   <script defer src="../../js/script.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "Travel Insurance Prediction",
+    "url": "https://bunevicius.com/projects/insurance/",
+    "description": "Predict who buys travel insurance using customer data.",
+    "image": "https://bunevicius.com/assets/images/insurance.jpeg",
+    "author": {
+      "@type": "Person",
+      "name": "Vytautas Bunevičius"
+    }
+  }
+  </script>
 </head>
 
 <body>
@@ -56,10 +76,10 @@
   <div id="main-content">
     <!-- Project header section -->
     <div id="project-header">
-      <div class="main-title">Travel Insurance Prediction: Who's Buying It?</div>
-      <div class="body-text">I dug into a dataset from a Tour & Travels Company to figure out which customers are likely
-        to grab their travel insurance package—complete with Covid cover. Using 2019 data on about 2,000 customers, I
-        built a model to predict who's in and who's out, based on stuff like age, income, and travel habits.</div>
+      <h1 class="main-title">Travel Insurance Prediction: Who Buys It?</h1>
+      <div class="body-text">I worked with a dataset from a Tour & Travels company to figure out which customers are likely
+        to buy a travel insurance package, including COVID cover. Using 2019 data on about 2,000 customers, I built a
+        model to predict who is likely to buy based on age, income, and travel habits.</div>
       <img class="project-header-image" src="../../assets/images/insurance.jpeg"
         alt="Travel Insurance Analysis Project Header">
     </div>
@@ -135,7 +155,7 @@
     <div id="project-notebook">
       <div class="subheader-text">What the Data Showed</div><br>
       <div id="iframe-container">
-        <iframe id="myIframe" src="../insurance/analysis/insurance-analysis.html" width="100%" height="100%"></iframe>
+        <iframe id="myIframe" src="../insurance/analysis/insurance-analysis.html"></iframe>
         <button id="fullscreenBtn">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="5,1 1,1 1,5"></polyline>

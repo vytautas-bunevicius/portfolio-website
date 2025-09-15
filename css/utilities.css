@@ -117,22 +117,20 @@ body.dark-mode .navbar .button:hover {
 }
 
 .button:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
+  text-decoration: none;
   cursor: pointer;
   background-color: var(--button-hover-color);
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .button.dark-mode-button {
   background-color: transparent;
   border: none;
   padding: 8px 16px;
-  transition: none;
-  /* Overrides general button transition */
   outline: none;
   box-shadow: none;
+  cursor: pointer;
+  /* Minimal interaction: only subtle background change */
+  transition: background-color 0.12s ease;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -142,19 +140,13 @@ body.dark-mode .navbar .button:hover {
 }
 
 .button.dark-mode-button:hover,
-.button.dark-mode-button:focus,
 .button.dark-mode-button:active {
-  border: none;
-  box-shadow: none;
-  transform: none;
-  text-decoration: none;
-  outline: none;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  background-color: var(--button-hover-color);
+}
+
+.button.dark-mode-button:focus-visible {
+  outline: 2px solid var(--text-color);
+  outline-offset: 2px;
 }
 
 /* Dark Mode Specific Styles for Buttons */
@@ -220,13 +212,13 @@ body:not(.dark-mode) .navbar {
   position: absolute;
   top: 15px;
   right: 15px;
-  background: rgba(0, 0, 0, 0.05);
-  border: 0;
+  background-color: var(--background-color);
+  border: 3px solid var(--text-color);
   width: 40px;
   height: 40px;
   border-radius: 50%;
   box-sizing: border-box;
-  transition: transform 0.3s;
+  transition: background-color 0.3s ease;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -234,7 +226,7 @@ body:not(.dark-mode) .navbar {
 }
 
 #fullscreen-button:hover {
-  transform: scale(1.125);
+  background-color: var(--button-hover-color);
 }
 
 #fullscreen-button svg:nth-child(2) {

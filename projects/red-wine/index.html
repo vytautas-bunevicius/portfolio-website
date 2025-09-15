@@ -7,9 +7,15 @@
   <meta charset="utf-8">
   <!-- Favicon for the website -->
   <link rel="icon" href="../../assets/images/1311.png">
-  <title>Vytautas Bunevičius</title>
+  <title>Red Wine Quality Analysis | Vytautas Bunevičius</title>
   <meta name="description"
-    content="Vytautas Bunevičius delves into red wine characteristics using machine learning to uncover the scientific factors that influence wine quality. Discover our data-driven approach to enhancing traditional winemaking practices.">
+    content="What affects red wine quality using data and simple models. Looks at chemistry and quality scores with clear takeaways.">
+  <link rel="canonical" href="https://bunevicius.com/projects/red-wine/">
+  <meta property="og:title" content="Red Wine Quality Analysis | Vytautas Bunevičius">
+  <meta property="og:description" content="What affects red wine quality using data and simple models. Looks at chemistry and quality scores with clear takeaways.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://bunevicius.com/projects/red-wine/">
+  <meta property="og:image" content="https://bunevicius.com/assets/images/red-wine.jpeg">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- External stylesheets -->
@@ -20,6 +26,20 @@
 
   <!-- Deferred JavaScript loading -->
   <script defer src="../../js/script.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "Red Wine Quality Analysis",
+    "url": "https://bunevicius.com/projects/red-wine/",
+    "description": "What affects red wine quality using data and simple models.",
+    "image": "https://bunevicius.com/assets/images/red-wine.jpeg",
+    "author": {
+      "@type": "Person",
+      "name": "Vytautas Bunevičius"
+    }
+  }
+  </script>
 </head>
 
 <body>
@@ -56,11 +76,8 @@
   <div id="main-content">
     <!-- Project header section -->
     <div id="project-header">
-      <div class="main-title">Red Wine Quality: What Makes It Good?</div>
-      <div class="body-text">Wine folks obsess over quality—it's what keeps drinkers happy and brands solid. I took a
-        crack at the Red Wine Quality dataset, using data analysis and some machine learning to figure out what makes a
-        red wine tick. The plan? Dig into the chemical makeup—like acidity and alcohol—and see how it ties to that 0-10
-        quality score.</div>
+      <h1 class="main-title">Red Wine Quality: What Makes It Good?</h1>
+      <div class="body-text">Quality matters for drinkers and brands. I worked with the Red Wine Quality dataset, using data analysis and simple models to see what makes a good red. The plan is to look at the chemical makeup, like acidity and alcohol, and relate it to the 0 to 10 quality score.</div>
       <img class="project-header-image" src="../../assets/images/red-wine.jpeg" alt="Red Wine Quality Project Header">
     </div>
 
@@ -108,7 +125,7 @@
     <div id="project-notebook">
       <div class="subheader-text">What the Data Showed</div><br>
       <div id="iframe-container">
-        <iframe id="myIframe" src="../red-wine/analysis/red-wine-analysis.html" width="100%" height="100%"></iframe>
+        <iframe id="myIframe" src="../red-wine/analysis/red-wine-analysis.html"></iframe>
         <button id="fullscreenBtn">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="5,1 1,1 1,5"></polyline>
