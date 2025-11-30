@@ -50,3 +50,4 @@ node_modules/
 *.bak
 *.backup
 *~
+/.claude/settings.local.json
